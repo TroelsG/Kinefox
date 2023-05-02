@@ -1,0 +1,1731 @@
+
+TinyFoxGPSSoftware.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .data         00000000  00803800  00803800  00000dcc  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  1 .text         00000cb0  00000000  00000000  00000094  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  2 .rodata       00000088  00008cb0  00000cb0  00000d44  2**0
+                  CONTENTS, ALLOC, LOAD, READONLY, DATA
+  3 .bss          00000041  00803800  00803800  00000dcc  2**0
+                  ALLOC
+  4 .comment      00000030  00000000  00000000  00000dcc  2**0
+                  CONTENTS, READONLY
+  5 .note.gnu.avr.deviceinfo 00000040  00000000  00000000  00000dfc  2**2
+                  CONTENTS, READONLY
+  6 .debug_aranges 00000360  00000000  00000000  00000e40  2**3
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_info   000075a5  00000000  00000000  000011a0  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_abbrev 00002aac  00000000  00000000  00008745  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_line   00002223  00000000  00000000  0000b1f1  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_frame  00000984  00000000  00000000  0000d414  2**2
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_str    000030c6  00000000  00000000  0000dd98  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 12 .debug_loc    00002d7d  00000000  00000000  00010e5e  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 13 .debug_ranges 000002f0  00000000  00000000  00013bdb  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 3c 00 	jmp	0x78	; 0x78 <__ctors_end>
+   4:	0c 94 59 00 	jmp	0xb2	; 0xb2 <__bad_interrupt>
+   8:	0c 94 59 00 	jmp	0xb2	; 0xb2 <__bad_interrupt>
+   c:	0c 94 26 02 	jmp	0x44c	; 0x44c <__vector_3>
+  10:	0c 94 59 00 	jmp	0xb2	; 0xb2 <__bad_interrupt>
+  14:	0c 94 59 00 	jmp	0xb2	; 0xb2 <__bad_interrupt>
+  18:	0c 94 59 00 	jmp	0xb2	; 0xb2 <__bad_interrupt>
+  1c:	0c 94 59 00 	jmp	0xb2	; 0xb2 <__bad_interrupt>
+  20:	0c 94 35 02 	jmp	0x46a	; 0x46a <__vector_8>
+  24:	0c 94 59 00 	jmp	0xb2	; 0xb2 <__bad_interrupt>
+  28:	0c 94 59 00 	jmp	0xb2	; 0xb2 <__bad_interrupt>
+  2c:	0c 94 59 00 	jmp	0xb2	; 0xb2 <__bad_interrupt>
+  30:	0c 94 59 00 	jmp	0xb2	; 0xb2 <__bad_interrupt>
+  34:	0c 94 59 00 	jmp	0xb2	; 0xb2 <__bad_interrupt>
+  38:	0c 94 59 00 	jmp	0xb2	; 0xb2 <__bad_interrupt>
+  3c:	0c 94 59 00 	jmp	0xb2	; 0xb2 <__bad_interrupt>
+  40:	0c 94 59 00 	jmp	0xb2	; 0xb2 <__bad_interrupt>
+  44:	0c 94 59 00 	jmp	0xb2	; 0xb2 <__bad_interrupt>
+  48:	0c 94 59 00 	jmp	0xb2	; 0xb2 <__bad_interrupt>
+  4c:	0c 94 59 00 	jmp	0xb2	; 0xb2 <__bad_interrupt>
+  50:	0c 94 59 00 	jmp	0xb2	; 0xb2 <__bad_interrupt>
+  54:	0c 94 59 00 	jmp	0xb2	; 0xb2 <__bad_interrupt>
+  58:	0c 94 59 00 	jmp	0xb2	; 0xb2 <__bad_interrupt>
+  5c:	0c 94 59 00 	jmp	0xb2	; 0xb2 <__bad_interrupt>
+  60:	0c 94 59 00 	jmp	0xb2	; 0xb2 <__bad_interrupt>
+  64:	0c 94 59 00 	jmp	0xb2	; 0xb2 <__bad_interrupt>
+  68:	0c 94 59 00 	jmp	0xb2	; 0xb2 <__bad_interrupt>
+  6c:	0c 94 59 00 	jmp	0xb2	; 0xb2 <__bad_interrupt>
+  70:	0c 94 59 00 	jmp	0xb2	; 0xb2 <__bad_interrupt>
+  74:	0c 94 59 00 	jmp	0xb2	; 0xb2 <__bad_interrupt>
+
+00000078 <__ctors_end>:
+  78:	11 24       	eor	r1, r1
+  7a:	1f be       	out	0x3f, r1	; 63
+  7c:	cf ef       	ldi	r28, 0xFF	; 255
+  7e:	cd bf       	out	0x3d, r28	; 61
+  80:	df e3       	ldi	r29, 0x3F	; 63
+  82:	de bf       	out	0x3e, r29	; 62
+
+00000084 <__do_copy_data>:
+  84:	18 e3       	ldi	r17, 0x38	; 56
+  86:	a0 e0       	ldi	r26, 0x00	; 0
+  88:	b8 e3       	ldi	r27, 0x38	; 56
+  8a:	e8 e3       	ldi	r30, 0x38	; 56
+  8c:	fd e0       	ldi	r31, 0x0D	; 13
+  8e:	02 c0       	rjmp	.+4      	; 0x94 <__do_copy_data+0x10>
+  90:	05 90       	lpm	r0, Z+
+  92:	0d 92       	st	X+, r0
+  94:	a0 30       	cpi	r26, 0x00	; 0
+  96:	b1 07       	cpc	r27, r17
+  98:	d9 f7       	brne	.-10     	; 0x90 <__do_copy_data+0xc>
+
+0000009a <__do_clear_bss>:
+  9a:	28 e3       	ldi	r18, 0x38	; 56
+  9c:	a0 e0       	ldi	r26, 0x00	; 0
+  9e:	b8 e3       	ldi	r27, 0x38	; 56
+  a0:	01 c0       	rjmp	.+2      	; 0xa4 <.do_clear_bss_start>
+
+000000a2 <.do_clear_bss_loop>:
+  a2:	1d 92       	st	X+, r1
+
+000000a4 <.do_clear_bss_start>:
+  a4:	a1 34       	cpi	r26, 0x41	; 65
+  a6:	b2 07       	cpc	r27, r18
+  a8:	e1 f7       	brne	.-8      	; 0xa2 <.do_clear_bss_loop>
+  aa:	0e 94 35 03 	call	0x66a	; 0x66a <main>
+  ae:	0c 94 56 06 	jmp	0xcac	; 0xcac <_exit>
+
+000000b2 <__bad_interrupt>:
+  b2:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+000000b6 <_Z14accMC3635Alivev>:
+  b6:	cf 93       	push	r28
+  b8:	8c e4       	ldi	r24, 0x4C	; 76
+  ba:	0e 94 0b 02 	call	0x416	; 0x416 <_Z12i2cStartReadh>
+  be:	c8 2f       	mov	r28, r24
+  c0:	81 11       	cpse	r24, r1
+  c2:	03 c0       	rjmp	.+6      	; 0xca <_Z14accMC3635Alivev+0x14>
+  c4:	0e 94 1d 02 	call	0x43a	; 0x43a <_Z7i2cStopv>
+  c8:	02 c0       	rjmp	.+4      	; 0xce <_Z14accMC3635Alivev+0x18>
+  ca:	0e 94 1d 02 	call	0x43a	; 0x43a <_Z7i2cStopv>
+  ce:	8c 2f       	mov	r24, r28
+  d0:	cf 91       	pop	r28
+  d2:	08 95       	ret
+
+000000d4 <_Z16sigfoxFirstStartv>:
+  d4:	85 e2       	ldi	r24, 0x25	; 37
+  d6:	9d e8       	ldi	r25, 0x8D	; 141
+  d8:	0e 94 41 05 	call	0xa82	; 0xa82 <_Z7printlnPKc>
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+  dc:	2f e3       	ldi	r18, 0x3F	; 63
+  de:	8d e0       	ldi	r24, 0x0D	; 13
+  e0:	93 e0       	ldi	r25, 0x03	; 3
+  e2:	21 50       	subi	r18, 0x01	; 1
+  e4:	80 40       	sbci	r24, 0x00	; 0
+  e6:	90 40       	sbci	r25, 0x00	; 0
+  e8:	e1 f7       	brne	.-8      	; 0xe2 <_Z16sigfoxFirstStartv+0xe>
+  ea:	00 c0       	rjmp	.+0      	; 0xec <_Z16sigfoxFirstStartv+0x18>
+  ec:	00 00       	nop
+  ee:	08 95       	ret
+
+000000f0 <_Z17sigfoxWaitForOkayj>:
+  f0:	cf 93       	push	r28
+  f2:	df 93       	push	r29
+  f4:	cd b7       	in	r28, 0x3d	; 61
+  f6:	de b7       	in	r29, 0x3e	; 62
+  f8:	c4 5b       	subi	r28, 0xB4	; 180
+  fa:	d1 09       	sbc	r29, r1
+  fc:	cd bf       	out	0x3d, r28	; 61
+  fe:	de bf       	out	0x3e, r29	; 62
+ 100:	9c 01       	movw	r18, r24
+ 102:	44 eb       	ldi	r20, 0xB4	; 180
+ 104:	be 01       	movw	r22, r28
+ 106:	6f 5f       	subi	r22, 0xFF	; 255
+ 108:	7f 4f       	sbci	r23, 0xFF	; 255
+ 10a:	8a e0       	ldi	r24, 0x0A	; 10
+ 10c:	0e 94 ea 04 	call	0x9d4	; 0x9d4 <_Z8uartReadcPchj>
+ 110:	88 23       	and	r24, r24
+ 112:	81 f0       	breq	.+32     	; 0x134 <__EEPROM_REGION_LENGTH__+0x34>
+ 114:	6f e4       	ldi	r22, 0x4F	; 79
+ 116:	70 e0       	ldi	r23, 0x00	; 0
+ 118:	ce 01       	movw	r24, r28
+ 11a:	01 96       	adiw	r24, 0x01	; 1
+ 11c:	0e 94 2f 06 	call	0xc5e	; 0xc5e <strchr>
+ 120:	fc 01       	movw	r30, r24
+ 122:	89 2b       	or	r24, r25
+ 124:	31 f0       	breq	.+12     	; 0x132 <__EEPROM_REGION_LENGTH__+0x32>
+ 126:	81 e0       	ldi	r24, 0x01	; 1
+ 128:	90 81       	ld	r25, Z
+ 12a:	9f 34       	cpi	r25, 0x4F	; 79
+ 12c:	19 f0       	breq	.+6      	; 0x134 <__EEPROM_REGION_LENGTH__+0x34>
+ 12e:	80 e0       	ldi	r24, 0x00	; 0
+ 130:	01 c0       	rjmp	.+2      	; 0x134 <__EEPROM_REGION_LENGTH__+0x34>
+ 132:	80 e0       	ldi	r24, 0x00	; 0
+ 134:	cc 54       	subi	r28, 0x4C	; 76
+ 136:	df 4f       	sbci	r29, 0xFF	; 255
+ 138:	cd bf       	out	0x3d, r28	; 61
+ 13a:	de bf       	out	0x3e, r29	; 62
+ 13c:	df 91       	pop	r29
+ 13e:	cf 91       	pop	r28
+ 140:	08 95       	ret
+
+00000142 <_Z11sigfoxAlivev>:
+ 142:	80 eb       	ldi	r24, 0xB0	; 176
+ 144:	9c e8       	ldi	r25, 0x8C	; 140
+ 146:	0e 94 41 05 	call	0xa82	; 0xa82 <_Z7printlnPKc>
+ 14a:	88 ee       	ldi	r24, 0xE8	; 232
+ 14c:	93 e0       	ldi	r25, 0x03	; 3
+ 14e:	0e 94 78 00 	call	0xf0	; 0xf0 <_Z17sigfoxWaitForOkayj>
+ 152:	08 95       	ret
+
+00000154 <_Z11sigfoxSleepv>:
+ 154:	83 eb       	ldi	r24, 0xB3	; 179
+ 156:	9c e8       	ldi	r25, 0x8C	; 140
+ 158:	0e 94 41 05 	call	0xa82	; 0xa82 <_Z7printlnPKc>
+ 15c:	80 ed       	ldi	r24, 0xD0	; 208
+ 15e:	97 e0       	ldi	r25, 0x07	; 7
+ 160:	0e 94 78 00 	call	0xf0	; 0xf0 <_Z17sigfoxWaitForOkayj>
+ 164:	08 95       	ret
+
+00000166 <_Z10sigfoxSendPhh>:
+ 166:	ef 92       	push	r14
+ 168:	ff 92       	push	r15
+ 16a:	0f 93       	push	r16
+ 16c:	1f 93       	push	r17
+ 16e:	cf 93       	push	r28
+ 170:	6d 30       	cpi	r22, 0x0D	; 13
+ 172:	40 f5       	brcc	.+80     	; 0x1c4 <_Z10sigfoxSendPhh+0x5e>
+ 174:	06 2f       	mov	r16, r22
+ 176:	7c 01       	movw	r14, r24
+ 178:	8a eb       	ldi	r24, 0xBA	; 186
+ 17a:	9c e8       	ldi	r25, 0x8C	; 140
+ 17c:	0e 94 2c 05 	call	0xa58	; 0xa58 <_Z5printPKc>
+ 180:	10 e0       	ldi	r17, 0x00	; 0
+ 182:	10 16       	cp	r1, r16
+ 184:	11 06       	cpc	r1, r17
+ 186:	8c f4       	brge	.+34     	; 0x1aa <_Z10sigfoxSendPhh+0x44>
+ 188:	c0 e0       	ldi	r28, 0x00	; 0
+ 18a:	f7 01       	movw	r30, r14
+ 18c:	ec 0f       	add	r30, r28
+ 18e:	f1 1d       	adc	r31, r1
+ 190:	c7 fd       	sbrc	r28, 7
+ 192:	fa 95       	dec	r31
+ 194:	80 81       	ld	r24, Z
+ 196:	0e 94 8a 05 	call	0xb14	; 0xb14 <_Z14printByteAsHexh>
+ 19a:	cf 5f       	subi	r28, 0xFF	; 255
+ 19c:	2c 2f       	mov	r18, r28
+ 19e:	0c 2e       	mov	r0, r28
+ 1a0:	00 0c       	add	r0, r0
+ 1a2:	33 0b       	sbc	r19, r19
+ 1a4:	20 17       	cp	r18, r16
+ 1a6:	31 07       	cpc	r19, r17
+ 1a8:	84 f3       	brlt	.-32     	; 0x18a <_Z10sigfoxSendPhh+0x24>
+ 1aa:	85 e2       	ldi	r24, 0x25	; 37
+ 1ac:	9d e8       	ldi	r25, 0x8D	; 141
+ 1ae:	0e 94 2c 05 	call	0xa58	; 0xa58 <_Z5printPKc>
+ 1b2:	82 ed       	ldi	r24, 0xD2	; 210
+ 1b4:	9c e8       	ldi	r25, 0x8C	; 140
+ 1b6:	0e 94 2c 05 	call	0xa58	; 0xa58 <_Z5printPKc>
+ 1ba:	80 ee       	ldi	r24, 0xE0	; 224
+ 1bc:	9e e2       	ldi	r25, 0x2E	; 46
+ 1be:	0e 94 78 00 	call	0xf0	; 0xf0 <_Z17sigfoxWaitForOkayj>
+ 1c2:	01 c0       	rjmp	.+2      	; 0x1c6 <_Z10sigfoxSendPhh+0x60>
+ 1c4:	80 e0       	ldi	r24, 0x00	; 0
+ 1c6:	cf 91       	pop	r28
+ 1c8:	1f 91       	pop	r17
+ 1ca:	0f 91       	pop	r16
+ 1cc:	ff 90       	pop	r15
+ 1ce:	ef 90       	pop	r14
+ 1d0:	08 95       	ret
+
+000001d2 <_Z14deviceInitPinsv>:
+ 1d2:	8a ef       	ldi	r24, 0xFA	; 250
+ 1d4:	80 93 00 04 	sts	0x0400, r24	; 0x800400 <__RODATA_PM_OFFSET__+0x7f8400>
+ 1d8:	87 ef       	ldi	r24, 0xF7	; 247
+ 1da:	80 93 20 04 	sts	0x0420, r24	; 0x800420 <__RODATA_PM_OFFSET__+0x7f8420>
+ 1de:	8f e3       	ldi	r24, 0x3F	; 63
+ 1e0:	80 93 40 04 	sts	0x0440, r24	; 0x800440 <__RODATA_PM_OFFSET__+0x7f8440>
+ 1e4:	08 95       	ret
+
+000001e6 <_Z20deviceIncrementTimerv>:
+ 1e6:	80 91 00 38 	lds	r24, 0x3800	; 0x803800 <__DATA_REGION_ORIGIN__>
+ 1ea:	90 91 01 38 	lds	r25, 0x3801	; 0x803801 <__DATA_REGION_ORIGIN__+0x1>
+ 1ee:	a0 91 02 38 	lds	r26, 0x3802	; 0x803802 <__DATA_REGION_ORIGIN__+0x2>
+ 1f2:	b0 91 03 38 	lds	r27, 0x3803	; 0x803803 <__DATA_REGION_ORIGIN__+0x3>
+ 1f6:	01 96       	adiw	r24, 0x01	; 1
+ 1f8:	a1 1d       	adc	r26, r1
+ 1fa:	b1 1d       	adc	r27, r1
+ 1fc:	80 93 00 38 	sts	0x3800, r24	; 0x803800 <__DATA_REGION_ORIGIN__>
+ 200:	90 93 01 38 	sts	0x3801, r25	; 0x803801 <__DATA_REGION_ORIGIN__+0x1>
+ 204:	a0 93 02 38 	sts	0x3802, r26	; 0x803802 <__DATA_REGION_ORIGIN__+0x2>
+ 208:	b0 93 03 38 	sts	0x3803, r27	; 0x803803 <__DATA_REGION_ORIGIN__+0x3>
+ 20c:	08 95       	ret
+
+0000020e <_Z15deviceStopTimerv>:
+ 20e:	f8 94       	cli
+ 210:	e0 e0       	ldi	r30, 0x00	; 0
+ 212:	fa e0       	ldi	r31, 0x0A	; 10
+ 214:	12 86       	std	Z+10, r1	; 0x0a
+ 216:	10 82       	st	Z, r1
+ 218:	78 94       	sei
+ 21a:	08 95       	ret
+
+0000021c <_Z18deviceStandbySleepv>:
+ 21c:	0e 94 07 01 	call	0x20e	; 0x20e <_Z15deviceStopTimerv>
+ 220:	e0 e2       	ldi	r30, 0x20	; 32
+ 222:	f4 e0       	ldi	r31, 0x04	; 4
+ 224:	10 8a       	std	Z+16, r1	; 0x10
+ 226:	11 8a       	std	Z+17, r1	; 0x11
+ 228:	e0 e5       	ldi	r30, 0x50	; 80
+ 22a:	f0 e0       	ldi	r31, 0x00	; 0
+ 22c:	80 81       	ld	r24, Z
+ 22e:	89 7f       	andi	r24, 0xF9	; 249
+ 230:	82 60       	ori	r24, 0x02	; 2
+ 232:	80 83       	st	Z, r24
+ 234:	80 81       	ld	r24, Z
+ 236:	81 60       	ori	r24, 0x01	; 1
+ 238:	80 83       	st	Z, r24
+ 23a:	88 95       	sleep
+ 23c:	08 95       	ret
+
+0000023e <_Z30deviceInitInternalRTCInterruptj>:
+ 23e:	9c 01       	movw	r18, r24
+ 240:	f8 94       	cli
+ 242:	e0 e4       	ldi	r30, 0x40	; 64
+ 244:	f1 e0       	ldi	r31, 0x01	; 1
+ 246:	91 81       	ldd	r25, Z+1	; 0x01
+ 248:	91 11       	cpse	r25, r1
+ 24a:	fd cf       	rjmp	.-6      	; 0x246 <_Z30deviceInitInternalRTCInterruptj+0x8>
+ 24c:	10 92 48 01 	sts	0x0148, r1	; 0x800148 <__RODATA_PM_OFFSET__+0x7f8148>
+ 250:	10 92 49 01 	sts	0x0149, r1	; 0x800149 <__RODATA_PM_OFFSET__+0x7f8149>
+ 254:	e0 e4       	ldi	r30, 0x40	; 64
+ 256:	f1 e0       	ldi	r31, 0x01	; 1
+ 258:	91 81       	ldd	r25, Z+1	; 0x01
+ 25a:	91 11       	cpse	r25, r1
+ 25c:	fd cf       	rjmp	.-6      	; 0x258 <_Z30deviceInitInternalRTCInterruptj+0x1a>
+ 25e:	c9 01       	movw	r24, r18
+ 260:	88 0f       	add	r24, r24
+ 262:	99 1f       	adc	r25, r25
+ 264:	88 0f       	add	r24, r24
+ 266:	99 1f       	adc	r25, r25
+ 268:	e0 e4       	ldi	r30, 0x40	; 64
+ 26a:	f1 e0       	ldi	r31, 0x01	; 1
+ 26c:	82 87       	std	Z+10, r24	; 0x0a
+ 26e:	93 87       	std	Z+11, r25	; 0x0b
+ 270:	81 e0       	ldi	r24, 0x01	; 1
+ 272:	87 83       	std	Z+7, r24	; 0x07
+ 274:	91 ec       	ldi	r25, 0xC1	; 193
+ 276:	90 83       	st	Z, r25
+ 278:	82 83       	std	Z+2, r24	; 0x02
+ 27a:	78 94       	sei
+ 27c:	08 95       	ret
+
+0000027e <_Z23deviceReadSupplyVoltagev>:
+ 27e:	e0 e0       	ldi	r30, 0x00	; 0
+ 280:	f6 e0       	ldi	r31, 0x06	; 6
+ 282:	81 e0       	ldi	r24, 0x01	; 1
+ 284:	80 83       	st	Z, r24
+ 286:	88 e0       	ldi	r24, 0x08	; 8
+ 288:	82 83       	std	Z+2, r24	; 0x02
+ 28a:	84 e6       	ldi	r24, 0x64	; 100
+ 28c:	80 87       	std	Z+8, r24	; 0x08
+ 28e:	83 e3       	ldi	r24, 0x33	; 51
+ 290:	84 87       	std	Z+12, r24	; 0x0c
+ 292:	80 e1       	ldi	r24, 0x10	; 16
+ 294:	82 87       	std	Z+10, r24	; 0x0a
+ 296:	82 85       	ldd	r24, Z+10	; 0x0a
+ 298:	81 60       	ori	r24, 0x01	; 1
+ 29a:	82 87       	std	Z+10, r24	; 0x0a
+ 29c:	85 81       	ldd	r24, Z+5	; 0x05
+ 29e:	80 ff       	sbrs	r24, 0
+ 2a0:	fd cf       	rjmp	.-6      	; 0x29c <_Z23deviceReadSupplyVoltagev+0x1e>
+ 2a2:	20 91 10 06 	lds	r18, 0x0610	; 0x800610 <__RODATA_PM_OFFSET__+0x7f8610>
+ 2a6:	30 91 11 06 	lds	r19, 0x0611	; 0x800611 <__RODATA_PM_OFFSET__+0x7f8611>
+ 2aa:	40 91 12 06 	lds	r20, 0x0612	; 0x800612 <__RODATA_PM_OFFSET__+0x7f8612>
+ 2ae:	50 91 13 06 	lds	r21, 0x0613	; 0x800613 <__RODATA_PM_OFFSET__+0x7f8613>
+ 2b2:	21 15       	cp	r18, r1
+ 2b4:	31 05       	cpc	r19, r1
+ 2b6:	41 05       	cpc	r20, r1
+ 2b8:	51 05       	cpc	r21, r1
+ 2ba:	21 f4       	brne	.+8      	; 0x2c4 <_Z23deviceReadSupplyVoltagev+0x46>
+ 2bc:	21 e0       	ldi	r18, 0x01	; 1
+ 2be:	30 e0       	ldi	r19, 0x00	; 0
+ 2c0:	40 e0       	ldi	r20, 0x00	; 0
+ 2c2:	50 e0       	ldi	r21, 0x00	; 0
+ 2c4:	10 92 00 06 	sts	0x0600, r1	; 0x800600 <__RODATA_PM_OFFSET__+0x7f8600>
+ 2c8:	60 e0       	ldi	r22, 0x00	; 0
+ 2ca:	70 e0       	ldi	r23, 0x00	; 0
+ 2cc:	80 e4       	ldi	r24, 0x40	; 64
+ 2ce:	90 e0       	ldi	r25, 0x00	; 0
+ 2d0:	0e 94 cd 05 	call	0xb9a	; 0xb9a <__udivmodsi4>
+ 2d4:	c9 01       	movw	r24, r18
+ 2d6:	08 95       	ret
+
+000002d8 <_Z17deviceSetCPUSpeedh>:
+ 2d8:	28 ed       	ldi	r18, 0xD8	; 216
+ 2da:	81 60       	ori	r24, 0x01	; 1
+ 2dc:	90 e0       	ldi	r25, 0x00	; 0
+ 2de:	24 bf       	out	0x34, r18	; 52
+ 2e0:	80 93 61 00 	sts	0x0061, r24	; 0x800061 <__RODATA_PM_OFFSET__+0x7f8061>
+ 2e4:	80 e0       	ldi	r24, 0x00	; 0
+ 2e6:	24 bf       	out	0x34, r18	; 52
+ 2e8:	80 93 60 00 	sts	0x0060, r24	; 0x800060 <__RODATA_PM_OFFSET__+0x7f8060>
+ 2ec:	e0 e6       	ldi	r30, 0x60	; 96
+ 2ee:	f0 e0       	ldi	r31, 0x00	; 0
+ 2f0:	83 81       	ldd	r24, Z+3	; 0x03
+ 2f2:	80 fd       	sbrc	r24, 0
+ 2f4:	fd cf       	rjmp	.-6      	; 0x2f0 <_Z17deviceSetCPUSpeedh+0x18>
+ 2f6:	08 95       	ret
+
+000002f8 <_Z16deviceBlinkGreenh>:
+ 2f8:	88 23       	and	r24, r24
+ 2fa:	a9 f0       	breq	.+42     	; 0x326 <_Z16deviceBlinkGreenh+0x2e>
+ 2fc:	e0 e4       	ldi	r30, 0x40	; 64
+ 2fe:	f4 e0       	ldi	r31, 0x04	; 4
+ 300:	94 e0       	ldi	r25, 0x04	; 4
+ 302:	95 83       	std	Z+5, r25	; 0x05
+ 304:	af e4       	ldi	r26, 0x4F	; 79
+ 306:	b3 ec       	ldi	r27, 0xC3	; 195
+ 308:	11 97       	sbiw	r26, 0x01	; 1
+ 30a:	f1 f7       	brne	.-4      	; 0x308 <_Z16deviceBlinkGreenh+0x10>
+ 30c:	00 c0       	rjmp	.+0      	; 0x30e <_Z16deviceBlinkGreenh+0x16>
+ 30e:	00 00       	nop
+ 310:	96 83       	std	Z+6, r25	; 0x06
+ 312:	81 30       	cpi	r24, 0x01	; 1
+ 314:	41 f0       	breq	.+16     	; 0x326 <_Z16deviceBlinkGreenh+0x2e>
+ 316:	af e4       	ldi	r26, 0x4F	; 79
+ 318:	b3 ec       	ldi	r27, 0xC3	; 195
+ 31a:	11 97       	sbiw	r26, 0x01	; 1
+ 31c:	f1 f7       	brne	.-4      	; 0x31a <_Z16deviceBlinkGreenh+0x22>
+ 31e:	00 c0       	rjmp	.+0      	; 0x320 <_Z16deviceBlinkGreenh+0x28>
+ 320:	00 00       	nop
+ 322:	81 50       	subi	r24, 0x01	; 1
+ 324:	71 f7       	brne	.-36     	; 0x302 <_Z16deviceBlinkGreenh+0xa>
+ 326:	08 95       	ret
+
+00000328 <_Z19deviceSigfoxPinIdlev>:
+ 328:	80 e1       	ldi	r24, 0x10	; 16
+ 32a:	80 93 25 04 	sts	0x0425, r24	; 0x800425 <__RODATA_PM_OFFSET__+0x7f8425>
+ 32e:	08 95       	ret
+
+00000330 <_Z21deviceSigfoxPinWakeUpv>:
+ 330:	80 e1       	ldi	r24, 0x10	; 16
+ 332:	80 93 26 04 	sts	0x0426, r24	; 0x800426 <__RODATA_PM_OFFSET__+0x7f8426>
+ 336:	08 95       	ret
+
+00000338 <_Z13devicePowerOnv>:
+ 338:	82 e0       	ldi	r24, 0x02	; 2
+ 33a:	80 93 45 04 	sts	0x0445, r24	; 0x800445 <__RODATA_PM_OFFSET__+0x7f8445>
+ 33e:	8d ee       	ldi	r24, 0xED	; 237
+ 340:	92 e0       	ldi	r25, 0x02	; 2
+ 342:	01 97       	sbiw	r24, 0x01	; 1
+ 344:	f1 f7       	brne	.-4      	; 0x342 <_Z13devicePowerOnv+0xa>
+ 346:	00 c0       	rjmp	.+0      	; 0x348 <_Z13devicePowerOnv+0x10>
+ 348:	00 00       	nop
+ 34a:	08 95       	ret
+
+0000034c <_Z14devicePowerOffv>:
+ 34c:	82 e0       	ldi	r24, 0x02	; 2
+ 34e:	80 93 46 04 	sts	0x0446, r24	; 0x800446 <__RODATA_PM_OFFSET__+0x7f8446>
+ 352:	08 95       	ret
+
+00000354 <_Z3maplllll>:
+ 354:	4f 92       	push	r4
+ 356:	5f 92       	push	r5
+ 358:	6f 92       	push	r6
+ 35a:	7f 92       	push	r7
+ 35c:	af 92       	push	r10
+ 35e:	bf 92       	push	r11
+ 360:	cf 92       	push	r12
+ 362:	df 92       	push	r13
+ 364:	ef 92       	push	r14
+ 366:	ff 92       	push	r15
+ 368:	0f 93       	push	r16
+ 36a:	1f 93       	push	r17
+ 36c:	cf 93       	push	r28
+ 36e:	df 93       	push	r29
+ 370:	cd b7       	in	r28, 0x3d	; 61
+ 372:	de b7       	in	r29, 0x3e	; 62
+ 374:	29 01       	movw	r4, r18
+ 376:	3a 01       	movw	r6, r20
+ 378:	9b 01       	movw	r18, r22
+ 37a:	ac 01       	movw	r20, r24
+ 37c:	24 19       	sub	r18, r4
+ 37e:	35 09       	sbc	r19, r5
+ 380:	46 09       	sbc	r20, r6
+ 382:	57 09       	sbc	r21, r7
+ 384:	89 89       	ldd	r24, Y+17	; 0x11
+ 386:	9a 89       	ldd	r25, Y+18	; 0x12
+ 388:	ab 89       	ldd	r26, Y+19	; 0x13
+ 38a:	bc 89       	ldd	r27, Y+20	; 0x14
+ 38c:	bc 01       	movw	r22, r24
+ 38e:	cd 01       	movw	r24, r26
+ 390:	6a 19       	sub	r22, r10
+ 392:	7b 09       	sbc	r23, r11
+ 394:	8c 09       	sbc	r24, r12
+ 396:	9d 09       	sbc	r25, r13
+ 398:	0e 94 bd 05 	call	0xb7a	; 0xb7a <__mulsi3>
+ 39c:	a8 01       	movw	r20, r16
+ 39e:	97 01       	movw	r18, r14
+ 3a0:	24 19       	sub	r18, r4
+ 3a2:	35 09       	sbc	r19, r5
+ 3a4:	46 09       	sbc	r20, r6
+ 3a6:	57 09       	sbc	r21, r7
+ 3a8:	0e 94 ef 05 	call	0xbde	; 0xbde <__divmodsi4>
+ 3ac:	ca 01       	movw	r24, r20
+ 3ae:	b9 01       	movw	r22, r18
+ 3b0:	6a 0d       	add	r22, r10
+ 3b2:	7b 1d       	adc	r23, r11
+ 3b4:	8c 1d       	adc	r24, r12
+ 3b6:	9d 1d       	adc	r25, r13
+ 3b8:	df 91       	pop	r29
+ 3ba:	cf 91       	pop	r28
+ 3bc:	1f 91       	pop	r17
+ 3be:	0f 91       	pop	r16
+ 3c0:	ff 90       	pop	r15
+ 3c2:	ef 90       	pop	r14
+ 3c4:	df 90       	pop	r13
+ 3c6:	cf 90       	pop	r12
+ 3c8:	bf 90       	pop	r11
+ 3ca:	af 90       	pop	r10
+ 3cc:	7f 90       	pop	r7
+ 3ce:	6f 90       	pop	r6
+ 3d0:	5f 90       	pop	r5
+ 3d2:	4f 90       	pop	r4
+ 3d4:	08 95       	ret
+
+000003d6 <_Z7i2cInitv>:
+ 3d6:	e0 ea       	ldi	r30, 0xA0	; 160
+ 3d8:	f8 e0       	ldi	r31, 0x08	; 8
+ 3da:	16 82       	std	Z+6, r1	; 0x06
+ 3dc:	83 e0       	ldi	r24, 0x03	; 3
+ 3de:	83 83       	std	Z+3, r24	; 0x03
+ 3e0:	84 81       	ldd	r24, Z+4	; 0x04
+ 3e2:	88 60       	ori	r24, 0x08	; 8
+ 3e4:	84 83       	std	Z+4, r24	; 0x04
+ 3e6:	85 81       	ldd	r24, Z+5	; 0x05
+ 3e8:	81 60       	ori	r24, 0x01	; 1
+ 3ea:	85 83       	std	Z+5, r24	; 0x05
+ 3ec:	85 81       	ldd	r24, Z+5	; 0x05
+ 3ee:	80 6c       	ori	r24, 0xC0	; 192
+ 3f0:	85 83       	std	Z+5, r24	; 0x05
+ 3f2:	08 95       	ret
+
+000003f4 <_Z7pollRIFv>:
+ 3f4:	88 e8       	ldi	r24, 0x88	; 136
+ 3f6:	93 e1       	ldi	r25, 0x13	; 19
+ 3f8:	e0 ea       	ldi	r30, 0xA0	; 160
+ 3fa:	f8 e0       	ldi	r31, 0x08	; 8
+ 3fc:	25 81       	ldd	r18, Z+5	; 0x05
+ 3fe:	22 23       	and	r18, r18
+ 400:	44 f0       	brlt	.+16     	; 0x412 <__LOCK_REGION_LENGTH__+0x12>
+ 402:	23 e0       	ldi	r18, 0x03	; 3
+ 404:	2a 95       	dec	r18
+ 406:	f1 f7       	brne	.-4      	; 0x404 <__LOCK_REGION_LENGTH__+0x4>
+ 408:	00 00       	nop
+ 40a:	01 97       	sbiw	r24, 0x01	; 1
+ 40c:	b9 f7       	brne	.-18     	; 0x3fc <_Z7pollRIFv+0x8>
+ 40e:	80 e0       	ldi	r24, 0x00	; 0
+ 410:	08 95       	ret
+ 412:	81 e0       	ldi	r24, 0x01	; 1
+ 414:	08 95       	ret
+
+00000416 <_Z12i2cStartReadh>:
+ 416:	90 91 a5 08 	lds	r25, 0x08A5	; 0x8008a5 <__RODATA_PM_OFFSET__+0x7f88a5>
+ 41a:	93 70       	andi	r25, 0x03	; 3
+ 41c:	93 30       	cpi	r25, 0x03	; 3
+ 41e:	59 f0       	breq	.+22     	; 0x436 <_Z12i2cStartReadh+0x20>
+ 420:	e0 ea       	ldi	r30, 0xA0	; 160
+ 422:	f8 e0       	ldi	r31, 0x08	; 8
+ 424:	94 81       	ldd	r25, Z+4	; 0x04
+ 426:	9b 7f       	andi	r25, 0xFB	; 251
+ 428:	94 83       	std	Z+4, r25	; 0x04
+ 42a:	88 0f       	add	r24, r24
+ 42c:	81 60       	ori	r24, 0x01	; 1
+ 42e:	87 83       	std	Z+7, r24	; 0x07
+ 430:	0e 94 fa 01 	call	0x3f4	; 0x3f4 <_Z7pollRIFv>
+ 434:	08 95       	ret
+ 436:	80 e0       	ldi	r24, 0x00	; 0
+ 438:	08 95       	ret
+
+0000043a <_Z7i2cStopv>:
+ 43a:	e0 ea       	ldi	r30, 0xA0	; 160
+ 43c:	f8 e0       	ldi	r31, 0x08	; 8
+ 43e:	84 81       	ldd	r24, Z+4	; 0x04
+ 440:	84 60       	ori	r24, 0x04	; 4
+ 442:	84 83       	std	Z+4, r24	; 0x04
+ 444:	84 81       	ldd	r24, Z+4	; 0x04
+ 446:	83 60       	ori	r24, 0x03	; 3
+ 448:	84 83       	std	Z+4, r24	; 0x04
+ 44a:	08 95       	ret
+
+0000044c <__vector_3>:
+	deviceL70powerOff();
+	uartFlush();
+	uartOff();
+	deinitSecondUartPins(); // otherwise leakage
+	return gpsResult;
+}
+ 44c:	1f 92       	push	r1
+ 44e:	0f 92       	push	r0
+ 450:	0f b6       	in	r0, 0x3f	; 63
+ 452:	0f 92       	push	r0
+ 454:	11 24       	eor	r1, r1
+ 456:	8f 93       	push	r24
+ 458:	81 e0       	ldi	r24, 0x01	; 1
+ 45a:	80 93 43 01 	sts	0x0143, r24	; 0x800143 <__RODATA_PM_OFFSET__+0x7f8143>
+ 45e:	8f 91       	pop	r24
+ 460:	0f 90       	pop	r0
+ 462:	0f be       	out	0x3f, r0	; 63
+ 464:	0f 90       	pop	r0
+ 466:	1f 90       	pop	r1
+ 468:	18 95       	reti
+
+0000046a <__vector_8>:
+ 46a:	1f 92       	push	r1
+ 46c:	0f 92       	push	r0
+ 46e:	0f b6       	in	r0, 0x3f	; 63
+ 470:	0f 92       	push	r0
+ 472:	11 24       	eor	r1, r1
+ 474:	2f 93       	push	r18
+ 476:	3f 93       	push	r19
+ 478:	4f 93       	push	r20
+ 47a:	5f 93       	push	r21
+ 47c:	6f 93       	push	r22
+ 47e:	7f 93       	push	r23
+ 480:	8f 93       	push	r24
+ 482:	9f 93       	push	r25
+ 484:	af 93       	push	r26
+ 486:	bf 93       	push	r27
+ 488:	ef 93       	push	r30
+ 48a:	ff 93       	push	r31
+ 48c:	0e 94 f3 00 	call	0x1e6	; 0x1e6 <_Z20deviceIncrementTimerv>
+ 490:	81 e0       	ldi	r24, 0x01	; 1
+ 492:	80 93 0b 0a 	sts	0x0A0B, r24	; 0x800a0b <__RODATA_PM_OFFSET__+0x7f8a0b>
+ 496:	ff 91       	pop	r31
+ 498:	ef 91       	pop	r30
+ 49a:	bf 91       	pop	r27
+ 49c:	af 91       	pop	r26
+ 49e:	9f 91       	pop	r25
+ 4a0:	8f 91       	pop	r24
+ 4a2:	7f 91       	pop	r23
+ 4a4:	6f 91       	pop	r22
+ 4a6:	5f 91       	pop	r21
+ 4a8:	4f 91       	pop	r20
+ 4aa:	3f 91       	pop	r19
+ 4ac:	2f 91       	pop	r18
+ 4ae:	0f 90       	pop	r0
+ 4b0:	0f be       	out	0x3f, r0	; 63
+ 4b2:	0f 90       	pop	r0
+ 4b4:	1f 90       	pop	r1
+ 4b6:	18 95       	reti
+
+000004b8 <_Z4waitj>:
+ 4b8:	0e 94 1f 01 	call	0x23e	; 0x23e <_Z30deviceInitInternalRTCInterruptj>
+ 4bc:	0e 94 0e 01 	call	0x21c	; 0x21c <_Z18deviceStandbySleepv>
+ 4c0:	10 92 40 01 	sts	0x0140, r1	; 0x800140 <__RODATA_PM_OFFSET__+0x7f8140>
+ 4c4:	08 95       	ret
+
+000004c6 <_Z17tinyFoxStartPrintv>:
+ 4c6:	0f 93       	push	r16
+ 4c8:	1f 93       	push	r17
+ 4ca:	cf 93       	push	r28
+ 4cc:	df 93       	push	r29
+ 4ce:	cd b7       	in	r28, 0x3d	; 61
+ 4d0:	de b7       	in	r29, 0x3e	; 62
+ 4d2:	c0 54       	subi	r28, 0x40	; 64
+ 4d4:	d1 09       	sbc	r29, r1
+ 4d6:	cd bf       	out	0x3d, r28	; 61
+ 4d8:	de bf       	out	0x3e, r29	; 62
+ 4da:	80 e2       	ldi	r24, 0x20	; 32
+ 4dc:	8e 01       	movw	r16, r28
+ 4de:	0f 5f       	subi	r16, 0xFF	; 255
+ 4e0:	1f 4f       	sbci	r17, 0xFF	; 255
+ 4e2:	d8 01       	movw	r26, r16
+ 4e4:	e8 2f       	mov	r30, r24
+ 4e6:	1d 92       	st	X+, r1
+ 4e8:	ea 95       	dec	r30
+ 4ea:	e9 f7       	brne	.-6      	; 0x4e6 <_Z17tinyFoxStartPrintv+0x20>
+ 4ec:	fe 01       	movw	r30, r28
+ 4ee:	b1 96       	adiw	r30, 0x21	; 33
+ 4f0:	df 01       	movw	r26, r30
+ 4f2:	1d 92       	st	X+, r1
+ 4f4:	8a 95       	dec	r24
+ 4f6:	e9 f7       	brne	.-6      	; 0x4f2 <_Z17tinyFoxStartPrintv+0x2c>
+ 4f8:	81 ec       	ldi	r24, 0xC1	; 193
+ 4fa:	9c e8       	ldi	r25, 0x8C	; 140
+ 4fc:	0e 94 41 05 	call	0xa82	; 0xa82 <_Z7printlnPKc>
+ 500:	28 eb       	ldi	r18, 0xB8	; 184
+ 502:	3b e0       	ldi	r19, 0x0B	; 11
+ 504:	40 e2       	ldi	r20, 0x20	; 32
+ 506:	b8 01       	movw	r22, r16
+ 508:	8a e0       	ldi	r24, 0x0A	; 10
+ 50a:	0e 94 ea 04 	call	0x9d4	; 0x9d4 <_Z8uartReadcPchj>
+ 50e:	88 23       	and	r24, r24
+ 510:	91 f1       	breq	.+100    	; 0x576 <_Z17tinyFoxStartPrintv+0xb0>
+ 512:	e7 ea       	ldi	r30, 0xA7	; 167
+ 514:	f1 e6       	ldi	r31, 0x61	; 97
+ 516:	31 97       	sbiw	r30, 0x01	; 1
+ 518:	f1 f7       	brne	.-4      	; 0x516 <_Z17tinyFoxStartPrintv+0x50>
+ 51a:	00 c0       	rjmp	.+0      	; 0x51c <_Z17tinyFoxStartPrintv+0x56>
+ 51c:	00 00       	nop
+ 51e:	89 ec       	ldi	r24, 0xC9	; 201
+ 520:	9c e8       	ldi	r25, 0x8C	; 140
+ 522:	0e 94 41 05 	call	0xa82	; 0xa82 <_Z7printlnPKc>
+ 526:	28 eb       	ldi	r18, 0xB8	; 184
+ 528:	3b e0       	ldi	r19, 0x0B	; 11
+ 52a:	40 e2       	ldi	r20, 0x20	; 32
+ 52c:	be 01       	movw	r22, r28
+ 52e:	6f 5d       	subi	r22, 0xDF	; 223
+ 530:	7f 4f       	sbci	r23, 0xFF	; 255
+ 532:	8a e0       	ldi	r24, 0x0A	; 10
+ 534:	0e 94 ea 04 	call	0x9d4	; 0x9d4 <_Z8uartReadcPchj>
+ 538:	88 23       	and	r24, r24
+ 53a:	e9 f0       	breq	.+58     	; 0x576 <_Z17tinyFoxStartPrintv+0xb0>
+ 53c:	8f ed       	ldi	r24, 0xDF	; 223
+ 53e:	9c e8       	ldi	r25, 0x8C	; 140
+ 540:	0e 94 41 05 	call	0xa82	; 0xa82 <_Z7printlnPKc>
+ 544:	8a ee       	ldi	r24, 0xEA	; 234
+ 546:	9c e8       	ldi	r25, 0x8C	; 140
+ 548:	0e 94 2c 05 	call	0xa58	; 0xa58 <_Z5printPKc>
+ 54c:	c8 01       	movw	r24, r16
+ 54e:	0e 94 41 05 	call	0xa82	; 0xa82 <_Z7printlnPKc>
+ 552:	8f ee       	ldi	r24, 0xEF	; 239
+ 554:	9c e8       	ldi	r25, 0x8C	; 140
+ 556:	0e 94 2c 05 	call	0xa58	; 0xa58 <_Z5printPKc>
+ 55a:	ce 01       	movw	r24, r28
+ 55c:	81 96       	adiw	r24, 0x21	; 33
+ 55e:	0e 94 41 05 	call	0xa82	; 0xa82 <_Z7printlnPKc>
+ 562:	81 ed       	ldi	r24, 0xD1	; 209
+ 564:	9c e8       	ldi	r25, 0x8C	; 140
+ 566:	0e 94 2c 05 	call	0xa58	; 0xa58 <_Z5printPKc>
+ 56a:	87 ea       	ldi	r24, 0xA7	; 167
+ 56c:	91 e6       	ldi	r25, 0x61	; 97
+ 56e:	01 97       	sbiw	r24, 0x01	; 1
+ 570:	f1 f7       	brne	.-4      	; 0x56e <_Z17tinyFoxStartPrintv+0xa8>
+ 572:	00 c0       	rjmp	.+0      	; 0x574 <_Z17tinyFoxStartPrintv+0xae>
+ 574:	00 00       	nop
+ 576:	c0 5c       	subi	r28, 0xC0	; 192
+ 578:	df 4f       	sbci	r29, 0xFF	; 255
+ 57a:	cd bf       	out	0x3d, r28	; 61
+ 57c:	de bf       	out	0x3e, r29	; 62
+ 57e:	df 91       	pop	r29
+ 580:	cf 91       	pop	r28
+ 582:	1f 91       	pop	r17
+ 584:	0f 91       	pop	r16
+ 586:	08 95       	ret
+
+00000588 <_Z11runTrackingv>:
+
+void runTracking() {
+ 588:	af 92       	push	r10
+ 58a:	bf 92       	push	r11
+ 58c:	cf 92       	push	r12
+ 58e:	df 92       	push	r13
+ 590:	ef 92       	push	r14
+ 592:	ff 92       	push	r15
+ 594:	0f 93       	push	r16
+ 596:	1f 93       	push	r17
+
+	// blink to indicate start
+	
+	// TODO: if didnt get fix: just send message without GPS data
+		//deviceBlinkGreen(15);
+		sigfoxData[sigfoxDataPointer] = batteryVoltage >> 8; sigfoxDataPointer++;
+ 598:	80 91 04 38 	lds	r24, 0x3804	; 0x803804 <sigfoxDataPointer>
+ 59c:	60 91 1e 38 	lds	r22, 0x381E	; 0x80381e <batteryVoltage>
+ 5a0:	70 91 1f 38 	lds	r23, 0x381F	; 0x80381f <batteryVoltage+0x1>
+ 5a4:	e8 2f       	mov	r30, r24
+ 5a6:	f0 e0       	ldi	r31, 0x00	; 0
+ 5a8:	eb 5f       	subi	r30, 0xFB	; 251
+ 5aa:	f7 4c       	sbci	r31, 0xC7	; 199
+ 5ac:	70 83       	st	Z, r23
+		sigfoxData[sigfoxDataPointer] = batteryVoltage; sigfoxDataPointer++;
+ 5ae:	e1 e0       	ldi	r30, 0x01	; 1
+ 5b0:	e8 0f       	add	r30, r24
+ 5b2:	f0 e0       	ldi	r31, 0x00	; 0
+ 5b4:	eb 5f       	subi	r30, 0xFB	; 251
+ 5b6:	f7 4c       	sbci	r31, 0xC7	; 199
+ 5b8:	60 83       	st	Z, r22
+ 5ba:	8e 5f       	subi	r24, 0xFE	; 254
+ 5bc:	80 93 04 38 	sts	0x3804, r24	; 0x803804 <sigfoxDataPointer>
+
+		eeprom_write_byte(eepromreadcount, map(batteryVoltage, 2800, 3700, 1, 255));
+ 5c0:	80 e0       	ldi	r24, 0x00	; 0
+ 5c2:	90 e0       	ldi	r25, 0x00	; 0
+ 5c4:	1f 92       	push	r1
+ 5c6:	1f 92       	push	r1
+ 5c8:	1f 92       	push	r1
+ 5ca:	2f ef       	ldi	r18, 0xFF	; 255
+ 5cc:	2f 93       	push	r18
+ 5ce:	a1 2c       	mov	r10, r1
+ 5d0:	b1 2c       	mov	r11, r1
+ 5d2:	65 01       	movw	r12, r10
+ 5d4:	a3 94       	inc	r10
+ 5d6:	14 e7       	ldi	r17, 0x74	; 116
+ 5d8:	e1 2e       	mov	r14, r17
+ 5da:	1e e0       	ldi	r17, 0x0E	; 14
+ 5dc:	f1 2e       	mov	r15, r17
+ 5de:	00 e0       	ldi	r16, 0x00	; 0
+ 5e0:	10 e0       	ldi	r17, 0x00	; 0
+ 5e2:	20 ef       	ldi	r18, 0xF0	; 240
+ 5e4:	3a e0       	ldi	r19, 0x0A	; 10
+ 5e6:	40 e0       	ldi	r20, 0x00	; 0
+ 5e8:	50 e0       	ldi	r21, 0x00	; 0
+ 5ea:	0e 94 aa 01 	call	0x354	; 0x354 <_Z3maplllll>
+ 5ee:	80 91 1c 38 	lds	r24, 0x381C	; 0x80381c <eepromreadcount>
+ 5f2:	90 91 1d 38 	lds	r25, 0x381D	; 0x80381d <eepromreadcount+0x1>
+ 5f6:	0e 94 42 06 	call	0xc84	; 0xc84 <eeprom_write_byte>
+	    eepromreadcount = eepromreadcount + 1;
+ 5fa:	80 91 1c 38 	lds	r24, 0x381C	; 0x80381c <eepromreadcount>
+ 5fe:	90 91 1d 38 	lds	r25, 0x381D	; 0x80381d <eepromreadcount+0x1>
+ 602:	01 96       	adiw	r24, 0x01	; 1
+ 604:	80 93 1c 38 	sts	0x381C, r24	; 0x80381c <eepromreadcount>
+ 608:	90 93 1d 38 	sts	0x381D, r25	; 0x80381d <eepromreadcount+0x1>
+
+		// send data
+		initPrimaryUARTwith9600();
+ 60c:	0e 94 ab 04 	call	0x956	; 0x956 <_Z23initPrimaryUARTwith9600v>
+		deviceSigfoxPinWakeUp();
+ 610:	0e 94 98 01 	call	0x330	; 0x330 <_Z21deviceSigfoxPinWakeUpv>
+ 614:	87 ea       	ldi	r24, 0xA7	; 167
+ 616:	91 e6       	ldi	r25, 0x61	; 97
+ 618:	01 97       	sbiw	r24, 0x01	; 1
+ 61a:	f1 f7       	brne	.-4      	; 0x618 <_Z11runTrackingv+0x90>
+ 61c:	00 c0       	rjmp	.+0      	; 0x61e <_Z11runTrackingv+0x96>
+ 61e:	00 00       	nop
+		_delay_ms(100); // wait until sigfox module booted (does not send ok after boot via wake up pin)
+		sigfoxFirstStart();
+ 620:	0e 94 6a 00 	call	0xd4	; 0xd4 <_Z16sigfoxFirstStartv>
+ 624:	87 ea       	ldi	r24, 0xA7	; 167
+ 626:	91 e6       	ldi	r25, 0x61	; 97
+ 628:	01 97       	sbiw	r24, 0x01	; 1
+ 62a:	f1 f7       	brne	.-4      	; 0x628 <_Z11runTrackingv+0xa0>
+ 62c:	00 c0       	rjmp	.+0      	; 0x62e <_Z11runTrackingv+0xa6>
+ 62e:	00 00       	nop
+		_delay_ms(100); // wait until sigfox module booted (does not send ok after boot via wake up pin)
+		sigfoxSend(sigfoxData, sigfoxDataPointer);
+ 630:	60 91 04 38 	lds	r22, 0x3804	; 0x803804 <sigfoxDataPointer>
+ 634:	85 e0       	ldi	r24, 0x05	; 5
+ 636:	98 e3       	ldi	r25, 0x38	; 56
+ 638:	0e 94 b3 00 	call	0x166	; 0x166 <_Z10sigfoxSendPhh>
+ 63c:	87 ea       	ldi	r24, 0xA7	; 167
+ 63e:	91 e6       	ldi	r25, 0x61	; 97
+ 640:	01 97       	sbiw	r24, 0x01	; 1
+ 642:	f1 f7       	brne	.-4      	; 0x640 <_Z11runTrackingv+0xb8>
+ 644:	00 c0       	rjmp	.+0      	; 0x646 <_Z11runTrackingv+0xbe>
+ 646:	00 00       	nop
+		_delay_ms(100);
+		deviceSigfoxPinIdle();
+ 648:	0e 94 94 01 	call	0x328	; 0x328 <_Z19deviceSigfoxPinIdlev>
+		sigfoxSleep();
+ 64c:	0e 94 aa 00 	call	0x154	; 0x154 <_Z11sigfoxSleepv>
+}
+ 650:	0f 90       	pop	r0
+ 652:	0f 90       	pop	r0
+ 654:	0f 90       	pop	r0
+ 656:	0f 90       	pop	r0
+ 658:	1f 91       	pop	r17
+ 65a:	0f 91       	pop	r16
+ 65c:	ff 90       	pop	r15
+ 65e:	ef 90       	pop	r14
+ 660:	df 90       	pop	r13
+ 662:	cf 90       	pop	r12
+ 664:	bf 90       	pop	r11
+ 666:	af 90       	pop	r10
+ 668:	08 95       	ret
+
+0000066a <main>:
+
+int main(void) {
+	while(1) {
+		RTC.CTRLA = 0; // disable RTC interrupt
+ 66a:	c0 e4       	ldi	r28, 0x40	; 64
+ 66c:	d1 e0       	ldi	r29, 0x01	; 1
+			//	deviceLedGreenOn();
+			//	wait(1);
+			//	deviceLedGreenOff();
+				vedbaTotalSum = 0;
+				//deviceBlinkGreen(3); // indicate start
+				state = ST_TRACKING;
+ 66e:	68 94       	set
+ 670:	99 24       	eor	r9, r9
+ 672:	91 f8       	bld	r9, 1
+				
+				_delay_ms(100);
+				runTracking();
+				memset(sigfoxData, 0, 12);
+ 674:	05 e0       	ldi	r16, 0x05	; 5
+ 676:	18 e3       	ldi	r17, 0x38	; 56
+ 678:	0f 2e       	mov	r0, r31
+ 67a:	fc e0       	ldi	r31, 0x0C	; 12
+ 67c:	bf 2e       	mov	r11, r31
+ 67e:	f0 2d       	mov	r31, r0
+			eepromreadcount = 0;
+						
+			// test sensors
+			i2cInit();
+			devicePowerOn();
+			if(!accMC3635Alive()) { lastError = 4; }		
+ 680:	68 94       	set
+ 682:	aa 24       	eor	r10, r10
+ 684:	a2 f8       	bld	r10, 2
+			}
+		if (batteryVoltage > 3550) { // a lot of energy available
+				memset(sigfoxData, 0, 12);
+				sigfoxDataPointer = 0;
+				runTracking();
+				sleepCnt = 1;
+ 686:	c1 2c       	mov	r12, r1
+ 688:	d1 2c       	mov	r13, r1
+ 68a:	76 01       	movw	r14, r12
+ 68c:	c3 94       	inc	r12
+		sigfoxSleep();
+}
+
+int main(void) {
+	while(1) {
+		RTC.CTRLA = 0; // disable RTC interrupt
+ 68e:	18 82       	st	Y, r1
+		if(state == ST_FIRST_START_HARD_RESET) { deviceSetCPUSpeed(OSC16_PRESCALER_CPU_1MHZ);  } // 1MHz = 701uA @while(1), do this BEFORE reading supply voltage
+ 690:	80 91 2c 38 	lds	r24, 0x382C	; 0x80382c <state>
+ 694:	81 11       	cpse	r24, r1
+ 696:	03 c0       	rjmp	.+6      	; 0x69e <main+0x34>
+ 698:	86 e0       	ldi	r24, 0x06	; 6
+ 69a:	0e 94 6c 01 	call	0x2d8	; 0x2d8 <_Z17deviceSetCPUSpeedh>
+		batteryVoltage = deviceReadSupplyVoltage(); // perform as first thing in every state
+ 69e:	0e 94 3f 01 	call	0x27e	; 0x27e <_Z23deviceReadSupplyVoltagev>
+ 6a2:	80 93 1e 38 	sts	0x381E, r24	; 0x80381e <batteryVoltage>
+ 6a6:	90 93 1f 38 	sts	0x381F, r25	; 0x80381f <batteryVoltage+0x1>
+		if(state == ST_FIRST_START_HARD_RESET) { // will be re-entered after data download
+ 6aa:	80 91 2c 38 	lds	r24, 0x382C	; 0x80382c <state>
+ 6ae:	81 11       	cpse	r24, r1
+ 6b0:	95 c0       	rjmp	.+298    	; 0x7dc <main+0x172>
+			deviceInitPins();
+ 6b2:	0e 94 e9 00 	call	0x1d2	; 0x1d2 <_Z14deviceInitPinsv>
+			usePrintf(); // NOT NEEDED, requires a lot of flash memory
+ 6b6:	0e 94 79 05 	call	0xaf2	; 0xaf2 <_Z9usePrintfv>
+			initPrimaryUARTwith9600(); // init uart to communicate with sigfox module
+ 6ba:	0e 94 ab 04 	call	0x956	; 0x956 <_Z23initPrimaryUARTwith9600v>
+			deviceSigfoxPinIdle();
+ 6be:	0e 94 94 01 	call	0x328	; 0x328 <_Z19deviceSigfoxPinIdlev>
+			lastError = 0; // IMPORTANT: reset all errors
+ 6c2:	10 92 11 38 	sts	0x3811, r1	; 0x803811 <lastError>
+
+			wait(1); // sleep 1 second (sigfox module is running!)		
+ 6c6:	81 e0       	ldi	r24, 0x01	; 1
+ 6c8:	90 e0       	ldi	r25, 0x00	; 0
+ 6ca:	0e 94 5c 02 	call	0x4b8	; 0x4b8 <_Z4waitj>
+			
+			while (readcounter < 200)
+ 6ce:	80 91 1b 38 	lds	r24, 0x381B	; 0x80381b <readcounter>
+ 6d2:	88 3c       	cpi	r24, 0xC8	; 200
+ 6d4:	10 f5       	brcc	.+68     	; 0x71a <main+0xb0>
+			{
+				eepromvoltage = eeprom_read_byte(eepromreadcount);
+ 6d6:	80 91 1c 38 	lds	r24, 0x381C	; 0x80381c <eepromreadcount>
+ 6da:	90 91 1d 38 	lds	r25, 0x381D	; 0x80381d <eepromreadcount+0x1>
+ 6de:	0e 94 3a 06 	call	0xc74	; 0xc74 <eeprom_read_byte>
+ 6e2:	80 93 1a 38 	sts	0x381A, r24	; 0x80381a <eepromvoltage>
+				printU32(eepromvoltage);
+ 6e6:	68 2f       	mov	r22, r24
+ 6e8:	70 e0       	ldi	r23, 0x00	; 0
+ 6ea:	80 e0       	ldi	r24, 0x00	; 0
+ 6ec:	90 e0       	ldi	r25, 0x00	; 0
+ 6ee:	0e 94 4c 05 	call	0xa98	; 0xa98 <_Z8printU32m>
+				println("");
+ 6f2:	86 e2       	ldi	r24, 0x26	; 38
+ 6f4:	9d e8       	ldi	r25, 0x8D	; 141
+ 6f6:	0e 94 41 05 	call	0xa82	; 0xa82 <_Z7printlnPKc>
+ 				eepromreadcount = eepromreadcount + 1;
+ 6fa:	80 91 1c 38 	lds	r24, 0x381C	; 0x80381c <eepromreadcount>
+ 6fe:	90 91 1d 38 	lds	r25, 0x381D	; 0x80381d <eepromreadcount+0x1>
+ 702:	01 96       	adiw	r24, 0x01	; 1
+ 704:	80 93 1c 38 	sts	0x381C, r24	; 0x80381c <eepromreadcount>
+ 708:	90 93 1d 38 	sts	0x381D, r25	; 0x80381d <eepromreadcount+0x1>
+				readcounter = readcounter + 1;
+ 70c:	80 91 1b 38 	lds	r24, 0x381B	; 0x80381b <readcounter>
+ 710:	8f 5f       	subi	r24, 0xFF	; 255
+ 712:	80 93 1b 38 	sts	0x381B, r24	; 0x80381b <readcounter>
+			deviceSigfoxPinIdle();
+			lastError = 0; // IMPORTANT: reset all errors
+
+			wait(1); // sleep 1 second (sigfox module is running!)		
+			
+			while (readcounter < 200)
+ 716:	88 3c       	cpi	r24, 0xC8	; 200
+ 718:	f0 f2       	brcs	.-68     	; 0x6d6 <main+0x6c>
+				println("");
+ 				eepromreadcount = eepromreadcount + 1;
+				readcounter = readcounter + 1;
+			}
+			
+			eepromreadcount = 0;
+ 71a:	10 92 1c 38 	sts	0x381C, r1	; 0x80381c <eepromreadcount>
+ 71e:	10 92 1d 38 	sts	0x381D, r1	; 0x80381d <eepromreadcount+0x1>
+						
+			// test sensors
+			i2cInit();
+ 722:	0e 94 eb 01 	call	0x3d6	; 0x3d6 <_Z7i2cInitv>
+			devicePowerOn();
+ 726:	0e 94 9c 01 	call	0x338	; 0x338 <_Z13devicePowerOnv>
+			if(!accMC3635Alive()) { lastError = 4; }		
+ 72a:	0e 94 5b 00 	call	0xb6	; 0xb6 <_Z14accMC3635Alivev>
+ 72e:	81 11       	cpse	r24, r1
+ 730:	02 c0       	rjmp	.+4      	; 0x736 <main+0xcc>
+ 732:	a0 92 11 38 	sts	0x3811, r10	; 0x803811 <lastError>
+			devicePowerOff();
+ 736:	0e 94 a6 01 	call	0x34c	; 0x34c <_Z14devicePowerOffv>
+			
+			// read id and pac of sigfox module and put module to sleep
+	
+			deviceSigfoxPinWakeUp();
+ 73a:	0e 94 98 01 	call	0x330	; 0x330 <_Z21deviceSigfoxPinWakeUpv>
+ 73e:	87 ea       	ldi	r24, 0xA7	; 167
+ 740:	91 e6       	ldi	r25, 0x61	; 97
+ 742:	01 97       	sbiw	r24, 0x01	; 1
+ 744:	f1 f7       	brne	.-4      	; 0x742 <main+0xd8>
+ 746:	00 c0       	rjmp	.+0      	; 0x748 <main+0xde>
+ 748:	00 00       	nop
+			_delay_ms(100); // wait until sigfox module booted (does not send ok after boot via wake up pin)
+			sigfoxFirstStart(); // wake up module with UART
+ 74a:	0e 94 6a 00 	call	0xd4	; 0xd4 <_Z16sigfoxFirstStartv>
+			//if(!sigfoxAlive()) { lastError = 1; }
+			sigfoxAlive();
+ 74e:	0e 94 a1 00 	call	0x142	; 0x142 <_Z11sigfoxAlivev>
+ 752:	9f e9       	ldi	r25, 0x9F	; 159
+ 754:	e6 e8       	ldi	r30, 0x86	; 134
+ 756:	f1 e0       	ldi	r31, 0x01	; 1
+ 758:	91 50       	subi	r25, 0x01	; 1
+ 75a:	e0 40       	sbci	r30, 0x00	; 0
+ 75c:	f0 40       	sbci	r31, 0x00	; 0
+ 75e:	e1 f7       	brne	.-8      	; 0x758 <main+0xee>
+ 760:	00 c0       	rjmp	.+0      	; 0x762 <main+0xf8>
+ 762:	00 00       	nop
+			_delay_ms(500);
+			tinyFoxStartPrint(); // alternative function: sigfoxPrintIdAndPac();
+ 764:	0e 94 63 02 	call	0x4c6	; 0x4c6 <_Z17tinyFoxStartPrintv>
+ 768:	2f e9       	ldi	r18, 0x9F	; 159
+ 76a:	86 e8       	ldi	r24, 0x86	; 134
+ 76c:	91 e0       	ldi	r25, 0x01	; 1
+ 76e:	21 50       	subi	r18, 0x01	; 1
+ 770:	80 40       	sbci	r24, 0x00	; 0
+ 772:	90 40       	sbci	r25, 0x00	; 0
+ 774:	e1 f7       	brne	.-8      	; 0x76e <main+0x104>
+ 776:	00 c0       	rjmp	.+0      	; 0x778 <main+0x10e>
+ 778:	00 00       	nop
+			_delay_ms(500);
+			deviceSigfoxPinIdle();
+ 77a:	0e 94 94 01 	call	0x328	; 0x328 <_Z19deviceSigfoxPinIdlev>
+			//if(!sigfoxSleep()) { lastError = 2; }
+			sigfoxSleep();
+ 77e:	0e 94 aa 00 	call	0x154	; 0x154 <_Z11sigfoxSleepv>
+			
+			// evaluate errors and transit into next state
+			if(lastError > 0) {
+ 782:	80 91 11 38 	lds	r24, 0x3811	; 0x803811 <lastError>
+ 786:	88 23       	and	r24, r24
+ 788:	41 f0       	breq	.+16     	; 0x79a <main+0x130>
+				deviceBlinkGreen(lastError + 1);
+ 78a:	8f 5f       	subi	r24, 0xFF	; 255
+ 78c:	0e 94 7c 01 	call	0x2f8	; 0x2f8 <_Z16deviceBlinkGreenh>
+				deviceInitInternalRTCInterrupt(60);	// try again after some seconds	
+ 790:	8c e3       	ldi	r24, 0x3C	; 60
+ 792:	90 e0       	ldi	r25, 0x00	; 0
+ 794:	0e 94 1f 01 	call	0x23e	; 0x23e <_Z30deviceInitInternalRTCInterruptj>
+ 798:	21 c0       	rjmp	.+66     	; 0x7dc <main+0x172>
+			}
+			else {
+			//	deviceLedGreenOn();
+			//	wait(1);
+			//	deviceLedGreenOff();
+				vedbaTotalSum = 0;
+ 79a:	10 92 12 38 	sts	0x3812, r1	; 0x803812 <vedbaTotalSum>
+ 79e:	10 92 13 38 	sts	0x3813, r1	; 0x803813 <vedbaTotalSum+0x1>
+ 7a2:	10 92 14 38 	sts	0x3814, r1	; 0x803814 <vedbaTotalSum+0x2>
+ 7a6:	10 92 15 38 	sts	0x3815, r1	; 0x803815 <vedbaTotalSum+0x3>
+ 7aa:	10 92 16 38 	sts	0x3816, r1	; 0x803816 <vedbaTotalSum+0x4>
+ 7ae:	10 92 17 38 	sts	0x3817, r1	; 0x803817 <vedbaTotalSum+0x5>
+ 7b2:	10 92 18 38 	sts	0x3818, r1	; 0x803818 <vedbaTotalSum+0x6>
+ 7b6:	10 92 19 38 	sts	0x3819, r1	; 0x803819 <vedbaTotalSum+0x7>
+				//deviceBlinkGreen(3); // indicate start
+				state = ST_TRACKING;
+ 7ba:	90 92 2c 38 	sts	0x382C, r9	; 0x80382c <state>
+ 7be:	e7 ea       	ldi	r30, 0xA7	; 167
+ 7c0:	f1 e6       	ldi	r31, 0x61	; 97
+ 7c2:	31 97       	sbiw	r30, 0x01	; 1
+ 7c4:	f1 f7       	brne	.-4      	; 0x7c2 <main+0x158>
+ 7c6:	00 c0       	rjmp	.+0      	; 0x7c8 <main+0x15e>
+ 7c8:	00 00       	nop
+				
+				_delay_ms(100);
+				runTracking();
+ 7ca:	0e 94 c4 02 	call	0x588	; 0x588 <_Z11runTrackingv>
+				memset(sigfoxData, 0, 12);
+ 7ce:	f8 01       	movw	r30, r16
+ 7d0:	2b 2d       	mov	r18, r11
+ 7d2:	11 92       	st	Z+, r1
+ 7d4:	2a 95       	dec	r18
+ 7d6:	e9 f7       	brne	.-6      	; 0x7d2 <main+0x168>
+				sigfoxDataPointer = 0;
+ 7d8:	10 92 04 38 	sts	0x3804, r1	; 0x803804 <sigfoxDataPointer>
+				}
+				//deviceInitInternalRTCInterrupt(5);
+			}
+		if (batteryVoltage > 3550) { // a lot of energy available
+ 7dc:	80 91 1e 38 	lds	r24, 0x381E	; 0x80381e <batteryVoltage>
+ 7e0:	90 91 1f 38 	lds	r25, 0x381F	; 0x80381f <batteryVoltage+0x1>
+ 7e4:	8f 3d       	cpi	r24, 0xDF	; 223
+ 7e6:	ed e0       	ldi	r30, 0x0D	; 13
+ 7e8:	9e 07       	cpc	r25, r30
+ 7ea:	b0 f0       	brcs	.+44     	; 0x818 <__DATA_REGION_LENGTH__+0x18>
+				memset(sigfoxData, 0, 12);
+ 7ec:	f8 01       	movw	r30, r16
+ 7ee:	2b 2d       	mov	r18, r11
+ 7f0:	11 92       	st	Z+, r1
+ 7f2:	2a 95       	dec	r18
+ 7f4:	e9 f7       	brne	.-6      	; 0x7f0 <main+0x186>
+				sigfoxDataPointer = 0;
+ 7f6:	10 92 04 38 	sts	0x3804, r1	; 0x803804 <sigfoxDataPointer>
+				runTracking();
+ 7fa:	0e 94 c4 02 	call	0x588	; 0x588 <_Z11runTrackingv>
+				sleepCnt = 1;
+ 7fe:	c0 92 24 38 	sts	0x3824, r12	; 0x803824 <sleepCnt>
+ 802:	d0 92 25 38 	sts	0x3825, r13	; 0x803825 <sleepCnt+0x1>
+ 806:	e0 92 26 38 	sts	0x3826, r14	; 0x803826 <sleepCnt+0x2>
+ 80a:	f0 92 27 38 	sts	0x3827, r15	; 0x803827 <sleepCnt+0x3>
+				// backup power stays on
+				deviceInitInternalRTCInterrupt(SHORT_SLEEP);
+ 80e:	80 e4       	ldi	r24, 0x40	; 64
+ 810:	98 e3       	ldi	r25, 0x38	; 56
+ 812:	0e 94 1f 01 	call	0x23e	; 0x23e <_Z30deviceInitInternalRTCInterruptj>
+ 816:	70 c0       	rjmp	.+224    	; 0x8f8 <__DATA_REGION_LENGTH__+0xf8>
+		}
+		else if((state == ST_TRACKING) && (activationCnt == ACTIVATION_COUNT)) {
+ 818:	20 91 2c 38 	lds	r18, 0x382C	; 0x80382c <state>
+ 81c:	22 30       	cpi	r18, 0x02	; 2
+ 81e:	09 f0       	breq	.+2      	; 0x822 <__DATA_REGION_LENGTH__+0x22>
+ 820:	6b c0       	rjmp	.+214    	; 0x8f8 <__DATA_REGION_LENGTH__+0xf8>
+ 822:	40 91 20 38 	lds	r20, 0x3820	; 0x803820 <activationCnt>
+ 826:	50 91 21 38 	lds	r21, 0x3821	; 0x803821 <activationCnt+0x1>
+ 82a:	60 91 22 38 	lds	r22, 0x3822	; 0x803822 <activationCnt+0x2>
+ 82e:	70 91 23 38 	lds	r23, 0x3823	; 0x803823 <activationCnt+0x3>
+ 832:	41 30       	cpi	r20, 0x01	; 1
+ 834:	51 05       	cpc	r21, r1
+ 836:	61 05       	cpc	r22, r1
+ 838:	71 05       	cpc	r23, r1
+ 83a:	09 f0       	breq	.+2      	; 0x83e <__DATA_REGION_LENGTH__+0x3e>
+ 83c:	5d c0       	rjmp	.+186    	; 0x8f8 <__DATA_REGION_LENGTH__+0xf8>
+			if(batteryVoltage > 2900) { // battery low
+ 83e:	85 35       	cpi	r24, 0x55	; 85
+ 840:	9b 40       	sbci	r25, 0x0B	; 11
+ 842:	08 f4       	brcc	.+2      	; 0x846 <__DATA_REGION_LENGTH__+0x46>
+ 844:	55 c0       	rjmp	.+170    	; 0x8f0 <__DATA_REGION_LENGTH__+0xf0>
+				if(sleepCnt == SLEEP_COUNT) {
+ 846:	80 91 24 38 	lds	r24, 0x3824	; 0x803824 <sleepCnt>
+ 84a:	90 91 25 38 	lds	r25, 0x3825	; 0x803825 <sleepCnt+0x1>
+ 84e:	a0 91 26 38 	lds	r26, 0x3826	; 0x803826 <sleepCnt+0x2>
+ 852:	b0 91 27 38 	lds	r27, 0x3827	; 0x803827 <sleepCnt+0x3>
+ 856:	06 97       	sbiw	r24, 0x06	; 6
+ 858:	a1 05       	cpc	r26, r1
+ 85a:	b1 05       	cpc	r27, r1
+ 85c:	b1 f4       	brne	.+44     	; 0x88a <__DATA_REGION_LENGTH__+0x8a>
+				memset(sigfoxData, 0, 12);
+ 85e:	f8 01       	movw	r30, r16
+ 860:	2b 2d       	mov	r18, r11
+ 862:	11 92       	st	Z+, r1
+ 864:	2a 95       	dec	r18
+ 866:	e9 f7       	brne	.-6      	; 0x862 <__DATA_REGION_LENGTH__+0x62>
+				sigfoxDataPointer = 0;
+ 868:	10 92 04 38 	sts	0x3804, r1	; 0x803804 <sigfoxDataPointer>
+				runTracking();
+ 86c:	0e 94 c4 02 	call	0x588	; 0x588 <_Z11runTrackingv>
+				// backup power stays on
+				deviceInitInternalRTCInterrupt(LONG_SLEEP);
+ 870:	80 e4       	ldi	r24, 0x40	; 64
+ 872:	98 e3       	ldi	r25, 0x38	; 56
+ 874:	0e 94 1f 01 	call	0x23e	; 0x23e <_Z30deviceInitInternalRTCInterruptj>
+				sleepCnt = 0;					
+ 878:	10 92 24 38 	sts	0x3824, r1	; 0x803824 <sleepCnt>
+ 87c:	10 92 25 38 	sts	0x3825, r1	; 0x803825 <sleepCnt+0x1>
+ 880:	10 92 26 38 	sts	0x3826, r1	; 0x803826 <sleepCnt+0x2>
+ 884:	10 92 27 38 	sts	0x3827, r1	; 0x803827 <sleepCnt+0x3>
+ 888:	1f c0       	rjmp	.+62     	; 0x8c8 <__DATA_REGION_LENGTH__+0xc8>
+		        //sigfoxSleep();
+				//memset(sigfoxData, 0, 12);
+				//sigfoxDataPointer = 0;
+				//deviceInitInternalRTCInterrupt(LONG_SLEEP);
+				//}
+				else if(activation == 1) {
+ 88a:	80 91 28 38 	lds	r24, 0x3828	; 0x803828 <activation>
+ 88e:	90 91 29 38 	lds	r25, 0x3829	; 0x803829 <activation+0x1>
+ 892:	a0 91 2a 38 	lds	r26, 0x382A	; 0x80382a <activation+0x2>
+ 896:	b0 91 2b 38 	lds	r27, 0x382B	; 0x80382b <activation+0x3>
+ 89a:	01 97       	sbiw	r24, 0x01	; 1
+ 89c:	a1 05       	cpc	r26, r1
+ 89e:	b1 05       	cpc	r27, r1
+ 8a0:	79 f4       	brne	.+30     	; 0x8c0 <__DATA_REGION_LENGTH__+0xc0>
+				activation = 0;
+ 8a2:	10 92 28 38 	sts	0x3828, r1	; 0x803828 <activation>
+ 8a6:	10 92 29 38 	sts	0x3829, r1	; 0x803829 <activation+0x1>
+ 8aa:	10 92 2a 38 	sts	0x382A, r1	; 0x80382a <activation+0x2>
+ 8ae:	10 92 2b 38 	sts	0x382B, r1	; 0x80382b <activation+0x3>
+				runTracking();
+ 8b2:	0e 94 c4 02 	call	0x588	; 0x588 <_Z11runTrackingv>
+				// backup power stays on
+				deviceInitInternalRTCInterrupt(LONG_SLEEP);		
+ 8b6:	80 e4       	ldi	r24, 0x40	; 64
+ 8b8:	98 e3       	ldi	r25, 0x38	; 56
+ 8ba:	0e 94 1f 01 	call	0x23e	; 0x23e <_Z30deviceInitInternalRTCInterruptj>
+ 8be:	04 c0       	rjmp	.+8      	; 0x8c8 <__DATA_REGION_LENGTH__+0xc8>
+				}
+				else{
+				deviceInitInternalRTCInterrupt(LONG_SLEEP);		
+ 8c0:	80 e4       	ldi	r24, 0x40	; 64
+ 8c2:	98 e3       	ldi	r25, 0x38	; 56
+ 8c4:	0e 94 1f 01 	call	0x23e	; 0x23e <_Z30deviceInitInternalRTCInterruptj>
+				}
+			sleepCnt++;
+ 8c8:	80 91 24 38 	lds	r24, 0x3824	; 0x803824 <sleepCnt>
+ 8cc:	90 91 25 38 	lds	r25, 0x3825	; 0x803825 <sleepCnt+0x1>
+ 8d0:	a0 91 26 38 	lds	r26, 0x3826	; 0x803826 <sleepCnt+0x2>
+ 8d4:	b0 91 27 38 	lds	r27, 0x3827	; 0x803827 <sleepCnt+0x3>
+ 8d8:	01 96       	adiw	r24, 0x01	; 1
+ 8da:	a1 1d       	adc	r26, r1
+ 8dc:	b1 1d       	adc	r27, r1
+ 8de:	80 93 24 38 	sts	0x3824, r24	; 0x803824 <sleepCnt>
+ 8e2:	90 93 25 38 	sts	0x3825, r25	; 0x803825 <sleepCnt+0x1>
+ 8e6:	a0 93 26 38 	sts	0x3826, r26	; 0x803826 <sleepCnt+0x2>
+ 8ea:	b0 93 27 38 	sts	0x3827, r27	; 0x803827 <sleepCnt+0x3>
+ 8ee:	04 c0       	rjmp	.+8      	; 0x8f8 <__DATA_REGION_LENGTH__+0xf8>
+			}
+			else { // battery pretty much empty
+				deviceInitInternalRTCInterrupt(14400);
+ 8f0:	80 e4       	ldi	r24, 0x40	; 64
+ 8f2:	98 e3       	ldi	r25, 0x38	; 56
+ 8f4:	0e 94 1f 01 	call	0x23e	; 0x23e <_Z30deviceInitInternalRTCInterruptj>
+			}
+		}
+		if (activationCnt < (ACTIVATION_COUNT)) {
+ 8f8:	80 91 20 38 	lds	r24, 0x3820	; 0x803820 <activationCnt>
+ 8fc:	90 91 21 38 	lds	r25, 0x3821	; 0x803821 <activationCnt+0x1>
+ 900:	a0 91 22 38 	lds	r26, 0x3822	; 0x803822 <activationCnt+0x2>
+ 904:	b0 91 23 38 	lds	r27, 0x3823	; 0x803823 <activationCnt+0x3>
+ 908:	89 2b       	or	r24, r25
+ 90a:	8a 2b       	or	r24, r26
+ 90c:	8b 2b       	or	r24, r27
+ 90e:	a1 f4       	brne	.+40     	; 0x938 <__DATA_REGION_LENGTH__+0x138>
+			activationCnt++;
+ 910:	c0 92 20 38 	sts	0x3820, r12	; 0x803820 <activationCnt>
+ 914:	d0 92 21 38 	sts	0x3821, r13	; 0x803821 <activationCnt+0x1>
+ 918:	e0 92 22 38 	sts	0x3822, r14	; 0x803822 <activationCnt+0x2>
+ 91c:	f0 92 23 38 	sts	0x3823, r15	; 0x803823 <activationCnt+0x3>
+			activation = 1;
+ 920:	c0 92 28 38 	sts	0x3828, r12	; 0x803828 <activation>
+ 924:	d0 92 29 38 	sts	0x3829, r13	; 0x803829 <activation+0x1>
+ 928:	e0 92 2a 38 	sts	0x382A, r14	; 0x80382a <activation+0x2>
+ 92c:	f0 92 2b 38 	sts	0x382B, r15	; 0x80382b <activation+0x3>
+			deviceInitInternalRTCInterrupt(14400); //PLEASE REMEMBER TO CHANGE!!!
+ 930:	80 e4       	ldi	r24, 0x40	; 64
+ 932:	98 e3       	ldi	r25, 0x38	; 56
+ 934:	0e 94 1f 01 	call	0x23e	; 0x23e <_Z30deviceInitInternalRTCInterruptj>
+			}
+		deinitAllUARTPins();
+ 938:	0e 94 d4 04 	call	0x9a8	; 0x9a8 <_Z17deinitAllUARTPinsv>
+		deviceStandbySleep();
+ 93c:	0e 94 0e 01 	call	0x21c	; 0x21c <_Z18deviceStandbySleepv>
+		deviceSigfoxPinIdle();
+		sigfoxSleep();
+}
+
+int main(void) {
+	while(1) {
+ 940:	a6 ce       	rjmp	.-692    	; 0x68e <main+0x24>
+
+00000942 <_ZL17usePrintfFunctioncP6__file>:
+ 942:	e0 e0       	ldi	r30, 0x00	; 0
+ 944:	f8 e0       	ldi	r31, 0x08	; 8
+ 946:	94 81       	ldd	r25, Z+4	; 0x04
+ 948:	95 ff       	sbrs	r25, 5
+ 94a:	fd cf       	rjmp	.-6      	; 0x946 <_ZL17usePrintfFunctioncP6__file+0x4>
+ 94c:	80 93 02 08 	sts	0x0802, r24	; 0x800802 <__RODATA_PM_OFFSET__+0x7f8802>
+ 950:	80 e0       	ldi	r24, 0x00	; 0
+ 952:	90 e0       	ldi	r25, 0x00	; 0
+ 954:	08 95       	ret
+
+00000956 <_Z23initPrimaryUARTwith9600v>:
+ 956:	10 92 e2 05 	sts	0x05E2, r1	; 0x8005e2 <__RODATA_PM_OFFSET__+0x7f85e2>
+ 95a:	a0 e0       	ldi	r26, 0x00	; 0
+ 95c:	b8 e0       	ldi	r27, 0x08	; 8
+ 95e:	16 96       	adiw	r26, 0x06	; 6
+ 960:	8c 91       	ld	r24, X
+ 962:	16 97       	sbiw	r26, 0x06	; 6
+ 964:	80 6c       	ori	r24, 0xC0	; 192
+ 966:	16 96       	adiw	r26, 0x06	; 6
+ 968:	8c 93       	st	X, r24
+ 96a:	16 97       	sbiw	r26, 0x06	; 6
+ 96c:	e0 e2       	ldi	r30, 0x20	; 32
+ 96e:	f4 e0       	ldi	r31, 0x04	; 4
+ 970:	84 e0       	ldi	r24, 0x04	; 4
+ 972:	85 83       	std	Z+5, r24	; 0x05
+ 974:	80 81       	ld	r24, Z
+ 976:	84 60       	ori	r24, 0x04	; 4
+ 978:	80 83       	st	Z, r24
+ 97a:	80 81       	ld	r24, Z
+ 97c:	87 7f       	andi	r24, 0xF7	; 247
+ 97e:	80 83       	st	Z, r24
+ 980:	81 ea       	ldi	r24, 0xA1	; 161
+ 982:	91 e0       	ldi	r25, 0x01	; 1
+ 984:	18 96       	adiw	r26, 0x08	; 8
+ 986:	8d 93       	st	X+, r24
+ 988:	9c 93       	st	X, r25
+ 98a:	19 97       	sbiw	r26, 0x09	; 9
+ 98c:	08 95       	ret
+
+0000098e <_Z9uartFlushv>:
+ 98e:	80 91 04 08 	lds	r24, 0x0804	; 0x800804 <__RODATA_PM_OFFSET__+0x7f8804>
+ 992:	88 23       	and	r24, r24
+ 994:	3c f4       	brge	.+14     	; 0x9a4 <_Z9uartFlushv+0x16>
+ 996:	e0 e0       	ldi	r30, 0x00	; 0
+ 998:	f8 e0       	ldi	r31, 0x08	; 8
+ 99a:	80 81       	ld	r24, Z
+ 99c:	94 81       	ldd	r25, Z+4	; 0x04
+ 99e:	99 23       	and	r25, r25
+ 9a0:	e4 f3       	brlt	.-8      	; 0x99a <_Z9uartFlushv+0xc>
+ 9a2:	08 95       	ret
+ 9a4:	80 e0       	ldi	r24, 0x00	; 0
+ 9a6:	08 95       	ret
+
+000009a8 <_Z17deinitAllUARTPinsv>:
+ 9a8:	e0 e0       	ldi	r30, 0x00	; 0
+ 9aa:	f4 e0       	ldi	r31, 0x04	; 4
+ 9ac:	80 81       	ld	r24, Z
+ 9ae:	8d 7f       	andi	r24, 0xFD	; 253
+ 9b0:	80 83       	st	Z, r24
+ 9b2:	80 81       	ld	r24, Z
+ 9b4:	8b 7f       	andi	r24, 0xFB	; 251
+ 9b6:	80 83       	st	Z, r24
+ 9b8:	84 e0       	ldi	r24, 0x04	; 4
+ 9ba:	81 8b       	std	Z+17, r24	; 0x11
+ 9bc:	82 8b       	std	Z+18, r24	; 0x12
+ 9be:	e0 e2       	ldi	r30, 0x20	; 32
+ 9c0:	f4 e0       	ldi	r31, 0x04	; 4
+ 9c2:	90 81       	ld	r25, Z
+ 9c4:	9b 7f       	andi	r25, 0xFB	; 251
+ 9c6:	90 83       	st	Z, r25
+ 9c8:	90 81       	ld	r25, Z
+ 9ca:	97 7f       	andi	r25, 0xF7	; 247
+ 9cc:	90 83       	st	Z, r25
+ 9ce:	82 8b       	std	Z+18, r24	; 0x12
+ 9d0:	83 8b       	std	Z+19, r24	; 0x13
+ 9d2:	08 95       	ret
+
+000009d4 <_Z8uartReadcPchj>:
+ 9d4:	ef 92       	push	r14
+ 9d6:	ff 92       	push	r15
+ 9d8:	0f 93       	push	r16
+ 9da:	1f 93       	push	r17
+ 9dc:	cf 93       	push	r28
+ 9de:	df 93       	push	r29
+ 9e0:	18 2f       	mov	r17, r24
+ 9e2:	7b 01       	movw	r14, r22
+ 9e4:	04 2f       	mov	r16, r20
+ 9e6:	e9 01       	movw	r28, r18
+ 9e8:	50 e0       	ldi	r21, 0x00	; 0
+ 9ea:	60 e0       	ldi	r22, 0x00	; 0
+ 9ec:	70 e0       	ldi	r23, 0x00	; 0
+ 9ee:	c7 01       	movw	r24, r14
+ 9f0:	0e 94 28 06 	call	0xc50	; 0xc50 <memset>
+ 9f4:	0e 94 c7 04 	call	0x98e	; 0x98e <_Z9uartFlushv>
+ 9f8:	90 e0       	ldi	r25, 0x00	; 0
+ 9fa:	e0 e0       	ldi	r30, 0x00	; 0
+ 9fc:	f8 e0       	ldi	r31, 0x08	; 8
+ 9fe:	84 81       	ldd	r24, Z+4	; 0x04
+ a00:	88 23       	and	r24, r24
+ a02:	54 f0       	brlt	.+20     	; 0xa18 <_Z8uartReadcPchj+0x44>
+ a04:	21 97       	sbiw	r28, 0x01	; 1
+ a06:	a9 ef       	ldi	r26, 0xF9	; 249
+ a08:	b0 e0       	ldi	r27, 0x00	; 0
+ a0a:	11 97       	sbiw	r26, 0x01	; 1
+ a0c:	f1 f7       	brne	.-4      	; 0xa0a <_Z8uartReadcPchj+0x36>
+ a0e:	00 c0       	rjmp	.+0      	; 0xa10 <_Z8uartReadcPchj+0x3c>
+ a10:	00 00       	nop
+ a12:	20 97       	sbiw	r28, 0x00	; 0
+ a14:	a1 f7       	brne	.-24     	; 0x9fe <_Z8uartReadcPchj+0x2a>
+ a16:	18 c0       	rjmp	.+48     	; 0xa48 <_Z8uartReadcPchj+0x74>
+ a18:	80 81       	ld	r24, Z
+ a1a:	8a 30       	cpi	r24, 0x0A	; 10
+ a1c:	69 f0       	breq	.+26     	; 0xa38 <_Z8uartReadcPchj+0x64>
+ a1e:	8d 30       	cpi	r24, 0x0D	; 13
+ a20:	59 f0       	breq	.+22     	; 0xa38 <_Z8uartReadcPchj+0x64>
+ a22:	21 e0       	ldi	r18, 0x01	; 1
+ a24:	29 0f       	add	r18, r25
+ a26:	d7 01       	movw	r26, r14
+ a28:	a9 0f       	add	r26, r25
+ a2a:	b1 1d       	adc	r27, r1
+ a2c:	8c 93       	st	X, r24
+ a2e:	20 17       	cp	r18, r16
+ a30:	10 f0       	brcs	.+4      	; 0xa36 <_Z8uartReadcPchj+0x62>
+ a32:	90 e0       	ldi	r25, 0x00	; 0
+ a34:	01 c0       	rjmp	.+2      	; 0xa38 <_Z8uartReadcPchj+0x64>
+ a36:	92 2f       	mov	r25, r18
+ a38:	81 13       	cpse	r24, r17
+ a3a:	e1 cf       	rjmp	.-62     	; 0x9fe <_Z8uartReadcPchj+0x2a>
+ a3c:	f7 01       	movw	r30, r14
+ a3e:	e9 0f       	add	r30, r25
+ a40:	f1 1d       	adc	r31, r1
+ a42:	10 82       	st	Z, r1
+ a44:	81 e0       	ldi	r24, 0x01	; 1
+ a46:	01 c0       	rjmp	.+2      	; 0xa4a <_Z8uartReadcPchj+0x76>
+ a48:	80 e0       	ldi	r24, 0x00	; 0
+ a4a:	df 91       	pop	r29
+ a4c:	cf 91       	pop	r28
+ a4e:	1f 91       	pop	r17
+ a50:	0f 91       	pop	r16
+ a52:	ff 90       	pop	r15
+ a54:	ef 90       	pop	r14
+ a56:	08 95       	ret
+
+00000a58 <_Z5printPKc>:
+ a58:	fc 01       	movw	r30, r24
+ a5a:	20 81       	ld	r18, Z
+ a5c:	22 23       	and	r18, r18
+ a5e:	81 f0       	breq	.+32     	; 0xa80 <_Z5printPKc+0x28>
+ a60:	dc 01       	movw	r26, r24
+ a62:	11 96       	adiw	r26, 0x01	; 1
+ a64:	e0 e0       	ldi	r30, 0x00	; 0
+ a66:	f8 e0       	ldi	r31, 0x08	; 8
+ a68:	94 81       	ldd	r25, Z+4	; 0x04
+ a6a:	95 ff       	sbrs	r25, 5
+ a6c:	fd cf       	rjmp	.-6      	; 0xa68 <_Z5printPKc+0x10>
+ a6e:	22 83       	std	Z+2, r18	; 0x02
+ a70:	2d 91       	ld	r18, X+
+ a72:	21 11       	cpse	r18, r1
+ a74:	f9 cf       	rjmp	.-14     	; 0xa68 <_Z5printPKc+0x10>
+ a76:	e0 e0       	ldi	r30, 0x00	; 0
+ a78:	f8 e0       	ldi	r31, 0x08	; 8
+ a7a:	84 81       	ldd	r24, Z+4	; 0x04
+ a7c:	85 ff       	sbrs	r24, 5
+ a7e:	fd cf       	rjmp	.-6      	; 0xa7a <_Z5printPKc+0x22>
+ a80:	08 95       	ret
+
+00000a82 <_Z7printlnPKc>:
+ a82:	0e 94 2c 05 	call	0xa58	; 0xa58 <_Z5printPKc>
+ a86:	85 e2       	ldi	r24, 0x25	; 37
+ a88:	9d e8       	ldi	r25, 0x8D	; 141
+ a8a:	0e 94 2c 05 	call	0xa58	; 0xa58 <_Z5printPKc>
+ a8e:	82 ed       	ldi	r24, 0xD2	; 210
+ a90:	9c e8       	ldi	r25, 0x8C	; 140
+ a92:	0e 94 2c 05 	call	0xa58	; 0xa58 <_Z5printPKc>
+ a96:	08 95       	ret
+
+00000a98 <_Z8printU32m>:
+ a98:	cf 92       	push	r12
+ a9a:	df 92       	push	r13
+ a9c:	ef 92       	push	r14
+ a9e:	ff 92       	push	r15
+ aa0:	6b 01       	movw	r12, r22
+ aa2:	7c 01       	movw	r14, r24
+ aa4:	8a e0       	ldi	r24, 0x0A	; 10
+ aa6:	c8 16       	cp	r12, r24
+ aa8:	d1 04       	cpc	r13, r1
+ aaa:	e1 04       	cpc	r14, r1
+ aac:	f1 04       	cpc	r15, r1
+ aae:	60 f0       	brcs	.+24     	; 0xac8 <_Z8printU32m+0x30>
+ ab0:	c7 01       	movw	r24, r14
+ ab2:	b6 01       	movw	r22, r12
+ ab4:	2a e0       	ldi	r18, 0x0A	; 10
+ ab6:	30 e0       	ldi	r19, 0x00	; 0
+ ab8:	40 e0       	ldi	r20, 0x00	; 0
+ aba:	50 e0       	ldi	r21, 0x00	; 0
+ abc:	0e 94 cd 05 	call	0xb9a	; 0xb9a <__udivmodsi4>
+ ac0:	ca 01       	movw	r24, r20
+ ac2:	b9 01       	movw	r22, r18
+ ac4:	0e 94 4c 05 	call	0xa98	; 0xa98 <_Z8printU32m>
+ ac8:	c7 01       	movw	r24, r14
+ aca:	b6 01       	movw	r22, r12
+ acc:	2a e0       	ldi	r18, 0x0A	; 10
+ ace:	30 e0       	ldi	r19, 0x00	; 0
+ ad0:	40 e0       	ldi	r20, 0x00	; 0
+ ad2:	50 e0       	ldi	r21, 0x00	; 0
+ ad4:	0e 94 cd 05 	call	0xb9a	; 0xb9a <__udivmodsi4>
+ ad8:	e0 e0       	ldi	r30, 0x00	; 0
+ ada:	f8 e0       	ldi	r31, 0x08	; 8
+ adc:	84 81       	ldd	r24, Z+4	; 0x04
+ ade:	85 ff       	sbrs	r24, 5
+ ae0:	fd cf       	rjmp	.-6      	; 0xadc <_Z8printU32m+0x44>
+ ae2:	60 5d       	subi	r22, 0xD0	; 208
+ ae4:	60 93 02 08 	sts	0x0802, r22	; 0x800802 <__RODATA_PM_OFFSET__+0x7f8802>
+ ae8:	ff 90       	pop	r15
+ aea:	ef 90       	pop	r14
+ aec:	df 90       	pop	r13
+ aee:	cf 90       	pop	r12
+ af0:	08 95       	ret
+
+00000af2 <_Z9usePrintfv>:
+ af2:	ed e2       	ldi	r30, 0x2D	; 45
+ af4:	f8 e3       	ldi	r31, 0x38	; 56
+ af6:	81 ea       	ldi	r24, 0xA1	; 161
+ af8:	94 e0       	ldi	r25, 0x04	; 4
+ afa:	80 87       	std	Z+8, r24	; 0x08
+ afc:	91 87       	std	Z+9, r25	; 0x09
+ afe:	12 86       	std	Z+10, r1	; 0x0a
+ b00:	13 86       	std	Z+11, r1	; 0x0b
+ b02:	82 e0       	ldi	r24, 0x02	; 2
+ b04:	83 83       	std	Z+3, r24	; 0x03
+ b06:	14 86       	std	Z+12, r1	; 0x0c
+ b08:	15 86       	std	Z+13, r1	; 0x0d
+ b0a:	e0 93 3d 38 	sts	0x383D, r30	; 0x80383d <__iob+0x2>
+ b0e:	f0 93 3e 38 	sts	0x383E, r31	; 0x80383e <__iob+0x3>
+ b12:	08 95       	ret
+
+00000b14 <_Z14printByteAsHexh>:
+ b14:	cf 93       	push	r28
+ b16:	df 93       	push	r29
+ b18:	cd b7       	in	r28, 0x3d	; 61
+ b1a:	de b7       	in	r29, 0x3e	; 62
+ b1c:	64 97       	sbiw	r28, 0x14	; 20
+ b1e:	cd bf       	out	0x3d, r28	; 61
+ b20:	de bf       	out	0x3e, r29	; 62
+ b22:	91 e1       	ldi	r25, 0x11	; 17
+ b24:	e7 e2       	ldi	r30, 0x27	; 39
+ b26:	fd e8       	ldi	r31, 0x8D	; 141
+ b28:	de 01       	movw	r26, r28
+ b2a:	11 96       	adiw	r26, 0x01	; 1
+ b2c:	01 90       	ld	r0, Z+
+ b2e:	0d 92       	st	X+, r0
+ b30:	9a 95       	dec	r25
+ b32:	e1 f7       	brne	.-8      	; 0xb2c <_Z14printByteAsHexh+0x18>
+ b34:	e8 2f       	mov	r30, r24
+ b36:	f0 e0       	ldi	r31, 0x00	; 0
+ b38:	f5 95       	asr	r31
+ b3a:	e7 95       	ror	r30
+ b3c:	f5 95       	asr	r31
+ b3e:	e7 95       	ror	r30
+ b40:	f5 95       	asr	r31
+ b42:	e7 95       	ror	r30
+ b44:	f5 95       	asr	r31
+ b46:	e7 95       	ror	r30
+ b48:	21 e0       	ldi	r18, 0x01	; 1
+ b4a:	30 e0       	ldi	r19, 0x00	; 0
+ b4c:	2c 0f       	add	r18, r28
+ b4e:	3d 1f       	adc	r19, r29
+ b50:	e2 0f       	add	r30, r18
+ b52:	f3 1f       	adc	r31, r19
+ b54:	90 81       	ld	r25, Z
+ b56:	9a 8b       	std	Y+18, r25	; 0x12
+ b58:	8f 70       	andi	r24, 0x0F	; 15
+ b5a:	f9 01       	movw	r30, r18
+ b5c:	e8 0f       	add	r30, r24
+ b5e:	f1 1d       	adc	r31, r1
+ b60:	80 81       	ld	r24, Z
+ b62:	8b 8b       	std	Y+19, r24	; 0x13
+ b64:	1c 8a       	std	Y+20, r1	; 0x14
+ b66:	ce 01       	movw	r24, r28
+ b68:	42 96       	adiw	r24, 0x12	; 18
+ b6a:	0e 94 2c 05 	call	0xa58	; 0xa58 <_Z5printPKc>
+ b6e:	64 96       	adiw	r28, 0x14	; 20
+ b70:	cd bf       	out	0x3d, r28	; 61
+ b72:	de bf       	out	0x3e, r29	; 62
+ b74:	df 91       	pop	r29
+ b76:	cf 91       	pop	r28
+ b78:	08 95       	ret
+
+00000b7a <__mulsi3>:
+ b7a:	db 01       	movw	r26, r22
+ b7c:	8f 93       	push	r24
+ b7e:	9f 93       	push	r25
+ b80:	0e 94 1d 06 	call	0xc3a	; 0xc3a <__muluhisi3>
+ b84:	bf 91       	pop	r27
+ b86:	af 91       	pop	r26
+ b88:	a2 9f       	mul	r26, r18
+ b8a:	80 0d       	add	r24, r0
+ b8c:	91 1d       	adc	r25, r1
+ b8e:	a3 9f       	mul	r26, r19
+ b90:	90 0d       	add	r25, r0
+ b92:	b2 9f       	mul	r27, r18
+ b94:	90 0d       	add	r25, r0
+ b96:	11 24       	eor	r1, r1
+ b98:	08 95       	ret
+
+00000b9a <__udivmodsi4>:
+ b9a:	a1 e2       	ldi	r26, 0x21	; 33
+ b9c:	1a 2e       	mov	r1, r26
+ b9e:	aa 1b       	sub	r26, r26
+ ba0:	bb 1b       	sub	r27, r27
+ ba2:	fd 01       	movw	r30, r26
+ ba4:	0d c0       	rjmp	.+26     	; 0xbc0 <__udivmodsi4_ep>
+
+00000ba6 <__udivmodsi4_loop>:
+ ba6:	aa 1f       	adc	r26, r26
+ ba8:	bb 1f       	adc	r27, r27
+ baa:	ee 1f       	adc	r30, r30
+ bac:	ff 1f       	adc	r31, r31
+ bae:	a2 17       	cp	r26, r18
+ bb0:	b3 07       	cpc	r27, r19
+ bb2:	e4 07       	cpc	r30, r20
+ bb4:	f5 07       	cpc	r31, r21
+ bb6:	20 f0       	brcs	.+8      	; 0xbc0 <__udivmodsi4_ep>
+ bb8:	a2 1b       	sub	r26, r18
+ bba:	b3 0b       	sbc	r27, r19
+ bbc:	e4 0b       	sbc	r30, r20
+ bbe:	f5 0b       	sbc	r31, r21
+
+00000bc0 <__udivmodsi4_ep>:
+ bc0:	66 1f       	adc	r22, r22
+ bc2:	77 1f       	adc	r23, r23
+ bc4:	88 1f       	adc	r24, r24
+ bc6:	99 1f       	adc	r25, r25
+ bc8:	1a 94       	dec	r1
+ bca:	69 f7       	brne	.-38     	; 0xba6 <__udivmodsi4_loop>
+ bcc:	60 95       	com	r22
+ bce:	70 95       	com	r23
+ bd0:	80 95       	com	r24
+ bd2:	90 95       	com	r25
+ bd4:	9b 01       	movw	r18, r22
+ bd6:	ac 01       	movw	r20, r24
+ bd8:	bd 01       	movw	r22, r26
+ bda:	cf 01       	movw	r24, r30
+ bdc:	08 95       	ret
+
+00000bde <__divmodsi4>:
+ bde:	05 2e       	mov	r0, r21
+ be0:	97 fb       	bst	r25, 7
+ be2:	1e f4       	brtc	.+6      	; 0xbea <__divmodsi4+0xc>
+ be4:	00 94       	com	r0
+ be6:	0e 94 06 06 	call	0xc0c	; 0xc0c <__negsi2>
+ bea:	57 fd       	sbrc	r21, 7
+ bec:	07 d0       	rcall	.+14     	; 0xbfc <__divmodsi4_neg2>
+ bee:	0e 94 cd 05 	call	0xb9a	; 0xb9a <__udivmodsi4>
+ bf2:	07 fc       	sbrc	r0, 7
+ bf4:	03 d0       	rcall	.+6      	; 0xbfc <__divmodsi4_neg2>
+ bf6:	4e f4       	brtc	.+18     	; 0xc0a <__divmodsi4_exit>
+ bf8:	0c 94 06 06 	jmp	0xc0c	; 0xc0c <__negsi2>
+
+00000bfc <__divmodsi4_neg2>:
+ bfc:	50 95       	com	r21
+ bfe:	40 95       	com	r20
+ c00:	30 95       	com	r19
+ c02:	21 95       	neg	r18
+ c04:	3f 4f       	sbci	r19, 0xFF	; 255
+ c06:	4f 4f       	sbci	r20, 0xFF	; 255
+ c08:	5f 4f       	sbci	r21, 0xFF	; 255
+
+00000c0a <__divmodsi4_exit>:
+ c0a:	08 95       	ret
+
+00000c0c <__negsi2>:
+ c0c:	90 95       	com	r25
+ c0e:	80 95       	com	r24
+ c10:	70 95       	com	r23
+ c12:	61 95       	neg	r22
+ c14:	7f 4f       	sbci	r23, 0xFF	; 255
+ c16:	8f 4f       	sbci	r24, 0xFF	; 255
+ c18:	9f 4f       	sbci	r25, 0xFF	; 255
+ c1a:	08 95       	ret
+
+00000c1c <__umulhisi3>:
+ c1c:	a2 9f       	mul	r26, r18
+ c1e:	b0 01       	movw	r22, r0
+ c20:	b3 9f       	mul	r27, r19
+ c22:	c0 01       	movw	r24, r0
+ c24:	a3 9f       	mul	r26, r19
+ c26:	70 0d       	add	r23, r0
+ c28:	81 1d       	adc	r24, r1
+ c2a:	11 24       	eor	r1, r1
+ c2c:	91 1d       	adc	r25, r1
+ c2e:	b2 9f       	mul	r27, r18
+ c30:	70 0d       	add	r23, r0
+ c32:	81 1d       	adc	r24, r1
+ c34:	11 24       	eor	r1, r1
+ c36:	91 1d       	adc	r25, r1
+ c38:	08 95       	ret
+
+00000c3a <__muluhisi3>:
+ c3a:	0e 94 0e 06 	call	0xc1c	; 0xc1c <__umulhisi3>
+ c3e:	a5 9f       	mul	r26, r21
+ c40:	90 0d       	add	r25, r0
+ c42:	b4 9f       	mul	r27, r20
+ c44:	90 0d       	add	r25, r0
+ c46:	a4 9f       	mul	r26, r20
+ c48:	80 0d       	add	r24, r0
+ c4a:	91 1d       	adc	r25, r1
+ c4c:	11 24       	eor	r1, r1
+ c4e:	08 95       	ret
+
+00000c50 <memset>:
+ c50:	dc 01       	movw	r26, r24
+ c52:	01 c0       	rjmp	.+2      	; 0xc56 <memset+0x6>
+ c54:	6d 93       	st	X+, r22
+ c56:	41 50       	subi	r20, 0x01	; 1
+ c58:	50 40       	sbci	r21, 0x00	; 0
+ c5a:	e0 f7       	brcc	.-8      	; 0xc54 <memset+0x4>
+ c5c:	08 95       	ret
+
+00000c5e <strchr>:
+ c5e:	fc 01       	movw	r30, r24
+ c60:	81 91       	ld	r24, Z+
+ c62:	86 17       	cp	r24, r22
+ c64:	21 f0       	breq	.+8      	; 0xc6e <strchr+0x10>
+ c66:	88 23       	and	r24, r24
+ c68:	d9 f7       	brne	.-10     	; 0xc60 <strchr+0x2>
+ c6a:	99 27       	eor	r25, r25
+ c6c:	08 95       	ret
+ c6e:	31 97       	sbiw	r30, 0x01	; 1
+ c70:	cf 01       	movw	r24, r30
+ c72:	08 95       	ret
+
+00000c74 <eeprom_read_byte>:
+ c74:	03 d0       	rcall	.+6      	; 0xc7c <eeprom_mapen>
+ c76:	80 81       	ld	r24, Z
+ c78:	99 27       	eor	r25, r25
+ c7a:	08 95       	ret
+
+00000c7c <eeprom_mapen>:
+ c7c:	fc 01       	movw	r30, r24
+ c7e:	e0 50       	subi	r30, 0x00	; 0
+ c80:	fc 4e       	sbci	r31, 0xEC	; 236
+ c82:	08 95       	ret
+
+00000c84 <eeprom_write_byte>:
+ c84:	26 2f       	mov	r18, r22
+
+00000c86 <eeprom_write_r18>:
+ c86:	af 93       	push	r26
+ c88:	bf 93       	push	r27
+ c8a:	e0 e0       	ldi	r30, 0x00	; 0
+ c8c:	f0 e1       	ldi	r31, 0x10	; 16
+ c8e:	32 81       	ldd	r19, Z+2	; 0x02
+ c90:	31 fd       	sbrc	r19, 1
+ c92:	fd cf       	rjmp	.-6      	; 0xc8e <eeprom_write_r18+0x8>
+ c94:	dc 01       	movw	r26, r24
+ c96:	a0 50       	subi	r26, 0x00	; 0
+ c98:	bc 4e       	sbci	r27, 0xEC	; 236
+ c9a:	2c 93       	st	X, r18
+ c9c:	2d e9       	ldi	r18, 0x9D	; 157
+ c9e:	24 bf       	out	0x34, r18	; 52
+ ca0:	23 e0       	ldi	r18, 0x03	; 3
+ ca2:	20 83       	st	Z, r18
+ ca4:	01 96       	adiw	r24, 0x01	; 1
+ ca6:	bf 91       	pop	r27
+ ca8:	af 91       	pop	r26
+ caa:	08 95       	ret
+
+00000cac <_exit>:
+ cac:	f8 94       	cli
+
+00000cae <__stop_program>:
+ cae:	ff cf       	rjmp	.-2      	; 0xcae <__stop_program>

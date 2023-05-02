@@ -1,0 +1,1541 @@
+
+TinyFoxSoftware.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .data         00000002  00803800  00000b0c  00000bc0  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  1 .text         00000aae  00000000  00000000  000000b4  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  2 .rodata       0000005e  00008aae  00000aae  00000b62  2**0
+                  CONTENTS, ALLOC, LOAD, READONLY, DATA
+  3 .bss          00000011  00803802  00803802  00000bc2  2**0
+                  ALLOC
+  4 .comment      00000030  00000000  00000000  00000bc2  2**0
+                  CONTENTS, READONLY
+  5 .note.gnu.avr.deviceinfo 00000040  00000000  00000000  00000bf4  2**2
+                  CONTENTS, READONLY
+  6 .debug_aranges 00000148  00000000  00000000  00000c34  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_info   00004b5d  00000000  00000000  00000d7c  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_abbrev 00002349  00000000  00000000  000058d9  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_line   00001037  00000000  00000000  00007c22  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_frame  000002e4  00000000  00000000  00008c5c  2**2
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_str    00001ed6  00000000  00000000  00008f40  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 12 .debug_loc    00001541  00000000  00000000  0000ae16  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 13 .debug_ranges 00000128  00000000  00000000  0000c357  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 3c 00 	jmp	0x78	; 0x78 <__ctors_end>
+   4:	0c 94 59 00 	jmp	0xb2	; 0xb2 <__bad_interrupt>
+   8:	0c 94 59 00 	jmp	0xb2	; 0xb2 <__bad_interrupt>
+   c:	0c 94 d1 01 	jmp	0x3a2	; 0x3a2 <__vector_3>
+  10:	0c 94 59 00 	jmp	0xb2	; 0xb2 <__bad_interrupt>
+  14:	0c 94 59 00 	jmp	0xb2	; 0xb2 <__bad_interrupt>
+  18:	0c 94 59 00 	jmp	0xb2	; 0xb2 <__bad_interrupt>
+  1c:	0c 94 59 00 	jmp	0xb2	; 0xb2 <__bad_interrupt>
+  20:	0c 94 59 00 	jmp	0xb2	; 0xb2 <__bad_interrupt>
+  24:	0c 94 59 00 	jmp	0xb2	; 0xb2 <__bad_interrupt>
+  28:	0c 94 59 00 	jmp	0xb2	; 0xb2 <__bad_interrupt>
+  2c:	0c 94 59 00 	jmp	0xb2	; 0xb2 <__bad_interrupt>
+  30:	0c 94 59 00 	jmp	0xb2	; 0xb2 <__bad_interrupt>
+  34:	0c 94 59 00 	jmp	0xb2	; 0xb2 <__bad_interrupt>
+  38:	0c 94 59 00 	jmp	0xb2	; 0xb2 <__bad_interrupt>
+  3c:	0c 94 59 00 	jmp	0xb2	; 0xb2 <__bad_interrupt>
+  40:	0c 94 59 00 	jmp	0xb2	; 0xb2 <__bad_interrupt>
+  44:	0c 94 59 00 	jmp	0xb2	; 0xb2 <__bad_interrupt>
+  48:	0c 94 59 00 	jmp	0xb2	; 0xb2 <__bad_interrupt>
+  4c:	0c 94 59 00 	jmp	0xb2	; 0xb2 <__bad_interrupt>
+  50:	0c 94 59 00 	jmp	0xb2	; 0xb2 <__bad_interrupt>
+  54:	0c 94 59 00 	jmp	0xb2	; 0xb2 <__bad_interrupt>
+  58:	0c 94 59 00 	jmp	0xb2	; 0xb2 <__bad_interrupt>
+  5c:	0c 94 59 00 	jmp	0xb2	; 0xb2 <__bad_interrupt>
+  60:	0c 94 59 00 	jmp	0xb2	; 0xb2 <__bad_interrupt>
+  64:	0c 94 59 00 	jmp	0xb2	; 0xb2 <__bad_interrupt>
+  68:	0c 94 59 00 	jmp	0xb2	; 0xb2 <__bad_interrupt>
+  6c:	0c 94 59 00 	jmp	0xb2	; 0xb2 <__bad_interrupt>
+  70:	0c 94 59 00 	jmp	0xb2	; 0xb2 <__bad_interrupt>
+  74:	0c 94 59 00 	jmp	0xb2	; 0xb2 <__bad_interrupt>
+
+00000078 <__ctors_end>:
+  78:	11 24       	eor	r1, r1
+  7a:	1f be       	out	0x3f, r1	; 63
+  7c:	cf ef       	ldi	r28, 0xFF	; 255
+  7e:	cd bf       	out	0x3d, r28	; 61
+  80:	df e3       	ldi	r29, 0x3F	; 63
+  82:	de bf       	out	0x3e, r29	; 62
+
+00000084 <__do_copy_data>:
+  84:	18 e3       	ldi	r17, 0x38	; 56
+  86:	a0 e0       	ldi	r26, 0x00	; 0
+  88:	b8 e3       	ldi	r27, 0x38	; 56
+  8a:	ec e0       	ldi	r30, 0x0C	; 12
+  8c:	fb e0       	ldi	r31, 0x0B	; 11
+  8e:	02 c0       	rjmp	.+4      	; 0x94 <__do_copy_data+0x10>
+  90:	05 90       	lpm	r0, Z+
+  92:	0d 92       	st	X+, r0
+  94:	a2 30       	cpi	r26, 0x02	; 2
+  96:	b1 07       	cpc	r27, r17
+  98:	d9 f7       	brne	.-10     	; 0x90 <__do_copy_data+0xc>
+
+0000009a <__do_clear_bss>:
+  9a:	28 e3       	ldi	r18, 0x38	; 56
+  9c:	a2 e0       	ldi	r26, 0x02	; 2
+  9e:	b8 e3       	ldi	r27, 0x38	; 56
+  a0:	01 c0       	rjmp	.+2      	; 0xa4 <.do_clear_bss_start>
+
+000000a2 <.do_clear_bss_loop>:
+  a2:	1d 92       	st	X+, r1
+
+000000a4 <.do_clear_bss_start>:
+  a4:	a3 31       	cpi	r26, 0x13	; 19
+  a6:	b2 07       	cpc	r27, r18
+  a8:	e1 f7       	brne	.-8      	; 0xa2 <.do_clear_bss_loop>
+  aa:	0e 94 e7 01 	call	0x3ce	; 0x3ce <main>
+  ae:	0c 94 55 05 	jmp	0xaaa	; 0xaaa <_exit>
+
+000000b2 <__bad_interrupt>:
+  b2:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+000000b6 <_Z16sigfoxFirstStartv>:
+  b6:	8e ea       	ldi	r24, 0xAE	; 174
+  b8:	9a e8       	ldi	r25, 0x8A	; 138
+  ba:	0e 94 e3 04 	call	0x9c6	; 0x9c6 <_Z7printlnPKc>
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+  be:	2f e3       	ldi	r18, 0x3F	; 63
+  c0:	8d e0       	ldi	r24, 0x0D	; 13
+  c2:	93 e0       	ldi	r25, 0x03	; 3
+  c4:	21 50       	subi	r18, 0x01	; 1
+  c6:	80 40       	sbci	r24, 0x00	; 0
+  c8:	90 40       	sbci	r25, 0x00	; 0
+  ca:	e1 f7       	brne	.-8      	; 0xc4 <_Z16sigfoxFirstStartv+0xe>
+  cc:	00 c0       	rjmp	.+0      	; 0xce <_Z16sigfoxFirstStartv+0x18>
+  ce:	00 00       	nop
+  d0:	08 95       	ret
+
+000000d2 <_Z17sigfoxWaitForOkayj>:
+  d2:	cf 93       	push	r28
+  d4:	df 93       	push	r29
+  d6:	cd b7       	in	r28, 0x3d	; 61
+  d8:	de b7       	in	r29, 0x3e	; 62
+  da:	c4 5b       	subi	r28, 0xB4	; 180
+  dc:	d1 09       	sbc	r29, r1
+  de:	cd bf       	out	0x3d, r28	; 61
+  e0:	de bf       	out	0x3e, r29	; 62
+  e2:	9c 01       	movw	r18, r24
+  e4:	44 eb       	ldi	r20, 0xB4	; 180
+  e6:	be 01       	movw	r22, r28
+  e8:	6f 5f       	subi	r22, 0xFF	; 255
+  ea:	7f 4f       	sbci	r23, 0xFF	; 255
+  ec:	8a e0       	ldi	r24, 0x0A	; 10
+  ee:	0e 94 8c 04 	call	0x918	; 0x918 <_Z8uartReadcPchj>
+  f2:	88 23       	and	r24, r24
+  f4:	81 f0       	breq	.+32     	; 0x116 <__EEPROM_REGION_LENGTH__+0x16>
+  f6:	6f e4       	ldi	r22, 0x4F	; 79
+  f8:	70 e0       	ldi	r23, 0x00	; 0
+  fa:	ce 01       	movw	r24, r28
+  fc:	01 96       	adiw	r24, 0x01	; 1
+  fe:	0e 94 4a 05 	call	0xa94	; 0xa94 <strchr>
+ 102:	fc 01       	movw	r30, r24
+ 104:	89 2b       	or	r24, r25
+ 106:	31 f0       	breq	.+12     	; 0x114 <__EEPROM_REGION_LENGTH__+0x14>
+ 108:	81 e0       	ldi	r24, 0x01	; 1
+ 10a:	90 81       	ld	r25, Z
+ 10c:	9f 34       	cpi	r25, 0x4F	; 79
+ 10e:	19 f0       	breq	.+6      	; 0x116 <__EEPROM_REGION_LENGTH__+0x16>
+ 110:	80 e0       	ldi	r24, 0x00	; 0
+ 112:	01 c0       	rjmp	.+2      	; 0x116 <__EEPROM_REGION_LENGTH__+0x16>
+ 114:	80 e0       	ldi	r24, 0x00	; 0
+ 116:	cc 54       	subi	r28, 0x4C	; 76
+ 118:	df 4f       	sbci	r29, 0xFF	; 255
+ 11a:	cd bf       	out	0x3d, r28	; 61
+ 11c:	de bf       	out	0x3e, r29	; 62
+ 11e:	df 91       	pop	r29
+ 120:	cf 91       	pop	r28
+ 122:	08 95       	ret
+
+00000124 <_Z11sigfoxAlivev>:
+ 124:	80 eb       	ldi	r24, 0xB0	; 176
+ 126:	9a e8       	ldi	r25, 0x8A	; 138
+ 128:	0e 94 e3 04 	call	0x9c6	; 0x9c6 <_Z7printlnPKc>
+ 12c:	88 ee       	ldi	r24, 0xE8	; 232
+ 12e:	93 e0       	ldi	r25, 0x03	; 3
+ 130:	0e 94 69 00 	call	0xd2	; 0xd2 <_Z17sigfoxWaitForOkayj>
+ 134:	08 95       	ret
+
+00000136 <_Z11sigfoxSleepv>:
+ 136:	83 eb       	ldi	r24, 0xB3	; 179
+ 138:	9a e8       	ldi	r25, 0x8A	; 138
+ 13a:	0e 94 e3 04 	call	0x9c6	; 0x9c6 <_Z7printlnPKc>
+ 13e:	80 ed       	ldi	r24, 0xD0	; 208
+ 140:	97 e0       	ldi	r25, 0x07	; 7
+ 142:	0e 94 69 00 	call	0xd2	; 0xd2 <_Z17sigfoxWaitForOkayj>
+ 146:	08 95       	ret
+
+00000148 <_Z10sigfoxSendPhh>:
+ 148:	ef 92       	push	r14
+ 14a:	ff 92       	push	r15
+ 14c:	0f 93       	push	r16
+ 14e:	1f 93       	push	r17
+ 150:	cf 93       	push	r28
+ 152:	6d 30       	cpi	r22, 0x0D	; 13
+ 154:	40 f5       	brcc	.+80     	; 0x1a6 <_Z10sigfoxSendPhh+0x5e>
+ 156:	06 2f       	mov	r16, r22
+ 158:	7c 01       	movw	r14, r24
+ 15a:	8a eb       	ldi	r24, 0xBA	; 186
+ 15c:	9a e8       	ldi	r25, 0x8A	; 138
+ 15e:	0e 94 ce 04 	call	0x99c	; 0x99c <_Z5printPKc>
+ 162:	10 e0       	ldi	r17, 0x00	; 0
+ 164:	10 16       	cp	r1, r16
+ 166:	11 06       	cpc	r1, r17
+ 168:	8c f4       	brge	.+34     	; 0x18c <_Z10sigfoxSendPhh+0x44>
+ 16a:	c0 e0       	ldi	r28, 0x00	; 0
+ 16c:	f7 01       	movw	r30, r14
+ 16e:	ec 0f       	add	r30, r28
+ 170:	f1 1d       	adc	r31, r1
+ 172:	c7 fd       	sbrc	r28, 7
+ 174:	fa 95       	dec	r31
+ 176:	80 81       	ld	r24, Z
+ 178:	0e 94 ee 04 	call	0x9dc	; 0x9dc <_Z14printByteAsHexh>
+ 17c:	cf 5f       	subi	r28, 0xFF	; 255
+ 17e:	2c 2f       	mov	r18, r28
+ 180:	0c 2e       	mov	r0, r28
+ 182:	00 0c       	add	r0, r0
+ 184:	33 0b       	sbc	r19, r19
+ 186:	20 17       	cp	r18, r16
+ 188:	31 07       	cpc	r19, r17
+ 18a:	84 f3       	brlt	.-32     	; 0x16c <_Z10sigfoxSendPhh+0x24>
+ 18c:	8e ea       	ldi	r24, 0xAE	; 174
+ 18e:	9a e8       	ldi	r25, 0x8A	; 138
+ 190:	0e 94 ce 04 	call	0x99c	; 0x99c <_Z5printPKc>
+ 194:	82 ed       	ldi	r24, 0xD2	; 210
+ 196:	9a e8       	ldi	r25, 0x8A	; 138
+ 198:	0e 94 ce 04 	call	0x99c	; 0x99c <_Z5printPKc>
+ 19c:	80 ee       	ldi	r24, 0xE0	; 224
+ 19e:	9e e2       	ldi	r25, 0x2E	; 46
+ 1a0:	0e 94 69 00 	call	0xd2	; 0xd2 <_Z17sigfoxWaitForOkayj>
+ 1a4:	01 c0       	rjmp	.+2      	; 0x1a8 <_Z10sigfoxSendPhh+0x60>
+ 1a6:	80 e0       	ldi	r24, 0x00	; 0
+ 1a8:	cf 91       	pop	r28
+ 1aa:	1f 91       	pop	r17
+ 1ac:	0f 91       	pop	r16
+ 1ae:	ff 90       	pop	r15
+ 1b0:	ef 90       	pop	r14
+ 1b2:	08 95       	ret
+
+000001b4 <_Z19sigfoxPrintIdAndPacPKc>:
+ 1b4:	ef 92       	push	r14
+ 1b6:	ff 92       	push	r15
+ 1b8:	0f 93       	push	r16
+ 1ba:	1f 93       	push	r17
+ 1bc:	cf 93       	push	r28
+ 1be:	df 93       	push	r29
+ 1c0:	cd b7       	in	r28, 0x3d	; 61
+ 1c2:	de b7       	in	r29, 0x3e	; 62
+ 1c4:	c0 54       	subi	r28, 0x40	; 64
+ 1c6:	d1 09       	sbc	r29, r1
+ 1c8:	cd bf       	out	0x3d, r28	; 61
+ 1ca:	de bf       	out	0x3e, r29	; 62
+ 1cc:	7c 01       	movw	r14, r24
+ 1ce:	80 e2       	ldi	r24, 0x20	; 32
+ 1d0:	8e 01       	movw	r16, r28
+ 1d2:	0f 5f       	subi	r16, 0xFF	; 255
+ 1d4:	1f 4f       	sbci	r17, 0xFF	; 255
+ 1d6:	d8 01       	movw	r26, r16
+ 1d8:	e8 2f       	mov	r30, r24
+ 1da:	1d 92       	st	X+, r1
+ 1dc:	ea 95       	dec	r30
+ 1de:	e9 f7       	brne	.-6      	; 0x1da <_Z19sigfoxPrintIdAndPacPKc+0x26>
+ 1e0:	fe 01       	movw	r30, r28
+ 1e2:	b1 96       	adiw	r30, 0x21	; 33
+ 1e4:	df 01       	movw	r26, r30
+ 1e6:	1d 92       	st	X+, r1
+ 1e8:	8a 95       	dec	r24
+ 1ea:	e9 f7       	brne	.-6      	; 0x1e6 <_Z19sigfoxPrintIdAndPacPKc+0x32>
+ 1ec:	81 ec       	ldi	r24, 0xC1	; 193
+ 1ee:	9a e8       	ldi	r25, 0x8A	; 138
+ 1f0:	0e 94 e3 04 	call	0x9c6	; 0x9c6 <_Z7printlnPKc>
+ 1f4:	28 eb       	ldi	r18, 0xB8	; 184
+ 1f6:	3b e0       	ldi	r19, 0x0B	; 11
+ 1f8:	40 e2       	ldi	r20, 0x20	; 32
+ 1fa:	b8 01       	movw	r22, r16
+ 1fc:	8a e0       	ldi	r24, 0x0A	; 10
+ 1fe:	0e 94 8c 04 	call	0x918	; 0x918 <_Z8uartReadcPchj>
+ 202:	18 2f       	mov	r17, r24
+ 204:	88 23       	and	r24, r24
+ 206:	09 f4       	brne	.+2      	; 0x20a <_Z19sigfoxPrintIdAndPacPKc+0x56>
+ 208:	3f c0       	rjmp	.+126    	; 0x288 <_Z19sigfoxPrintIdAndPacPKc+0xd4>
+ 20a:	e7 ea       	ldi	r30, 0xA7	; 167
+ 20c:	f1 e6       	ldi	r31, 0x61	; 97
+ 20e:	31 97       	sbiw	r30, 0x01	; 1
+ 210:	f1 f7       	brne	.-4      	; 0x20e <_Z19sigfoxPrintIdAndPacPKc+0x5a>
+ 212:	00 c0       	rjmp	.+0      	; 0x214 <_Z19sigfoxPrintIdAndPacPKc+0x60>
+ 214:	00 00       	nop
+ 216:	89 ec       	ldi	r24, 0xC9	; 201
+ 218:	9a e8       	ldi	r25, 0x8A	; 138
+ 21a:	0e 94 e3 04 	call	0x9c6	; 0x9c6 <_Z7printlnPKc>
+ 21e:	28 eb       	ldi	r18, 0xB8	; 184
+ 220:	3b e0       	ldi	r19, 0x0B	; 11
+ 222:	40 e2       	ldi	r20, 0x20	; 32
+ 224:	be 01       	movw	r22, r28
+ 226:	6f 5d       	subi	r22, 0xDF	; 223
+ 228:	7f 4f       	sbci	r23, 0xFF	; 255
+ 22a:	8a e0       	ldi	r24, 0x0A	; 10
+ 22c:	0e 94 8c 04 	call	0x918	; 0x918 <_Z8uartReadcPchj>
+ 230:	18 2f       	mov	r17, r24
+ 232:	88 23       	and	r24, r24
+ 234:	49 f1       	breq	.+82     	; 0x288 <_Z19sigfoxPrintIdAndPacPKc+0xd4>
+ 236:	0e 94 60 04 	call	0x8c0	; 0x8c0 <_Z22initSecondUARTwith9600v>
+ 23a:	81 ed       	ldi	r24, 0xD1	; 209
+ 23c:	9a e8       	ldi	r25, 0x8A	; 138
+ 23e:	0e 94 ce 04 	call	0x99c	; 0x99c <_Z5printPKc>
+ 242:	c7 01       	movw	r24, r14
+ 244:	0e 94 e3 04 	call	0x9c6	; 0x9c6 <_Z7printlnPKc>
+ 248:	84 ed       	ldi	r24, 0xD4	; 212
+ 24a:	9a e8       	ldi	r25, 0x8A	; 138
+ 24c:	0e 94 ce 04 	call	0x99c	; 0x99c <_Z5printPKc>
+ 250:	ce 01       	movw	r24, r28
+ 252:	01 96       	adiw	r24, 0x01	; 1
+ 254:	0e 94 e3 04 	call	0x9c6	; 0x9c6 <_Z7printlnPKc>
+ 258:	8a ed       	ldi	r24, 0xDA	; 218
+ 25a:	9a e8       	ldi	r25, 0x8A	; 138
+ 25c:	0e 94 ce 04 	call	0x99c	; 0x99c <_Z5printPKc>
+ 260:	ce 01       	movw	r24, r28
+ 262:	81 96       	adiw	r24, 0x21	; 33
+ 264:	0e 94 e3 04 	call	0x9c6	; 0x9c6 <_Z7printlnPKc>
+ 268:	87 ea       	ldi	r24, 0xA7	; 167
+ 26a:	91 e6       	ldi	r25, 0x61	; 97
+ 26c:	01 97       	sbiw	r24, 0x01	; 1
+ 26e:	f1 f7       	brne	.-4      	; 0x26c <_Z19sigfoxPrintIdAndPacPKc+0xb8>
+ 270:	00 c0       	rjmp	.+0      	; 0x272 <_Z19sigfoxPrintIdAndPacPKc+0xbe>
+ 272:	00 00       	nop
+ 274:	0e 94 43 04 	call	0x886	; 0x886 <_Z23initPrimaryUARTwith9600v>
+ 278:	0e 94 84 04 	call	0x908	; 0x908 <_Z20deinitSecondUartPinsv>
+ 27c:	a7 ea       	ldi	r26, 0xA7	; 167
+ 27e:	b1 e6       	ldi	r27, 0x61	; 97
+ 280:	11 97       	sbiw	r26, 0x01	; 1
+ 282:	f1 f7       	brne	.-4      	; 0x280 <_Z19sigfoxPrintIdAndPacPKc+0xcc>
+ 284:	00 c0       	rjmp	.+0      	; 0x286 <_Z19sigfoxPrintIdAndPacPKc+0xd2>
+ 286:	00 00       	nop
+ 288:	81 2f       	mov	r24, r17
+ 28a:	c0 5c       	subi	r28, 0xC0	; 192
+ 28c:	df 4f       	sbci	r29, 0xFF	; 255
+ 28e:	cd bf       	out	0x3d, r28	; 61
+ 290:	de bf       	out	0x3e, r29	; 62
+ 292:	df 91       	pop	r29
+ 294:	cf 91       	pop	r28
+ 296:	1f 91       	pop	r17
+ 298:	0f 91       	pop	r16
+ 29a:	ff 90       	pop	r15
+ 29c:	ef 90       	pop	r14
+ 29e:	08 95       	ret
+
+000002a0 <_Z14deviceInitPinsv>:
+ 2a0:	e0 e0       	ldi	r30, 0x00	; 0
+ 2a2:	f4 e0       	ldi	r31, 0x04	; 4
+ 2a4:	8a ef       	ldi	r24, 0xFA	; 250
+ 2a6:	80 83       	st	Z, r24
+ 2a8:	8f e3       	ldi	r24, 0x3F	; 63
+ 2aa:	80 93 20 04 	sts	0x0420, r24	; 0x800420 <__RODATA_PM_OFFSET__+0x7f8420>
+ 2ae:	8f e0       	ldi	r24, 0x0F	; 15
+ 2b0:	80 93 40 04 	sts	0x0440, r24	; 0x800440 <__RODATA_PM_OFFSET__+0x7f8440>
+ 2b4:	88 e0       	ldi	r24, 0x08	; 8
+ 2b6:	83 8b       	std	Z+19, r24	; 0x13
+ 2b8:	08 95       	ret
+
+000002ba <_Z18deviceStandbySleepv>:
+ 2ba:	e0 e2       	ldi	r30, 0x20	; 32
+ 2bc:	f4 e0       	ldi	r31, 0x04	; 4
+ 2be:	10 8a       	std	Z+16, r1	; 0x10
+ 2c0:	11 8a       	std	Z+17, r1	; 0x11
+ 2c2:	e0 e5       	ldi	r30, 0x50	; 80
+ 2c4:	f0 e0       	ldi	r31, 0x00	; 0
+ 2c6:	80 81       	ld	r24, Z
+ 2c8:	89 7f       	andi	r24, 0xF9	; 249
+ 2ca:	82 60       	ori	r24, 0x02	; 2
+ 2cc:	80 83       	st	Z, r24
+ 2ce:	80 81       	ld	r24, Z
+ 2d0:	81 60       	ori	r24, 0x01	; 1
+ 2d2:	80 83       	st	Z, r24
+ 2d4:	88 95       	sleep
+ 2d6:	08 95       	ret
+
+000002d8 <_Z30deviceInitInternalRTCInterruptj>:
+ 2d8:	9c 01       	movw	r18, r24
+ 2da:	f8 94       	cli
+ 2dc:	e0 e4       	ldi	r30, 0x40	; 64
+ 2de:	f1 e0       	ldi	r31, 0x01	; 1
+ 2e0:	91 81       	ldd	r25, Z+1	; 0x01
+ 2e2:	91 11       	cpse	r25, r1
+ 2e4:	fd cf       	rjmp	.-6      	; 0x2e0 <_Z30deviceInitInternalRTCInterruptj+0x8>
+ 2e6:	10 92 48 01 	sts	0x0148, r1	; 0x800148 <__RODATA_PM_OFFSET__+0x7f8148>
+ 2ea:	10 92 49 01 	sts	0x0149, r1	; 0x800149 <__RODATA_PM_OFFSET__+0x7f8149>
+ 2ee:	e0 e4       	ldi	r30, 0x40	; 64
+ 2f0:	f1 e0       	ldi	r31, 0x01	; 1
+ 2f2:	91 81       	ldd	r25, Z+1	; 0x01
+ 2f4:	91 11       	cpse	r25, r1
+ 2f6:	fd cf       	rjmp	.-6      	; 0x2f2 <_Z30deviceInitInternalRTCInterruptj+0x1a>
+ 2f8:	c9 01       	movw	r24, r18
+ 2fa:	88 0f       	add	r24, r24
+ 2fc:	99 1f       	adc	r25, r25
+ 2fe:	88 0f       	add	r24, r24
+ 300:	99 1f       	adc	r25, r25
+ 302:	e0 e4       	ldi	r30, 0x40	; 64
+ 304:	f1 e0       	ldi	r31, 0x01	; 1
+ 306:	82 87       	std	Z+10, r24	; 0x0a
+ 308:	93 87       	std	Z+11, r25	; 0x0b
+ 30a:	81 e0       	ldi	r24, 0x01	; 1
+ 30c:	87 83       	std	Z+7, r24	; 0x07
+ 30e:	91 ec       	ldi	r25, 0xC1	; 193
+ 310:	90 83       	st	Z, r25
+ 312:	82 83       	std	Z+2, r24	; 0x02
+ 314:	78 94       	sei
+ 316:	08 95       	ret
+
+00000318 <_Z23deviceReadSupplyVoltagev>:
+ 318:	e0 e0       	ldi	r30, 0x00	; 0
+ 31a:	f6 e0       	ldi	r31, 0x06	; 6
+ 31c:	81 e0       	ldi	r24, 0x01	; 1
+ 31e:	80 83       	st	Z, r24
+ 320:	88 e0       	ldi	r24, 0x08	; 8
+ 322:	82 83       	std	Z+2, r24	; 0x02
+ 324:	84 e6       	ldi	r24, 0x64	; 100
+ 326:	80 87       	std	Z+8, r24	; 0x08
+ 328:	83 e3       	ldi	r24, 0x33	; 51
+ 32a:	84 87       	std	Z+12, r24	; 0x0c
+ 32c:	80 e1       	ldi	r24, 0x10	; 16
+ 32e:	82 87       	std	Z+10, r24	; 0x0a
+ 330:	82 85       	ldd	r24, Z+10	; 0x0a
+ 332:	81 60       	ori	r24, 0x01	; 1
+ 334:	82 87       	std	Z+10, r24	; 0x0a
+ 336:	85 81       	ldd	r24, Z+5	; 0x05
+ 338:	80 ff       	sbrs	r24, 0
+ 33a:	fd cf       	rjmp	.-6      	; 0x336 <_Z23deviceReadSupplyVoltagev+0x1e>
+ 33c:	20 91 10 06 	lds	r18, 0x0610	; 0x800610 <__RODATA_PM_OFFSET__+0x7f8610>
+ 340:	30 91 11 06 	lds	r19, 0x0611	; 0x800611 <__RODATA_PM_OFFSET__+0x7f8611>
+ 344:	40 91 12 06 	lds	r20, 0x0612	; 0x800612 <__RODATA_PM_OFFSET__+0x7f8612>
+ 348:	50 91 13 06 	lds	r21, 0x0613	; 0x800613 <__RODATA_PM_OFFSET__+0x7f8613>
+ 34c:	21 15       	cp	r18, r1
+ 34e:	31 05       	cpc	r19, r1
+ 350:	41 05       	cpc	r20, r1
+ 352:	51 05       	cpc	r21, r1
+ 354:	21 f4       	brne	.+8      	; 0x35e <_Z23deviceReadSupplyVoltagev+0x46>
+ 356:	21 e0       	ldi	r18, 0x01	; 1
+ 358:	30 e0       	ldi	r19, 0x00	; 0
+ 35a:	40 e0       	ldi	r20, 0x00	; 0
+ 35c:	50 e0       	ldi	r21, 0x00	; 0
+ 35e:	10 92 00 06 	sts	0x0600, r1	; 0x800600 <__RODATA_PM_OFFSET__+0x7f8600>
+ 362:	60 e0       	ldi	r22, 0x00	; 0
+ 364:	70 e0       	ldi	r23, 0x00	; 0
+ 366:	80 e4       	ldi	r24, 0x40	; 64
+ 368:	90 e0       	ldi	r25, 0x00	; 0
+ 36a:	0e 94 21 05 	call	0xa42	; 0xa42 <__udivmodsi4>
+ 36e:	c9 01       	movw	r24, r18
+ 370:	08 95       	ret
+
+00000372 <_Z17deviceSetCPUSpeedh>:
+ 372:	28 ed       	ldi	r18, 0xD8	; 216
+ 374:	81 60       	ori	r24, 0x01	; 1
+ 376:	90 e0       	ldi	r25, 0x00	; 0
+ 378:	24 bf       	out	0x34, r18	; 52
+ 37a:	80 93 61 00 	sts	0x0061, r24	; 0x800061 <__RODATA_PM_OFFSET__+0x7f8061>
+ 37e:	80 e0       	ldi	r24, 0x00	; 0
+ 380:	24 bf       	out	0x34, r18	; 52
+ 382:	80 93 60 00 	sts	0x0060, r24	; 0x800060 <__RODATA_PM_OFFSET__+0x7f8060>
+ 386:	e0 e6       	ldi	r30, 0x60	; 96
+ 388:	f0 e0       	ldi	r31, 0x00	; 0
+ 38a:	83 81       	ldd	r24, Z+3	; 0x03
+ 38c:	80 fd       	sbrc	r24, 0
+ 38e:	fd cf       	rjmp	.-6      	; 0x38a <_Z17deviceSetCPUSpeedh+0x18>
+ 390:	08 95       	ret
+
+00000392 <_Z19deviceSigfoxPinIdlev>:
+ 392:	88 e0       	ldi	r24, 0x08	; 8
+ 394:	80 93 05 04 	sts	0x0405, r24	; 0x800405 <__RODATA_PM_OFFSET__+0x7f8405>
+ 398:	08 95       	ret
+
+0000039a <_Z21deviceSigfoxPinWakeUpv>:
+ 39a:	88 e0       	ldi	r24, 0x08	; 8
+ 39c:	80 93 06 04 	sts	0x0406, r24	; 0x800406 <__RODATA_PM_OFFSET__+0x7f8406>
+ 3a0:	08 95       	ret
+
+000003a2 <__vector_3>:
+//avrdude -c jtag2updi -P com17 -p t1626 -C C:\avrdude\avrdude.conf -U fuse6:w:0b00000100:m		
+//avrdude -c jtag2updi -P com17 -p t1626 -C C:\avrdude\avrdude.conf -U fuse5:w:0b11110111:m
+
+// TODO: sample voltage difference during acceleration
+
+ISR(RTC_CNT_vect) { RTC.INTFLAGS = RTC_OVF_bm; }
+ 3a2:	1f 92       	push	r1
+ 3a4:	0f 92       	push	r0
+ 3a6:	0f b6       	in	r0, 0x3f	; 63
+ 3a8:	0f 92       	push	r0
+ 3aa:	11 24       	eor	r1, r1
+ 3ac:	8f 93       	push	r24
+ 3ae:	81 e0       	ldi	r24, 0x01	; 1
+ 3b0:	80 93 43 01 	sts	0x0143, r24	; 0x800143 <__RODATA_PM_OFFSET__+0x7f8143>
+ 3b4:	8f 91       	pop	r24
+ 3b6:	0f 90       	pop	r0
+ 3b8:	0f be       	out	0x3f, r0	; 63
+ 3ba:	0f 90       	pop	r0
+ 3bc:	1f 90       	pop	r1
+ 3be:	18 95       	reti
+
+000003c0 <_Z4waitj>:
+uint8_t reps = 3;  //How many times the break should be repeated. 
+uint8_t activationcount = 0;
+uint8_t activationreps = 2; //156 
+
+void wait(uint16_t seconds) {
+	deviceInitInternalRTCInterrupt(seconds);
+ 3c0:	0e 94 6c 01 	call	0x2d8	; 0x2d8 <_Z30deviceInitInternalRTCInterruptj>
+	deviceStandbySleep();
+ 3c4:	0e 94 5d 01 	call	0x2ba	; 0x2ba <_Z18deviceStandbySleepv>
+	RTC.CTRLA = 0; // disable RTC interrupt
+ 3c8:	10 92 40 01 	sts	0x0140, r1	; 0x800140 <__RODATA_PM_OFFSET__+0x7f8140>
+ 3cc:	08 95       	ret
+
+000003ce <main>:
+}
+
+int main(void) { 
+	while(1) {
+		RTC.CTRLA = 0; // disable RTC interrupt
+ 3ce:	00 e4       	ldi	r16, 0x40	; 64
+ 3d0:	11 e0       	ldi	r17, 0x01	; 1
+		batteryVoltage = deviceReadSupplyVoltage(); // perform as first thing in every state
+				
+		if(state == ST_FIRST_START_HARD_RESET) { // will be re-entered after data download
+					uint8_t error = 0;
+					deviceInitPins();
+					PORTA.OUTSET = PIN6_bm; // RESET being pulled up
+ 3d2:	e1 2c       	mov	r14, r1
+ 3d4:	68 94       	set
+ 3d6:	ff 24       	eor	r15, r15
+ 3d8:	f2 f8       	bld	r15, 2
+ 3da:	68 94       	set
+ 3dc:	dd 24       	eor	r13, r13
+ 3de:	d6 f8       	bld	r13, 6
+				_delay_ms(100);
+				////DEBUG
+				deviceInitInternalRTCInterrupt(30);	// try again
+			}
+			else {
+				state = ST_TRACKING;
+ 3e0:	cc 24       	eor	r12, r12
+ 3e2:	c3 94       	inc	r12
+				// get voltage difference as indicator for sun conditions
+				sigfoxData[0] = batteryVoltage >> 8; // These two lines are used to split the temp in two bytes
+ 3e4:	c6 e0       	ldi	r28, 0x06	; 6
+ 3e6:	d8 e3       	ldi	r29, 0x38	; 56
+	RTC.CTRLA = 0; // disable RTC interrupt
+}
+
+int main(void) { 
+	while(1) {
+		RTC.CTRLA = 0; // disable RTC interrupt
+ 3e8:	f8 01       	movw	r30, r16
+ 3ea:	10 82       	st	Z, r1
+		if(state == ST_FIRST_START_HARD_RESET) { deviceSetCPUSpeed(OSC16_PRESCALER_CPU_1MHZ);  } // 1MHz = 701uA @while(1), do this BEFORE reading supply voltage
+ 3ec:	80 91 12 38 	lds	r24, 0x3812	; 0x803812 <state>
+ 3f0:	81 11       	cpse	r24, r1
+ 3f2:	03 c0       	rjmp	.+6      	; 0x3fa <main+0x2c>
+ 3f4:	86 e0       	ldi	r24, 0x06	; 6
+ 3f6:	0e 94 b9 01 	call	0x372	; 0x372 <_Z17deviceSetCPUSpeedh>
+			
+		batteryVoltage = deviceReadSupplyVoltage(); // perform as first thing in every state
+ 3fa:	0e 94 8c 01 	call	0x318	; 0x318 <_Z23deviceReadSupplyVoltagev>
+ 3fe:	80 93 04 38 	sts	0x3804, r24	; 0x803804 <batteryVoltage>
+ 402:	90 93 05 38 	sts	0x3805, r25	; 0x803805 <batteryVoltage+0x1>
+				
+		if(state == ST_FIRST_START_HARD_RESET) { // will be re-entered after data download
+ 406:	80 91 12 38 	lds	r24, 0x3812	; 0x803812 <state>
+ 40a:	81 11       	cpse	r24, r1
+ 40c:	83 c0       	rjmp	.+262    	; 0x514 <__LOCK_REGION_LENGTH__+0x114>
+					uint8_t error = 0;
+					deviceInitPins();
+ 40e:	0e 94 50 01 	call	0x2a0	; 0x2a0 <_Z14deviceInitPinsv>
+					PORTA.OUTSET = PIN6_bm; // RESET being pulled up
+ 412:	f7 01       	movw	r30, r14
+ 414:	d5 82       	std	Z+5, r13	; 0x05
+					//usePrintf(); // NOT NEEDED
+
+			
+					initPrimaryUARTwith9600(); // init uart to communicate with sigfox module
+ 416:	0e 94 43 04 	call	0x886	; 0x886 <_Z23initPrimaryUARTwith9600v>
+					deviceSigfoxPinIdle();
+ 41a:	0e 94 c9 01 	call	0x392	; 0x392 <_Z19deviceSigfoxPinIdlev>
+
+					wait(5);
+ 41e:	85 e0       	ldi	r24, 0x05	; 5
+ 420:	90 e0       	ldi	r25, 0x00	; 0
+ 422:	0e 94 e0 01 	call	0x3c0	; 0x3c0 <_Z4waitj>
+					sigfoxFirstStart(); // wake up module with UART
+ 426:	0e 94 5b 00 	call	0xb6	; 0xb6 <_Z16sigfoxFirstStartv>
+					if(!sigfoxAlive()) { error = 2; }
+ 42a:	0e 94 92 00 	call	0x124	; 0x124 <_Z11sigfoxAlivev>
+ 42e:	88 23       	and	r24, r24
+ 430:	09 f4       	brne	.+2      	; 0x434 <__LOCK_REGION_LENGTH__+0x34>
+ 432:	f7 c1       	rjmp	.+1006   	; 0x822 <__DATA_REGION_LENGTH__+0x22>
+ 434:	ff e9       	ldi	r31, 0x9F	; 159
+ 436:	26 e8       	ldi	r18, 0x86	; 134
+ 438:	81 e0       	ldi	r24, 0x01	; 1
+ 43a:	f1 50       	subi	r31, 0x01	; 1
+ 43c:	20 40       	sbci	r18, 0x00	; 0
+ 43e:	80 40       	sbci	r24, 0x00	; 0
+ 440:	e1 f7       	brne	.-8      	; 0x43a <__LOCK_REGION_LENGTH__+0x3a>
+ 442:	00 c0       	rjmp	.+0      	; 0x444 <__LOCK_REGION_LENGTH__+0x44>
+ 444:	00 00       	nop
+					else {
+						_delay_ms(500);
+						sigfoxPrintIdAndPac(SOFTWARE_VERSION);
+ 446:	8f ed       	ldi	r24, 0xDF	; 223
+ 448:	9a e8       	ldi	r25, 0x8A	; 138
+ 44a:	0e 94 da 00 	call	0x1b4	; 0x1b4 <_Z19sigfoxPrintIdAndPacPKc>
+ 44e:	9f e9       	ldi	r25, 0x9F	; 159
+ 450:	e6 e8       	ldi	r30, 0x86	; 134
+ 452:	f1 e0       	ldi	r31, 0x01	; 1
+ 454:	91 50       	subi	r25, 0x01	; 1
+ 456:	e0 40       	sbci	r30, 0x00	; 0
+ 458:	f0 40       	sbci	r31, 0x00	; 0
+ 45a:	e1 f7       	brne	.-8      	; 0x454 <__LOCK_REGION_LENGTH__+0x54>
+ 45c:	00 c0       	rjmp	.+0      	; 0x45e <__LOCK_REGION_LENGTH__+0x5e>
+ 45e:	00 00       	nop
+						_delay_ms(500);
+						if(!sigfoxSleep()) { error = 3; }
+ 460:	0e 94 9b 00 	call	0x136	; 0x136 <_Z11sigfoxSleepv>
+ 464:	88 23       	and	r24, r24
+ 466:	09 f4       	brne	.+2      	; 0x46a <__LOCK_REGION_LENGTH__+0x6a>
+ 468:	f5 c1       	rjmp	.+1002   	; 0x854 <__DATA_REGION_LENGTH__+0x54>
+				_delay_ms(100);
+				////DEBUG
+				deviceInitInternalRTCInterrupt(30);	// try again
+			}
+			else {
+				state = ST_TRACKING;
+ 46a:	c0 92 12 38 	sts	0x3812, r12	; 0x803812 <state>
+				// get voltage difference as indicator for sun conditions
+				sigfoxData[0] = batteryVoltage >> 8; // These two lines are used to split the temp in two bytes
+ 46e:	80 91 04 38 	lds	r24, 0x3804	; 0x803804 <batteryVoltage>
+ 472:	90 91 05 38 	lds	r25, 0x3805	; 0x803805 <batteryVoltage+0x1>
+ 476:	98 83       	st	Y, r25
+				sigfoxData[1] = batteryVoltage; //
+ 478:	89 83       	std	Y+1, r24	; 0x01
+			    // send data
+				deviceSigfoxPinWakeUp();
+ 47a:	0e 94 cd 01 	call	0x39a	; 0x39a <_Z21deviceSigfoxPinWakeUpv>
+ 47e:	87 ea       	ldi	r24, 0xA7	; 167
+ 480:	91 e6       	ldi	r25, 0x61	; 97
+ 482:	01 97       	sbiw	r24, 0x01	; 1
+ 484:	f1 f7       	brne	.-4      	; 0x482 <__LOCK_REGION_LENGTH__+0x82>
+ 486:	00 c0       	rjmp	.+0      	; 0x488 <__LOCK_REGION_LENGTH__+0x88>
+ 488:	00 00       	nop
+				_delay_ms(100); // wait until sigfox module booted (does not send ok after boot via wake up pin)
+				// TODO: set pin to idle again here already?!
+				sigfoxSend(sigfoxData, 2);
+ 48a:	62 e0       	ldi	r22, 0x02	; 2
+ 48c:	ce 01       	movw	r24, r28
+ 48e:	0e 94 a4 00 	call	0x148	; 0x148 <_Z10sigfoxSendPhh>
+ 492:	9f e9       	ldi	r25, 0x9F	; 159
+ 494:	e6 e8       	ldi	r30, 0x86	; 134
+ 496:	f1 e0       	ldi	r31, 0x01	; 1
+ 498:	91 50       	subi	r25, 0x01	; 1
+ 49a:	e0 40       	sbci	r30, 0x00	; 0
+ 49c:	f0 40       	sbci	r31, 0x00	; 0
+ 49e:	e1 f7       	brne	.-8      	; 0x498 <__LOCK_REGION_LENGTH__+0x98>
+ 4a0:	00 c0       	rjmp	.+0      	; 0x4a2 <__LOCK_REGION_LENGTH__+0xa2>
+ 4a2:	00 00       	nop
+				_delay_ms(500);
+				deviceSigfoxPinIdle();
+ 4a4:	0e 94 c9 01 	call	0x392	; 0x392 <_Z19deviceSigfoxPinIdlev>
+ 4a8:	2f e9       	ldi	r18, 0x9F	; 159
+ 4aa:	86 e8       	ldi	r24, 0x86	; 134
+ 4ac:	91 e0       	ldi	r25, 0x01	; 1
+ 4ae:	21 50       	subi	r18, 0x01	; 1
+ 4b0:	80 40       	sbci	r24, 0x00	; 0
+ 4b2:	90 40       	sbci	r25, 0x00	; 0
+ 4b4:	e1 f7       	brne	.-8      	; 0x4ae <__LOCK_REGION_LENGTH__+0xae>
+ 4b6:	00 c0       	rjmp	.+0      	; 0x4b8 <__LOCK_REGION_LENGTH__+0xb8>
+ 4b8:	00 00       	nop
+				_delay_ms(500);
+				sigfoxSleep();
+ 4ba:	0e 94 9b 00 	call	0x136	; 0x136 <_Z11sigfoxSleepv>
+ 4be:	ef e7       	ldi	r30, 0x7F	; 127
+ 4c0:	fa e1       	ldi	r31, 0x1A	; 26
+ 4c2:	26 e0       	ldi	r18, 0x06	; 6
+ 4c4:	e1 50       	subi	r30, 0x01	; 1
+ 4c6:	f0 40       	sbci	r31, 0x00	; 0
+ 4c8:	20 40       	sbci	r18, 0x00	; 0
+ 4ca:	e1 f7       	brne	.-8      	; 0x4c4 <__LOCK_REGION_LENGTH__+0xc4>
+ 4cc:	00 c0       	rjmp	.+0      	; 0x4ce <__LOCK_REGION_LENGTH__+0xce>
+ 4ce:	00 00       	nop
+				
+				_delay_ms(2000);
+				
+				deviceSigfoxPinWakeUp();
+ 4d0:	0e 94 cd 01 	call	0x39a	; 0x39a <_Z21deviceSigfoxPinWakeUpv>
+ 4d4:	87 ea       	ldi	r24, 0xA7	; 167
+ 4d6:	91 e6       	ldi	r25, 0x61	; 97
+ 4d8:	01 97       	sbiw	r24, 0x01	; 1
+ 4da:	f1 f7       	brne	.-4      	; 0x4d8 <__LOCK_REGION_LENGTH__+0xd8>
+ 4dc:	00 c0       	rjmp	.+0      	; 0x4de <__LOCK_REGION_LENGTH__+0xde>
+ 4de:	00 00       	nop
+				_delay_ms(100); // wait until sigfox module booted (does not send ok after boot via wake up pin)
+				// TODO: set pin to idle again here already?!
+				sigfoxSend(sigfoxData, 2);
+ 4e0:	62 e0       	ldi	r22, 0x02	; 2
+ 4e2:	ce 01       	movw	r24, r28
+ 4e4:	0e 94 a4 00 	call	0x148	; 0x148 <_Z10sigfoxSendPhh>
+ 4e8:	9f e9       	ldi	r25, 0x9F	; 159
+ 4ea:	e6 e8       	ldi	r30, 0x86	; 134
+ 4ec:	f1 e0       	ldi	r31, 0x01	; 1
+ 4ee:	91 50       	subi	r25, 0x01	; 1
+ 4f0:	e0 40       	sbci	r30, 0x00	; 0
+ 4f2:	f0 40       	sbci	r31, 0x00	; 0
+ 4f4:	e1 f7       	brne	.-8      	; 0x4ee <__LOCK_REGION_LENGTH__+0xee>
+ 4f6:	00 c0       	rjmp	.+0      	; 0x4f8 <__LOCK_REGION_LENGTH__+0xf8>
+ 4f8:	00 00       	nop
+				_delay_ms(500);
+				deviceSigfoxPinIdle();
+ 4fa:	0e 94 c9 01 	call	0x392	; 0x392 <_Z19deviceSigfoxPinIdlev>
+ 4fe:	2f e9       	ldi	r18, 0x9F	; 159
+ 500:	86 e8       	ldi	r24, 0x86	; 134
+ 502:	91 e0       	ldi	r25, 0x01	; 1
+ 504:	21 50       	subi	r18, 0x01	; 1
+ 506:	80 40       	sbci	r24, 0x00	; 0
+ 508:	90 40       	sbci	r25, 0x00	; 0
+ 50a:	e1 f7       	brne	.-8      	; 0x504 <__LOCK_REGION_LENGTH__+0x104>
+ 50c:	00 c0       	rjmp	.+0      	; 0x50e <__LOCK_REGION_LENGTH__+0x10e>
+ 50e:	00 00       	nop
+				_delay_ms(500);
+				sigfoxSleep();
+ 510:	0e 94 9b 00 	call	0x136	; 0x136 <_Z11sigfoxSleepv>
+			}
+		}
+		
+		if((batteryVoltage > 3500) && (activationreps == activationcount)){ //3300
+ 514:	80 91 04 38 	lds	r24, 0x3804	; 0x803804 <batteryVoltage>
+ 518:	90 91 05 38 	lds	r25, 0x3805	; 0x803805 <batteryVoltage+0x1>
+ 51c:	8d 3a       	cpi	r24, 0xAD	; 173
+ 51e:	ed e0       	ldi	r30, 0x0D	; 13
+ 520:	9e 07       	cpc	r25, r30
+ 522:	08 f4       	brcc	.+2      	; 0x526 <__LOCK_REGION_LENGTH__+0x126>
+ 524:	18 c1       	rjmp	.+560    	; 0x756 <__LOCK_REGION_LENGTH__+0x356>
+ 526:	30 91 00 38 	lds	r19, 0x3800	; 0x803800 <__DATA_REGION_ORIGIN__>
+ 52a:	20 91 02 38 	lds	r18, 0x3802	; 0x803802 <__data_end>
+ 52e:	32 13       	cpse	r19, r18
+ 530:	12 c1       	rjmp	.+548    	; 0x756 <__LOCK_REGION_LENGTH__+0x356>
+			    // get voltage difference as indicator for sun conditions
+			    sigfoxData[0] = batteryVoltage >> 8; // These two lines are used to split the temp in two bytes
+ 532:	98 83       	st	Y, r25
+			    sigfoxData[1] = batteryVoltage; //
+ 534:	89 83       	std	Y+1, r24	; 0x01
+			    				
+			    // send data
+			    deviceSigfoxPinWakeUp();
+ 536:	0e 94 cd 01 	call	0x39a	; 0x39a <_Z21deviceSigfoxPinWakeUpv>
+ 53a:	87 ea       	ldi	r24, 0xA7	; 167
+ 53c:	91 e6       	ldi	r25, 0x61	; 97
+ 53e:	01 97       	sbiw	r24, 0x01	; 1
+ 540:	f1 f7       	brne	.-4      	; 0x53e <__LOCK_REGION_LENGTH__+0x13e>
+ 542:	00 c0       	rjmp	.+0      	; 0x544 <__LOCK_REGION_LENGTH__+0x144>
+ 544:	00 00       	nop
+			    _delay_ms(100); // wait until sigfox module booted (does not send ok after boot via wake up pin)
+			    // TODO: set pin to idle again here already?!
+			    sigfoxSend(sigfoxData, 2);
+ 546:	62 e0       	ldi	r22, 0x02	; 2
+ 548:	ce 01       	movw	r24, r28
+ 54a:	0e 94 a4 00 	call	0x148	; 0x148 <_Z10sigfoxSendPhh>
+ 54e:	9f e9       	ldi	r25, 0x9F	; 159
+ 550:	e6 e8       	ldi	r30, 0x86	; 134
+ 552:	f1 e0       	ldi	r31, 0x01	; 1
+ 554:	91 50       	subi	r25, 0x01	; 1
+ 556:	e0 40       	sbci	r30, 0x00	; 0
+ 558:	f0 40       	sbci	r31, 0x00	; 0
+ 55a:	e1 f7       	brne	.-8      	; 0x554 <__LOCK_REGION_LENGTH__+0x154>
+ 55c:	00 c0       	rjmp	.+0      	; 0x55e <__LOCK_REGION_LENGTH__+0x15e>
+ 55e:	00 00       	nop
+			    _delay_ms(500);
+			    deviceSigfoxPinIdle();
+ 560:	0e 94 c9 01 	call	0x392	; 0x392 <_Z19deviceSigfoxPinIdlev>
+ 564:	2f e9       	ldi	r18, 0x9F	; 159
+ 566:	86 e8       	ldi	r24, 0x86	; 134
+ 568:	91 e0       	ldi	r25, 0x01	; 1
+ 56a:	21 50       	subi	r18, 0x01	; 1
+ 56c:	80 40       	sbci	r24, 0x00	; 0
+ 56e:	90 40       	sbci	r25, 0x00	; 0
+ 570:	e1 f7       	brne	.-8      	; 0x56a <__LOCK_REGION_LENGTH__+0x16a>
+ 572:	00 c0       	rjmp	.+0      	; 0x574 <__LOCK_REGION_LENGTH__+0x174>
+ 574:	00 00       	nop
+			    _delay_ms(500);
+			    sigfoxSleep();
+ 576:	0e 94 9b 00 	call	0x136	; 0x136 <_Z11sigfoxSleepv>
+				
+				// send data
+				deviceSigfoxPinWakeUp();
+ 57a:	0e 94 cd 01 	call	0x39a	; 0x39a <_Z21deviceSigfoxPinWakeUpv>
+ 57e:	e7 ea       	ldi	r30, 0xA7	; 167
+ 580:	f1 e6       	ldi	r31, 0x61	; 97
+ 582:	31 97       	sbiw	r30, 0x01	; 1
+ 584:	f1 f7       	brne	.-4      	; 0x582 <__LOCK_REGION_LENGTH__+0x182>
+ 586:	00 c0       	rjmp	.+0      	; 0x588 <__LOCK_REGION_LENGTH__+0x188>
+ 588:	00 00       	nop
+				_delay_ms(100); // wait until sigfox module booted (does not send ok after boot via wake up pin)
+				// TODO: set pin to idle again here already?!
+				sigfoxSend(sigfoxData, 2);
+ 58a:	62 e0       	ldi	r22, 0x02	; 2
+ 58c:	ce 01       	movw	r24, r28
+ 58e:	0e 94 a4 00 	call	0x148	; 0x148 <_Z10sigfoxSendPhh>
+ 592:	ff e9       	ldi	r31, 0x9F	; 159
+ 594:	26 e8       	ldi	r18, 0x86	; 134
+ 596:	81 e0       	ldi	r24, 0x01	; 1
+ 598:	f1 50       	subi	r31, 0x01	; 1
+ 59a:	20 40       	sbci	r18, 0x00	; 0
+ 59c:	80 40       	sbci	r24, 0x00	; 0
+ 59e:	e1 f7       	brne	.-8      	; 0x598 <__LOCK_REGION_LENGTH__+0x198>
+ 5a0:	00 c0       	rjmp	.+0      	; 0x5a2 <__LOCK_REGION_LENGTH__+0x1a2>
+ 5a2:	00 00       	nop
+				_delay_ms(500);
+				deviceSigfoxPinIdle();
+ 5a4:	0e 94 c9 01 	call	0x392	; 0x392 <_Z19deviceSigfoxPinIdlev>
+ 5a8:	9f e9       	ldi	r25, 0x9F	; 159
+ 5aa:	e6 e8       	ldi	r30, 0x86	; 134
+ 5ac:	f1 e0       	ldi	r31, 0x01	; 1
+ 5ae:	91 50       	subi	r25, 0x01	; 1
+ 5b0:	e0 40       	sbci	r30, 0x00	; 0
+ 5b2:	f0 40       	sbci	r31, 0x00	; 0
+ 5b4:	e1 f7       	brne	.-8      	; 0x5ae <__LOCK_REGION_LENGTH__+0x1ae>
+ 5b6:	00 c0       	rjmp	.+0      	; 0x5b8 <__LOCK_REGION_LENGTH__+0x1b8>
+ 5b8:	00 00       	nop
+				_delay_ms(500);
+				sigfoxSleep();
+ 5ba:	0e 94 9b 00 	call	0x136	; 0x136 <_Z11sigfoxSleepv>
+				
+				// send data
+				deviceSigfoxPinWakeUp();
+ 5be:	0e 94 cd 01 	call	0x39a	; 0x39a <_Z21deviceSigfoxPinWakeUpv>
+ 5c2:	87 ea       	ldi	r24, 0xA7	; 167
+ 5c4:	91 e6       	ldi	r25, 0x61	; 97
+ 5c6:	01 97       	sbiw	r24, 0x01	; 1
+ 5c8:	f1 f7       	brne	.-4      	; 0x5c6 <__LOCK_REGION_LENGTH__+0x1c6>
+ 5ca:	00 c0       	rjmp	.+0      	; 0x5cc <__LOCK_REGION_LENGTH__+0x1cc>
+ 5cc:	00 00       	nop
+				_delay_ms(100); // wait until sigfox module booted (does not send ok after boot via wake up pin)
+				// TODO: set pin to idle again here already?!
+				sigfoxSend(sigfoxData, 2);
+ 5ce:	62 e0       	ldi	r22, 0x02	; 2
+ 5d0:	ce 01       	movw	r24, r28
+ 5d2:	0e 94 a4 00 	call	0x148	; 0x148 <_Z10sigfoxSendPhh>
+ 5d6:	9f e9       	ldi	r25, 0x9F	; 159
+ 5d8:	e6 e8       	ldi	r30, 0x86	; 134
+ 5da:	f1 e0       	ldi	r31, 0x01	; 1
+ 5dc:	91 50       	subi	r25, 0x01	; 1
+ 5de:	e0 40       	sbci	r30, 0x00	; 0
+ 5e0:	f0 40       	sbci	r31, 0x00	; 0
+ 5e2:	e1 f7       	brne	.-8      	; 0x5dc <__LOCK_REGION_LENGTH__+0x1dc>
+ 5e4:	00 c0       	rjmp	.+0      	; 0x5e6 <__LOCK_REGION_LENGTH__+0x1e6>
+ 5e6:	00 00       	nop
+				_delay_ms(500);
+				deviceSigfoxPinIdle();
+ 5e8:	0e 94 c9 01 	call	0x392	; 0x392 <_Z19deviceSigfoxPinIdlev>
+ 5ec:	2f e9       	ldi	r18, 0x9F	; 159
+ 5ee:	86 e8       	ldi	r24, 0x86	; 134
+ 5f0:	91 e0       	ldi	r25, 0x01	; 1
+ 5f2:	21 50       	subi	r18, 0x01	; 1
+ 5f4:	80 40       	sbci	r24, 0x00	; 0
+ 5f6:	90 40       	sbci	r25, 0x00	; 0
+ 5f8:	e1 f7       	brne	.-8      	; 0x5f2 <__LOCK_REGION_LENGTH__+0x1f2>
+ 5fa:	00 c0       	rjmp	.+0      	; 0x5fc <__LOCK_REGION_LENGTH__+0x1fc>
+ 5fc:	00 00       	nop
+				_delay_ms(500);
+				sigfoxSleep();
+ 5fe:	0e 94 9b 00 	call	0x136	; 0x136 <_Z11sigfoxSleepv>
+				
+				// send data
+				deviceSigfoxPinWakeUp();
+ 602:	0e 94 cd 01 	call	0x39a	; 0x39a <_Z21deviceSigfoxPinWakeUpv>
+ 606:	e7 ea       	ldi	r30, 0xA7	; 167
+ 608:	f1 e6       	ldi	r31, 0x61	; 97
+ 60a:	31 97       	sbiw	r30, 0x01	; 1
+ 60c:	f1 f7       	brne	.-4      	; 0x60a <__LOCK_REGION_LENGTH__+0x20a>
+ 60e:	00 c0       	rjmp	.+0      	; 0x610 <__LOCK_REGION_LENGTH__+0x210>
+ 610:	00 00       	nop
+				_delay_ms(100); // wait until sigfox module booted (does not send ok after boot via wake up pin)
+				// TODO: set pin to idle again here already?!
+				sigfoxSend(sigfoxData, 2);
+ 612:	62 e0       	ldi	r22, 0x02	; 2
+ 614:	ce 01       	movw	r24, r28
+ 616:	0e 94 a4 00 	call	0x148	; 0x148 <_Z10sigfoxSendPhh>
+ 61a:	ff e9       	ldi	r31, 0x9F	; 159
+ 61c:	26 e8       	ldi	r18, 0x86	; 134
+ 61e:	81 e0       	ldi	r24, 0x01	; 1
+ 620:	f1 50       	subi	r31, 0x01	; 1
+ 622:	20 40       	sbci	r18, 0x00	; 0
+ 624:	80 40       	sbci	r24, 0x00	; 0
+ 626:	e1 f7       	brne	.-8      	; 0x620 <__LOCK_REGION_LENGTH__+0x220>
+ 628:	00 c0       	rjmp	.+0      	; 0x62a <__LOCK_REGION_LENGTH__+0x22a>
+ 62a:	00 00       	nop
+				_delay_ms(500);
+				deviceSigfoxPinIdle();
+ 62c:	0e 94 c9 01 	call	0x392	; 0x392 <_Z19deviceSigfoxPinIdlev>
+ 630:	9f e9       	ldi	r25, 0x9F	; 159
+ 632:	e6 e8       	ldi	r30, 0x86	; 134
+ 634:	f1 e0       	ldi	r31, 0x01	; 1
+ 636:	91 50       	subi	r25, 0x01	; 1
+ 638:	e0 40       	sbci	r30, 0x00	; 0
+ 63a:	f0 40       	sbci	r31, 0x00	; 0
+ 63c:	e1 f7       	brne	.-8      	; 0x636 <__LOCK_REGION_LENGTH__+0x236>
+ 63e:	00 c0       	rjmp	.+0      	; 0x640 <__LOCK_REGION_LENGTH__+0x240>
+ 640:	00 00       	nop
+				_delay_ms(500);
+				sigfoxSleep();
+ 642:	0e 94 9b 00 	call	0x136	; 0x136 <_Z11sigfoxSleepv>
+				
+				// send data
+				deviceSigfoxPinWakeUp();
+ 646:	0e 94 cd 01 	call	0x39a	; 0x39a <_Z21deviceSigfoxPinWakeUpv>
+ 64a:	87 ea       	ldi	r24, 0xA7	; 167
+ 64c:	91 e6       	ldi	r25, 0x61	; 97
+ 64e:	01 97       	sbiw	r24, 0x01	; 1
+ 650:	f1 f7       	brne	.-4      	; 0x64e <__LOCK_REGION_LENGTH__+0x24e>
+ 652:	00 c0       	rjmp	.+0      	; 0x654 <__LOCK_REGION_LENGTH__+0x254>
+ 654:	00 00       	nop
+				_delay_ms(100); // wait until sigfox module booted (does not send ok after boot via wake up pin)
+				// TODO: set pin to idle again here already?!
+				sigfoxSend(sigfoxData, 2);
+ 656:	62 e0       	ldi	r22, 0x02	; 2
+ 658:	ce 01       	movw	r24, r28
+ 65a:	0e 94 a4 00 	call	0x148	; 0x148 <_Z10sigfoxSendPhh>
+ 65e:	9f e9       	ldi	r25, 0x9F	; 159
+ 660:	e6 e8       	ldi	r30, 0x86	; 134
+ 662:	f1 e0       	ldi	r31, 0x01	; 1
+ 664:	91 50       	subi	r25, 0x01	; 1
+ 666:	e0 40       	sbci	r30, 0x00	; 0
+ 668:	f0 40       	sbci	r31, 0x00	; 0
+ 66a:	e1 f7       	brne	.-8      	; 0x664 <__LOCK_REGION_LENGTH__+0x264>
+ 66c:	00 c0       	rjmp	.+0      	; 0x66e <__LOCK_REGION_LENGTH__+0x26e>
+ 66e:	00 00       	nop
+				_delay_ms(500);
+				deviceSigfoxPinIdle();
+ 670:	0e 94 c9 01 	call	0x392	; 0x392 <_Z19deviceSigfoxPinIdlev>
+ 674:	2f e9       	ldi	r18, 0x9F	; 159
+ 676:	86 e8       	ldi	r24, 0x86	; 134
+ 678:	91 e0       	ldi	r25, 0x01	; 1
+ 67a:	21 50       	subi	r18, 0x01	; 1
+ 67c:	80 40       	sbci	r24, 0x00	; 0
+ 67e:	90 40       	sbci	r25, 0x00	; 0
+ 680:	e1 f7       	brne	.-8      	; 0x67a <__LOCK_REGION_LENGTH__+0x27a>
+ 682:	00 c0       	rjmp	.+0      	; 0x684 <__LOCK_REGION_LENGTH__+0x284>
+ 684:	00 00       	nop
+				_delay_ms(500);
+				sigfoxSleep();
+ 686:	0e 94 9b 00 	call	0x136	; 0x136 <_Z11sigfoxSleepv>
+
+				// send data
+				deviceSigfoxPinWakeUp();
+ 68a:	0e 94 cd 01 	call	0x39a	; 0x39a <_Z21deviceSigfoxPinWakeUpv>
+ 68e:	e7 ea       	ldi	r30, 0xA7	; 167
+ 690:	f1 e6       	ldi	r31, 0x61	; 97
+ 692:	31 97       	sbiw	r30, 0x01	; 1
+ 694:	f1 f7       	brne	.-4      	; 0x692 <__LOCK_REGION_LENGTH__+0x292>
+ 696:	00 c0       	rjmp	.+0      	; 0x698 <__LOCK_REGION_LENGTH__+0x298>
+ 698:	00 00       	nop
+				_delay_ms(100); // wait until sigfox module booted (does not send ok after boot via wake up pin)
+				// TODO: set pin to idle again here already?!
+				sigfoxSend(sigfoxData, 2);
+ 69a:	62 e0       	ldi	r22, 0x02	; 2
+ 69c:	ce 01       	movw	r24, r28
+ 69e:	0e 94 a4 00 	call	0x148	; 0x148 <_Z10sigfoxSendPhh>
+ 6a2:	ff e9       	ldi	r31, 0x9F	; 159
+ 6a4:	26 e8       	ldi	r18, 0x86	; 134
+ 6a6:	81 e0       	ldi	r24, 0x01	; 1
+ 6a8:	f1 50       	subi	r31, 0x01	; 1
+ 6aa:	20 40       	sbci	r18, 0x00	; 0
+ 6ac:	80 40       	sbci	r24, 0x00	; 0
+ 6ae:	e1 f7       	brne	.-8      	; 0x6a8 <__LOCK_REGION_LENGTH__+0x2a8>
+ 6b0:	00 c0       	rjmp	.+0      	; 0x6b2 <__LOCK_REGION_LENGTH__+0x2b2>
+ 6b2:	00 00       	nop
+				_delay_ms(500);
+				deviceSigfoxPinIdle();
+ 6b4:	0e 94 c9 01 	call	0x392	; 0x392 <_Z19deviceSigfoxPinIdlev>
+ 6b8:	9f e9       	ldi	r25, 0x9F	; 159
+ 6ba:	e6 e8       	ldi	r30, 0x86	; 134
+ 6bc:	f1 e0       	ldi	r31, 0x01	; 1
+ 6be:	91 50       	subi	r25, 0x01	; 1
+ 6c0:	e0 40       	sbci	r30, 0x00	; 0
+ 6c2:	f0 40       	sbci	r31, 0x00	; 0
+ 6c4:	e1 f7       	brne	.-8      	; 0x6be <__LOCK_REGION_LENGTH__+0x2be>
+ 6c6:	00 c0       	rjmp	.+0      	; 0x6c8 <__LOCK_REGION_LENGTH__+0x2c8>
+ 6c8:	00 00       	nop
+				_delay_ms(500);
+				sigfoxSleep();
+ 6ca:	0e 94 9b 00 	call	0x136	; 0x136 <_Z11sigfoxSleepv>
+				
+				// send data
+				deviceSigfoxPinWakeUp();
+ 6ce:	0e 94 cd 01 	call	0x39a	; 0x39a <_Z21deviceSigfoxPinWakeUpv>
+ 6d2:	87 ea       	ldi	r24, 0xA7	; 167
+ 6d4:	91 e6       	ldi	r25, 0x61	; 97
+ 6d6:	01 97       	sbiw	r24, 0x01	; 1
+ 6d8:	f1 f7       	brne	.-4      	; 0x6d6 <__LOCK_REGION_LENGTH__+0x2d6>
+ 6da:	00 c0       	rjmp	.+0      	; 0x6dc <__LOCK_REGION_LENGTH__+0x2dc>
+ 6dc:	00 00       	nop
+				_delay_ms(100); // wait until sigfox module booted (does not send ok after boot via wake up pin)
+				// TODO: set pin to idle again here already?!
+				sigfoxSend(sigfoxData, 2);
+ 6de:	62 e0       	ldi	r22, 0x02	; 2
+ 6e0:	ce 01       	movw	r24, r28
+ 6e2:	0e 94 a4 00 	call	0x148	; 0x148 <_Z10sigfoxSendPhh>
+ 6e6:	9f e9       	ldi	r25, 0x9F	; 159
+ 6e8:	e6 e8       	ldi	r30, 0x86	; 134
+ 6ea:	f1 e0       	ldi	r31, 0x01	; 1
+ 6ec:	91 50       	subi	r25, 0x01	; 1
+ 6ee:	e0 40       	sbci	r30, 0x00	; 0
+ 6f0:	f0 40       	sbci	r31, 0x00	; 0
+ 6f2:	e1 f7       	brne	.-8      	; 0x6ec <__LOCK_REGION_LENGTH__+0x2ec>
+ 6f4:	00 c0       	rjmp	.+0      	; 0x6f6 <__LOCK_REGION_LENGTH__+0x2f6>
+ 6f6:	00 00       	nop
+				_delay_ms(500);
+				deviceSigfoxPinIdle();
+ 6f8:	0e 94 c9 01 	call	0x392	; 0x392 <_Z19deviceSigfoxPinIdlev>
+ 6fc:	2f e9       	ldi	r18, 0x9F	; 159
+ 6fe:	86 e8       	ldi	r24, 0x86	; 134
+ 700:	91 e0       	ldi	r25, 0x01	; 1
+ 702:	21 50       	subi	r18, 0x01	; 1
+ 704:	80 40       	sbci	r24, 0x00	; 0
+ 706:	90 40       	sbci	r25, 0x00	; 0
+ 708:	e1 f7       	brne	.-8      	; 0x702 <__LOCK_REGION_LENGTH__+0x302>
+ 70a:	00 c0       	rjmp	.+0      	; 0x70c <__LOCK_REGION_LENGTH__+0x30c>
+ 70c:	00 00       	nop
+				_delay_ms(500);
+				sigfoxSleep();
+ 70e:	0e 94 9b 00 	call	0x136	; 0x136 <_Z11sigfoxSleepv>
+								
+				// send data
+				deviceSigfoxPinWakeUp();
+ 712:	0e 94 cd 01 	call	0x39a	; 0x39a <_Z21deviceSigfoxPinWakeUpv>
+ 716:	e7 ea       	ldi	r30, 0xA7	; 167
+ 718:	f1 e6       	ldi	r31, 0x61	; 97
+ 71a:	31 97       	sbiw	r30, 0x01	; 1
+ 71c:	f1 f7       	brne	.-4      	; 0x71a <__LOCK_REGION_LENGTH__+0x31a>
+ 71e:	00 c0       	rjmp	.+0      	; 0x720 <__LOCK_REGION_LENGTH__+0x320>
+ 720:	00 00       	nop
+				_delay_ms(100); // wait until sigfox module booted (does not send ok after boot via wake up pin)
+				// TODO: set pin to idle again here already?!
+				sigfoxSend(sigfoxData, 2);
+ 722:	62 e0       	ldi	r22, 0x02	; 2
+ 724:	ce 01       	movw	r24, r28
+ 726:	0e 94 a4 00 	call	0x148	; 0x148 <_Z10sigfoxSendPhh>
+ 72a:	ff e9       	ldi	r31, 0x9F	; 159
+ 72c:	26 e8       	ldi	r18, 0x86	; 134
+ 72e:	81 e0       	ldi	r24, 0x01	; 1
+ 730:	f1 50       	subi	r31, 0x01	; 1
+ 732:	20 40       	sbci	r18, 0x00	; 0
+ 734:	80 40       	sbci	r24, 0x00	; 0
+ 736:	e1 f7       	brne	.-8      	; 0x730 <__LOCK_REGION_LENGTH__+0x330>
+ 738:	00 c0       	rjmp	.+0      	; 0x73a <__LOCK_REGION_LENGTH__+0x33a>
+ 73a:	00 00       	nop
+				_delay_ms(500);
+				deviceSigfoxPinIdle();
+ 73c:	0e 94 c9 01 	call	0x392	; 0x392 <_Z19deviceSigfoxPinIdlev>
+ 740:	9f e9       	ldi	r25, 0x9F	; 159
+ 742:	e6 e8       	ldi	r30, 0x86	; 134
+ 744:	f1 e0       	ldi	r31, 0x01	; 1
+ 746:	91 50       	subi	r25, 0x01	; 1
+ 748:	e0 40       	sbci	r30, 0x00	; 0
+ 74a:	f0 40       	sbci	r31, 0x00	; 0
+ 74c:	e1 f7       	brne	.-8      	; 0x746 <__LOCK_REGION_LENGTH__+0x346>
+ 74e:	00 c0       	rjmp	.+0      	; 0x750 <__LOCK_REGION_LENGTH__+0x350>
+ 750:	00 00       	nop
+				_delay_ms(500);
+				sigfoxSleep();
+ 752:	0e 94 9b 00 	call	0x136	; 0x136 <_Z11sigfoxSleepv>
+		}
+		if((state == ST_TRACKING) && (batteryVoltage > 2800) && (count == reps)) {
+ 756:	80 91 12 38 	lds	r24, 0x3812	; 0x803812 <state>
+ 75a:	81 30       	cpi	r24, 0x01	; 1
+ 75c:	a1 f5       	brne	.+104    	; 0x7c6 <__LOCK_REGION_LENGTH__+0x3c6>
+ 75e:	80 91 04 38 	lds	r24, 0x3804	; 0x803804 <batteryVoltage>
+ 762:	90 91 05 38 	lds	r25, 0x3805	; 0x803805 <batteryVoltage+0x1>
+ 766:	81 3f       	cpi	r24, 0xF1	; 241
+ 768:	2a e0       	ldi	r18, 0x0A	; 10
+ 76a:	92 07       	cpc	r25, r18
+ 76c:	60 f1       	brcs	.+88     	; 0x7c6 <__LOCK_REGION_LENGTH__+0x3c6>
+ 76e:	30 91 03 38 	lds	r19, 0x3803	; 0x803803 <count>
+ 772:	20 91 01 38 	lds	r18, 0x3801	; 0x803801 <reps>
+ 776:	32 13       	cpse	r19, r18
+ 778:	26 c0       	rjmp	.+76     	; 0x7c6 <__LOCK_REGION_LENGTH__+0x3c6>
+				// get voltage difference as indicator for sun conditions
+				sigfoxData[0] = batteryVoltage >> 8; // These two lines are used to split the temp in two bytes
+ 77a:	98 83       	st	Y, r25
+				sigfoxData[1] = batteryVoltage;
+ 77c:	89 83       	std	Y+1, r24	; 0x01
+// 
+		
+				count = 0;
+ 77e:	10 92 03 38 	sts	0x3803, r1	; 0x803803 <count>
+				// send data
+				deviceSigfoxPinWakeUp();
+ 782:	0e 94 cd 01 	call	0x39a	; 0x39a <_Z21deviceSigfoxPinWakeUpv>
+ 786:	87 ea       	ldi	r24, 0xA7	; 167
+ 788:	91 e6       	ldi	r25, 0x61	; 97
+ 78a:	01 97       	sbiw	r24, 0x01	; 1
+ 78c:	f1 f7       	brne	.-4      	; 0x78a <__LOCK_REGION_LENGTH__+0x38a>
+ 78e:	00 c0       	rjmp	.+0      	; 0x790 <__LOCK_REGION_LENGTH__+0x390>
+ 790:	00 00       	nop
+				_delay_ms(100); // wait until sigfox module booted (does not send ok after boot via wake up pin)
+				// TODO: set pin to idle again here already?!
+				sigfoxSend(sigfoxData, 2);
+ 792:	62 e0       	ldi	r22, 0x02	; 2
+ 794:	ce 01       	movw	r24, r28
+ 796:	0e 94 a4 00 	call	0x148	; 0x148 <_Z10sigfoxSendPhh>
+ 79a:	9f e9       	ldi	r25, 0x9F	; 159
+ 79c:	e6 e8       	ldi	r30, 0x86	; 134
+ 79e:	f1 e0       	ldi	r31, 0x01	; 1
+ 7a0:	91 50       	subi	r25, 0x01	; 1
+ 7a2:	e0 40       	sbci	r30, 0x00	; 0
+ 7a4:	f0 40       	sbci	r31, 0x00	; 0
+ 7a6:	e1 f7       	brne	.-8      	; 0x7a0 <__LOCK_REGION_LENGTH__+0x3a0>
+ 7a8:	00 c0       	rjmp	.+0      	; 0x7aa <__LOCK_REGION_LENGTH__+0x3aa>
+ 7aa:	00 00       	nop
+				_delay_ms(500);
+				deviceSigfoxPinIdle();
+ 7ac:	0e 94 c9 01 	call	0x392	; 0x392 <_Z19deviceSigfoxPinIdlev>
+ 7b0:	2f e9       	ldi	r18, 0x9F	; 159
+ 7b2:	86 e8       	ldi	r24, 0x86	; 134
+ 7b4:	91 e0       	ldi	r25, 0x01	; 1
+ 7b6:	21 50       	subi	r18, 0x01	; 1
+ 7b8:	80 40       	sbci	r24, 0x00	; 0
+ 7ba:	90 40       	sbci	r25, 0x00	; 0
+ 7bc:	e1 f7       	brne	.-8      	; 0x7b6 <__LOCK_REGION_LENGTH__+0x3b6>
+ 7be:	00 c0       	rjmp	.+0      	; 0x7c0 <__LOCK_REGION_LENGTH__+0x3c0>
+ 7c0:	00 00       	nop
+				_delay_ms(500);
+				sigfoxSleep();
+ 7c2:	0e 94 9b 00 	call	0x136	; 0x136 <_Z11sigfoxSleepv>
+		}
+		if((count < reps) && (activationreps == activationcount)) {
+ 7c6:	80 91 03 38 	lds	r24, 0x3803	; 0x803803 <count>
+ 7ca:	90 91 01 38 	lds	r25, 0x3801	; 0x803801 <reps>
+ 7ce:	89 17       	cp	r24, r25
+ 7d0:	68 f4       	brcc	.+26     	; 0x7ec <__LOCK_REGION_LENGTH__+0x3ec>
+ 7d2:	20 91 00 38 	lds	r18, 0x3800	; 0x803800 <__DATA_REGION_ORIGIN__>
+ 7d6:	90 91 02 38 	lds	r25, 0x3802	; 0x803802 <__data_end>
+ 7da:	29 13       	cpse	r18, r25
+ 7dc:	07 c0       	rjmp	.+14     	; 0x7ec <__LOCK_REGION_LENGTH__+0x3ec>
+			    count = count+1;
+ 7de:	8f 5f       	subi	r24, 0xFF	; 255
+ 7e0:	80 93 03 38 	sts	0x3803, r24	; 0x803803 <count>
+			    deviceInitInternalRTCInterrupt(SLEEP_SECONDS);
+ 7e4:	85 e0       	ldi	r24, 0x05	; 5
+ 7e6:	90 e0       	ldi	r25, 0x00	; 0
+ 7e8:	0e 94 6c 01 	call	0x2d8	; 0x2d8 <_Z30deviceInitInternalRTCInterruptj>
+	    }
+		if(batteryVoltage < 2800) {
+ 7ec:	80 91 04 38 	lds	r24, 0x3804	; 0x803804 <batteryVoltage>
+ 7f0:	90 91 05 38 	lds	r25, 0x3805	; 0x803805 <batteryVoltage+0x1>
+ 7f4:	80 3f       	cpi	r24, 0xF0	; 240
+ 7f6:	9a 40       	sbci	r25, 0x0A	; 10
+ 7f8:	20 f4       	brcc	.+8      	; 0x802 <__DATA_REGION_LENGTH__+0x2>
+				deviceInitInternalRTCInterrupt(SLEEP_SECONDS);
+ 7fa:	85 e0       	ldi	r24, 0x05	; 5
+ 7fc:	90 e0       	ldi	r25, 0x00	; 0
+ 7fe:	0e 94 6c 01 	call	0x2d8	; 0x2d8 <_Z30deviceInitInternalRTCInterruptj>
+		}
+		if(activationcount < activationreps) {
+ 802:	80 91 02 38 	lds	r24, 0x3802	; 0x803802 <__data_end>
+ 806:	90 91 00 38 	lds	r25, 0x3800	; 0x803800 <__DATA_REGION_ORIGIN__>
+ 80a:	89 17       	cp	r24, r25
+ 80c:	38 f4       	brcc	.+14     	; 0x81c <__DATA_REGION_LENGTH__+0x1c>
+			    activationcount = activationcount +1;
+ 80e:	8f 5f       	subi	r24, 0xFF	; 255
+ 810:	80 93 02 38 	sts	0x3802, r24	; 0x803802 <__data_end>
+				deviceInitInternalRTCInterrupt(SLEEP_SECONDS);
+ 814:	85 e0       	ldi	r24, 0x05	; 5
+ 816:	90 e0       	ldi	r25, 0x00	; 0
+ 818:	0e 94 6c 01 	call	0x2d8	; 0x2d8 <_Z30deviceInitInternalRTCInterruptj>
+		}
+	deviceStandbySleep();
+ 81c:	0e 94 5d 01 	call	0x2ba	; 0x2ba <_Z18deviceStandbySleepv>
+	deviceStandbySleep();
+	RTC.CTRLA = 0; // disable RTC interrupt
+}
+
+int main(void) { 
+	while(1) {
+ 820:	e3 cd       	rjmp	.-1082   	; 0x3e8 <main+0x1a>
+						if(!sigfoxSleep()) { error = 3; }
+					}
+			
+			if(error == 2) {
+				////DEBUG
+			    initSecondUARTwith9600(); // uart to communicate with external programmer
+ 822:	0e 94 60 04 	call	0x8c0	; 0x8c0 <_Z22initSecondUARTwith9600v>
+			    print("Error 2");
+ 826:	8b ee       	ldi	r24, 0xEB	; 235
+ 828:	9a e8       	ldi	r25, 0x8A	; 138
+ 82a:	0e 94 ce 04 	call	0x99c	; 0x99c <_Z5printPKc>
+ 82e:	87 ea       	ldi	r24, 0xA7	; 167
+ 830:	91 e6       	ldi	r25, 0x61	; 97
+ 832:	01 97       	sbiw	r24, 0x01	; 1
+ 834:	f1 f7       	brne	.-4      	; 0x832 <__DATA_REGION_LENGTH__+0x32>
+ 836:	00 c0       	rjmp	.+0      	; 0x838 <__DATA_REGION_LENGTH__+0x38>
+ 838:	00 00       	nop
+			    _delay_ms(100);
+			    deinitSecondUartPins();
+ 83a:	0e 94 84 04 	call	0x908	; 0x908 <_Z20deinitSecondUartPinsv>
+ 83e:	e7 ea       	ldi	r30, 0xA7	; 167
+ 840:	f1 e6       	ldi	r31, 0x61	; 97
+ 842:	31 97       	sbiw	r30, 0x01	; 1
+ 844:	f1 f7       	brne	.-4      	; 0x842 <__DATA_REGION_LENGTH__+0x42>
+ 846:	00 c0       	rjmp	.+0      	; 0x848 <__DATA_REGION_LENGTH__+0x48>
+ 848:	00 00       	nop
+			    _delay_ms(100);
+			    ////DEBUG
+				deviceInitInternalRTCInterrupt(30);	// try again	
+ 84a:	8e e1       	ldi	r24, 0x1E	; 30
+ 84c:	90 e0       	ldi	r25, 0x00	; 0
+ 84e:	0e 94 6c 01 	call	0x2d8	; 0x2d8 <_Z30deviceInitInternalRTCInterruptj>
+ 852:	0b ce       	rjmp	.-1002   	; 0x46a <__LOCK_REGION_LENGTH__+0x6a>
+			}
+			if(error == 3) {
+				////DEBUG
+				initSecondUARTwith9600(); // uart to communicate with external programmer
+ 854:	0e 94 60 04 	call	0x8c0	; 0x8c0 <_Z22initSecondUARTwith9600v>
+				print("Error 3");
+ 858:	83 ef       	ldi	r24, 0xF3	; 243
+ 85a:	9a e8       	ldi	r25, 0x8A	; 138
+ 85c:	0e 94 ce 04 	call	0x99c	; 0x99c <_Z5printPKc>
+ 860:	87 ea       	ldi	r24, 0xA7	; 167
+ 862:	91 e6       	ldi	r25, 0x61	; 97
+ 864:	01 97       	sbiw	r24, 0x01	; 1
+ 866:	f1 f7       	brne	.-4      	; 0x864 <__DATA_REGION_LENGTH__+0x64>
+ 868:	00 c0       	rjmp	.+0      	; 0x86a <__DATA_REGION_LENGTH__+0x6a>
+ 86a:	00 00       	nop
+				_delay_ms(100);
+				deinitSecondUartPins();
+ 86c:	0e 94 84 04 	call	0x908	; 0x908 <_Z20deinitSecondUartPinsv>
+ 870:	e7 ea       	ldi	r30, 0xA7	; 167
+ 872:	f1 e6       	ldi	r31, 0x61	; 97
+ 874:	31 97       	sbiw	r30, 0x01	; 1
+ 876:	f1 f7       	brne	.-4      	; 0x874 <__DATA_REGION_LENGTH__+0x74>
+ 878:	00 c0       	rjmp	.+0      	; 0x87a <__DATA_REGION_LENGTH__+0x7a>
+ 87a:	00 00       	nop
+				_delay_ms(100);
+				////DEBUG
+				deviceInitInternalRTCInterrupt(30);	// try again
+ 87c:	8e e1       	ldi	r24, 0x1E	; 30
+ 87e:	90 e0       	ldi	r25, 0x00	; 0
+ 880:	0e 94 6c 01 	call	0x2d8	; 0x2d8 <_Z30deviceInitInternalRTCInterruptj>
+ 884:	47 ce       	rjmp	.-882    	; 0x514 <__LOCK_REGION_LENGTH__+0x114>
+
+00000886 <_Z23initPrimaryUARTwith9600v>:
+ 886:	81 e0       	ldi	r24, 0x01	; 1
+ 888:	80 93 e2 05 	sts	0x05E2, r24	; 0x8005e2 <__RODATA_PM_OFFSET__+0x7f85e2>
+ 88c:	a0 e0       	ldi	r26, 0x00	; 0
+ 88e:	b8 e0       	ldi	r27, 0x08	; 8
+ 890:	16 96       	adiw	r26, 0x06	; 6
+ 892:	8c 91       	ld	r24, X
+ 894:	16 97       	sbiw	r26, 0x06	; 6
+ 896:	80 6c       	ori	r24, 0xC0	; 192
+ 898:	16 96       	adiw	r26, 0x06	; 6
+ 89a:	8c 93       	st	X, r24
+ 89c:	16 97       	sbiw	r26, 0x06	; 6
+ 89e:	e0 e0       	ldi	r30, 0x00	; 0
+ 8a0:	f4 e0       	ldi	r31, 0x04	; 4
+ 8a2:	82 e0       	ldi	r24, 0x02	; 2
+ 8a4:	85 83       	std	Z+5, r24	; 0x05
+ 8a6:	80 81       	ld	r24, Z
+ 8a8:	82 60       	ori	r24, 0x02	; 2
+ 8aa:	80 83       	st	Z, r24
+ 8ac:	80 81       	ld	r24, Z
+ 8ae:	8b 7f       	andi	r24, 0xFB	; 251
+ 8b0:	80 83       	st	Z, r24
+ 8b2:	81 ea       	ldi	r24, 0xA1	; 161
+ 8b4:	91 e0       	ldi	r25, 0x01	; 1
+ 8b6:	18 96       	adiw	r26, 0x08	; 8
+ 8b8:	8d 93       	st	X+, r24
+ 8ba:	9c 93       	st	X, r25
+ 8bc:	19 97       	sbiw	r26, 0x09	; 9
+ 8be:	08 95       	ret
+
+000008c0 <_Z22initSecondUARTwith9600v>:
+ 8c0:	10 92 e2 05 	sts	0x05E2, r1	; 0x8005e2 <__RODATA_PM_OFFSET__+0x7f85e2>
+ 8c4:	a0 e0       	ldi	r26, 0x00	; 0
+ 8c6:	b8 e0       	ldi	r27, 0x08	; 8
+ 8c8:	80 e4       	ldi	r24, 0x40	; 64
+ 8ca:	16 96       	adiw	r26, 0x06	; 6
+ 8cc:	8c 93       	st	X, r24
+ 8ce:	16 97       	sbiw	r26, 0x06	; 6
+ 8d0:	e0 e2       	ldi	r30, 0x20	; 32
+ 8d2:	f4 e0       	ldi	r31, 0x04	; 4
+ 8d4:	12 8a       	std	Z+18, r1	; 0x12
+ 8d6:	84 e0       	ldi	r24, 0x04	; 4
+ 8d8:	85 83       	std	Z+5, r24	; 0x05
+ 8da:	80 81       	ld	r24, Z
+ 8dc:	84 60       	ori	r24, 0x04	; 4
+ 8de:	80 83       	st	Z, r24
+ 8e0:	81 ea       	ldi	r24, 0xA1	; 161
+ 8e2:	91 e0       	ldi	r25, 0x01	; 1
+ 8e4:	18 96       	adiw	r26, 0x08	; 8
+ 8e6:	8d 93       	st	X+, r24
+ 8e8:	9c 93       	st	X, r25
+ 8ea:	19 97       	sbiw	r26, 0x09	; 9
+ 8ec:	08 95       	ret
+
+000008ee <_Z9uartFlushv>:
+ 8ee:	80 91 04 08 	lds	r24, 0x0804	; 0x800804 <__RODATA_PM_OFFSET__+0x7f8804>
+ 8f2:	88 23       	and	r24, r24
+ 8f4:	3c f4       	brge	.+14     	; 0x904 <_Z9uartFlushv+0x16>
+ 8f6:	e0 e0       	ldi	r30, 0x00	; 0
+ 8f8:	f8 e0       	ldi	r31, 0x08	; 8
+ 8fa:	80 81       	ld	r24, Z
+ 8fc:	94 81       	ldd	r25, Z+4	; 0x04
+ 8fe:	99 23       	and	r25, r25
+ 900:	e4 f3       	brlt	.-8      	; 0x8fa <_Z9uartFlushv+0xc>
+ 902:	08 95       	ret
+ 904:	80 e0       	ldi	r24, 0x00	; 0
+ 906:	08 95       	ret
+
+00000908 <_Z20deinitSecondUartPinsv>:
+ 908:	e0 e2       	ldi	r30, 0x20	; 32
+ 90a:	f4 e0       	ldi	r31, 0x04	; 4
+ 90c:	80 81       	ld	r24, Z
+ 90e:	8b 7f       	andi	r24, 0xFB	; 251
+ 910:	80 83       	st	Z, r24
+ 912:	84 e0       	ldi	r24, 0x04	; 4
+ 914:	82 8b       	std	Z+18, r24	; 0x12
+ 916:	08 95       	ret
+
+00000918 <_Z8uartReadcPchj>:
+ 918:	ef 92       	push	r14
+ 91a:	ff 92       	push	r15
+ 91c:	0f 93       	push	r16
+ 91e:	1f 93       	push	r17
+ 920:	cf 93       	push	r28
+ 922:	df 93       	push	r29
+ 924:	18 2f       	mov	r17, r24
+ 926:	7b 01       	movw	r14, r22
+ 928:	04 2f       	mov	r16, r20
+ 92a:	e9 01       	movw	r28, r18
+ 92c:	50 e0       	ldi	r21, 0x00	; 0
+ 92e:	60 e0       	ldi	r22, 0x00	; 0
+ 930:	70 e0       	ldi	r23, 0x00	; 0
+ 932:	c7 01       	movw	r24, r14
+ 934:	0e 94 43 05 	call	0xa86	; 0xa86 <memset>
+ 938:	0e 94 77 04 	call	0x8ee	; 0x8ee <_Z9uartFlushv>
+ 93c:	90 e0       	ldi	r25, 0x00	; 0
+ 93e:	e0 e0       	ldi	r30, 0x00	; 0
+ 940:	f8 e0       	ldi	r31, 0x08	; 8
+ 942:	84 81       	ldd	r24, Z+4	; 0x04
+ 944:	88 23       	and	r24, r24
+ 946:	54 f0       	brlt	.+20     	; 0x95c <_Z8uartReadcPchj+0x44>
+ 948:	21 97       	sbiw	r28, 0x01	; 1
+ 94a:	a9 ef       	ldi	r26, 0xF9	; 249
+ 94c:	b0 e0       	ldi	r27, 0x00	; 0
+ 94e:	11 97       	sbiw	r26, 0x01	; 1
+ 950:	f1 f7       	brne	.-4      	; 0x94e <_Z8uartReadcPchj+0x36>
+ 952:	00 c0       	rjmp	.+0      	; 0x954 <_Z8uartReadcPchj+0x3c>
+ 954:	00 00       	nop
+ 956:	20 97       	sbiw	r28, 0x00	; 0
+ 958:	a1 f7       	brne	.-24     	; 0x942 <_Z8uartReadcPchj+0x2a>
+ 95a:	18 c0       	rjmp	.+48     	; 0x98c <_Z8uartReadcPchj+0x74>
+ 95c:	80 81       	ld	r24, Z
+ 95e:	8a 30       	cpi	r24, 0x0A	; 10
+ 960:	69 f0       	breq	.+26     	; 0x97c <_Z8uartReadcPchj+0x64>
+ 962:	8d 30       	cpi	r24, 0x0D	; 13
+ 964:	59 f0       	breq	.+22     	; 0x97c <_Z8uartReadcPchj+0x64>
+ 966:	21 e0       	ldi	r18, 0x01	; 1
+ 968:	29 0f       	add	r18, r25
+ 96a:	d7 01       	movw	r26, r14
+ 96c:	a9 0f       	add	r26, r25
+ 96e:	b1 1d       	adc	r27, r1
+ 970:	8c 93       	st	X, r24
+ 972:	02 17       	cp	r16, r18
+ 974:	10 f4       	brcc	.+4      	; 0x97a <_Z8uartReadcPchj+0x62>
+ 976:	90 e0       	ldi	r25, 0x00	; 0
+ 978:	01 c0       	rjmp	.+2      	; 0x97c <_Z8uartReadcPchj+0x64>
+ 97a:	92 2f       	mov	r25, r18
+ 97c:	81 13       	cpse	r24, r17
+ 97e:	e1 cf       	rjmp	.-62     	; 0x942 <_Z8uartReadcPchj+0x2a>
+ 980:	f7 01       	movw	r30, r14
+ 982:	e9 0f       	add	r30, r25
+ 984:	f1 1d       	adc	r31, r1
+ 986:	10 82       	st	Z, r1
+ 988:	81 e0       	ldi	r24, 0x01	; 1
+ 98a:	01 c0       	rjmp	.+2      	; 0x98e <_Z8uartReadcPchj+0x76>
+ 98c:	80 e0       	ldi	r24, 0x00	; 0
+ 98e:	df 91       	pop	r29
+ 990:	cf 91       	pop	r28
+ 992:	1f 91       	pop	r17
+ 994:	0f 91       	pop	r16
+ 996:	ff 90       	pop	r15
+ 998:	ef 90       	pop	r14
+ 99a:	08 95       	ret
+
+0000099c <_Z5printPKc>:
+ 99c:	fc 01       	movw	r30, r24
+ 99e:	20 81       	ld	r18, Z
+ 9a0:	22 23       	and	r18, r18
+ 9a2:	81 f0       	breq	.+32     	; 0x9c4 <_Z5printPKc+0x28>
+ 9a4:	dc 01       	movw	r26, r24
+ 9a6:	11 96       	adiw	r26, 0x01	; 1
+ 9a8:	e0 e0       	ldi	r30, 0x00	; 0
+ 9aa:	f8 e0       	ldi	r31, 0x08	; 8
+ 9ac:	94 81       	ldd	r25, Z+4	; 0x04
+ 9ae:	95 ff       	sbrs	r25, 5
+ 9b0:	fd cf       	rjmp	.-6      	; 0x9ac <_Z5printPKc+0x10>
+ 9b2:	22 83       	std	Z+2, r18	; 0x02
+ 9b4:	2d 91       	ld	r18, X+
+ 9b6:	21 11       	cpse	r18, r1
+ 9b8:	f9 cf       	rjmp	.-14     	; 0x9ac <_Z5printPKc+0x10>
+ 9ba:	e0 e0       	ldi	r30, 0x00	; 0
+ 9bc:	f8 e0       	ldi	r31, 0x08	; 8
+ 9be:	84 81       	ldd	r24, Z+4	; 0x04
+ 9c0:	85 ff       	sbrs	r24, 5
+ 9c2:	fd cf       	rjmp	.-6      	; 0x9be <_Z5printPKc+0x22>
+ 9c4:	08 95       	ret
+
+000009c6 <_Z7printlnPKc>:
+ 9c6:	0e 94 ce 04 	call	0x99c	; 0x99c <_Z5printPKc>
+ 9ca:	8e ea       	ldi	r24, 0xAE	; 174
+ 9cc:	9a e8       	ldi	r25, 0x8A	; 138
+ 9ce:	0e 94 ce 04 	call	0x99c	; 0x99c <_Z5printPKc>
+ 9d2:	82 ed       	ldi	r24, 0xD2	; 210
+ 9d4:	9a e8       	ldi	r25, 0x8A	; 138
+ 9d6:	0e 94 ce 04 	call	0x99c	; 0x99c <_Z5printPKc>
+ 9da:	08 95       	ret
+
+000009dc <_Z14printByteAsHexh>:
+ 9dc:	cf 93       	push	r28
+ 9de:	df 93       	push	r29
+ 9e0:	cd b7       	in	r28, 0x3d	; 61
+ 9e2:	de b7       	in	r29, 0x3e	; 62
+ 9e4:	64 97       	sbiw	r28, 0x14	; 20
+ 9e6:	cd bf       	out	0x3d, r28	; 61
+ 9e8:	de bf       	out	0x3e, r29	; 62
+ 9ea:	91 e1       	ldi	r25, 0x11	; 17
+ 9ec:	eb ef       	ldi	r30, 0xFB	; 251
+ 9ee:	fa e8       	ldi	r31, 0x8A	; 138
+ 9f0:	de 01       	movw	r26, r28
+ 9f2:	11 96       	adiw	r26, 0x01	; 1
+ 9f4:	01 90       	ld	r0, Z+
+ 9f6:	0d 92       	st	X+, r0
+ 9f8:	9a 95       	dec	r25
+ 9fa:	e1 f7       	brne	.-8      	; 0x9f4 <_Z14printByteAsHexh+0x18>
+ 9fc:	e8 2f       	mov	r30, r24
+ 9fe:	f0 e0       	ldi	r31, 0x00	; 0
+ a00:	f5 95       	asr	r31
+ a02:	e7 95       	ror	r30
+ a04:	f5 95       	asr	r31
+ a06:	e7 95       	ror	r30
+ a08:	f5 95       	asr	r31
+ a0a:	e7 95       	ror	r30
+ a0c:	f5 95       	asr	r31
+ a0e:	e7 95       	ror	r30
+ a10:	21 e0       	ldi	r18, 0x01	; 1
+ a12:	30 e0       	ldi	r19, 0x00	; 0
+ a14:	2c 0f       	add	r18, r28
+ a16:	3d 1f       	adc	r19, r29
+ a18:	e2 0f       	add	r30, r18
+ a1a:	f3 1f       	adc	r31, r19
+ a1c:	90 81       	ld	r25, Z
+ a1e:	9a 8b       	std	Y+18, r25	; 0x12
+ a20:	8f 70       	andi	r24, 0x0F	; 15
+ a22:	f9 01       	movw	r30, r18
+ a24:	e8 0f       	add	r30, r24
+ a26:	f1 1d       	adc	r31, r1
+ a28:	80 81       	ld	r24, Z
+ a2a:	8b 8b       	std	Y+19, r24	; 0x13
+ a2c:	1c 8a       	std	Y+20, r1	; 0x14
+ a2e:	ce 01       	movw	r24, r28
+ a30:	42 96       	adiw	r24, 0x12	; 18
+ a32:	0e 94 ce 04 	call	0x99c	; 0x99c <_Z5printPKc>
+ a36:	64 96       	adiw	r28, 0x14	; 20
+ a38:	cd bf       	out	0x3d, r28	; 61
+ a3a:	de bf       	out	0x3e, r29	; 62
+ a3c:	df 91       	pop	r29
+ a3e:	cf 91       	pop	r28
+ a40:	08 95       	ret
+
+00000a42 <__udivmodsi4>:
+ a42:	a1 e2       	ldi	r26, 0x21	; 33
+ a44:	1a 2e       	mov	r1, r26
+ a46:	aa 1b       	sub	r26, r26
+ a48:	bb 1b       	sub	r27, r27
+ a4a:	fd 01       	movw	r30, r26
+ a4c:	0d c0       	rjmp	.+26     	; 0xa68 <__udivmodsi4_ep>
+
+00000a4e <__udivmodsi4_loop>:
+ a4e:	aa 1f       	adc	r26, r26
+ a50:	bb 1f       	adc	r27, r27
+ a52:	ee 1f       	adc	r30, r30
+ a54:	ff 1f       	adc	r31, r31
+ a56:	a2 17       	cp	r26, r18
+ a58:	b3 07       	cpc	r27, r19
+ a5a:	e4 07       	cpc	r30, r20
+ a5c:	f5 07       	cpc	r31, r21
+ a5e:	20 f0       	brcs	.+8      	; 0xa68 <__udivmodsi4_ep>
+ a60:	a2 1b       	sub	r26, r18
+ a62:	b3 0b       	sbc	r27, r19
+ a64:	e4 0b       	sbc	r30, r20
+ a66:	f5 0b       	sbc	r31, r21
+
+00000a68 <__udivmodsi4_ep>:
+ a68:	66 1f       	adc	r22, r22
+ a6a:	77 1f       	adc	r23, r23
+ a6c:	88 1f       	adc	r24, r24
+ a6e:	99 1f       	adc	r25, r25
+ a70:	1a 94       	dec	r1
+ a72:	69 f7       	brne	.-38     	; 0xa4e <__udivmodsi4_loop>
+ a74:	60 95       	com	r22
+ a76:	70 95       	com	r23
+ a78:	80 95       	com	r24
+ a7a:	90 95       	com	r25
+ a7c:	9b 01       	movw	r18, r22
+ a7e:	ac 01       	movw	r20, r24
+ a80:	bd 01       	movw	r22, r26
+ a82:	cf 01       	movw	r24, r30
+ a84:	08 95       	ret
+
+00000a86 <memset>:
+ a86:	dc 01       	movw	r26, r24
+ a88:	01 c0       	rjmp	.+2      	; 0xa8c <memset+0x6>
+ a8a:	6d 93       	st	X+, r22
+ a8c:	41 50       	subi	r20, 0x01	; 1
+ a8e:	50 40       	sbci	r21, 0x00	; 0
+ a90:	e0 f7       	brcc	.-8      	; 0xa8a <memset+0x4>
+ a92:	08 95       	ret
+
+00000a94 <strchr>:
+ a94:	fc 01       	movw	r30, r24
+ a96:	81 91       	ld	r24, Z+
+ a98:	86 17       	cp	r24, r22
+ a9a:	21 f0       	breq	.+8      	; 0xaa4 <strchr+0x10>
+ a9c:	88 23       	and	r24, r24
+ a9e:	d9 f7       	brne	.-10     	; 0xa96 <strchr+0x2>
+ aa0:	99 27       	eor	r25, r25
+ aa2:	08 95       	ret
+ aa4:	31 97       	sbiw	r30, 0x01	; 1
+ aa6:	cf 01       	movw	r24, r30
+ aa8:	08 95       	ret
+
+00000aaa <_exit>:
+ aaa:	f8 94       	cli
+
+00000aac <__stop_program>:
+ aac:	ff cf       	rjmp	.-2      	; 0xaac <__stop_program>

@@ -1,0 +1,67 @@
+/* Online C++ Compiler and Editor */
+#include <iostream>
+
+using namespace std;
+
+
+int main()
+{
+        uint8_t buffer[7] = { 0 };
+        buffer[0] = 111;
+        buffer[1] = 41;
+        buffer[2] = 116;
+        buffer[3] = 164;
+        buffer[4] = 186;
+        buffer[5] = 90;
+        buffer[6] = 194;
+        int32_t lat, lon;
+        uint32_t temp;
+        
+        
+        temp = buffer[0];
+		lat = temp << 17;
+		temp = buffer[1];
+		lat = lat | (temp << 9);
+		temp = buffer[2];
+		lat = lat | (temp << 1);
+		temp = buffer[3];
+		lat = lat | ((temp >> 7) & 0xFF);
+		lat -= 9000000L;
+		
+		lon = (temp & 0b01111111) << 19;
+		temp = buffer[4];
+		lon = lon | (temp << 11);
+		temp = buffer[5];
+		lon = lon | (temp << 3);
+		temp = buffer[6];
+		lon = lon | ((temp >> 5) & 0xFF);
+		lon -= 18000000L;
+        printf("%ld.%05ld,%ld.%05ld\n\r", lat / 100000L, labs(lat) % 100000L, lon / 100000L, labs(lon) % 100000L);
+
+
+
+Javascript: 
+
+               var lat;
+        var lon;
+        var temp;
+
+        temp = 111;
+		lat = temp << 17;
+		temp = 41;
+		lat = lat | (temp << 9);
+		temp = 116;
+		lat = lat | (temp << 1);
+		temp = 164;
+		lat = lat | ((temp >> 7) & 0xFF);
+		lat -= 9000000;
+		
+		lon = (temp & 0b01111111) << 19;
+		temp = 186;
+		lon = lon | (temp << 11);
+		temp = 90;
+		lon = lon | (temp << 3);
+		temp = 194;
+		lon = lon | ((temp >> 5) & 0xFF);
+		lon -= 18000000;
+        console.log(lat / 100000, lon / 100000);
